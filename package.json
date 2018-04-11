@@ -38,6 +38,8 @@
     "url": "https://github.com/renderforest/renderforest-sdk-node.git"
   },
   "scripts": {
-    "fix-package": "fixpack"
+    "fix-package": "fixpack",
+    "lint": "./node_modules/.bin/eslint src --fix",
+    "lint-no-fix": "./node_modules/.bin/eslint src"
   }
 }
