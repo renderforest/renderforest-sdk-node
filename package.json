@@ -19,7 +19,8 @@
     "eslint-plugin-node": "6.0.1",
     "eslint-plugin-promise": "3.7.0",
     "eslint-plugin-standard": "3.0.1",
-    "fixpack": "2.3.1"
+    "fixpack": "2.3.1",
+    "pre-commit": "1.2.2"
   },
   "engines": {
     "node": ">=6"
@@ -33,6 +34,9 @@
     "sdk"
   ],
   "main": "./lib/renderforest.js",
+  "pre-commit": [
+    "pre-commit"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/renderforest/renderforest-sdk-node.git"
@@ -40,6 +44,7 @@
   "scripts": {
     "fix-package": "fixpack",
     "lint": "./node_modules/.bin/eslint src --fix",
-    "lint-no-fix": "./node_modules/.bin/eslint src"
+    "lint-no-fix": "./node_modules/.bin/eslint src",
+    "pre-commit": "npm run lint-no-fix"
   }
 }
