@@ -1,0 +1,37 @@
+{
+  "name": "renderforest-sdk-node",
+  "description": "Renderforest SDK for Node.js",
+  "version": "0.0.1",
+  "author": "RenderForest LLC",
+  "bugs": {
+    "url": "https://github.com/renderforest/renderforest-sdk-node/issues"
+  },
+  "contributors": [
+    {
+      "name": "Albert Hambardzumyan",
+      "email": "hambardzumyan.albert@gmail.com"
+    }
+  ],
+  "devDependencies": {
+    "fixpack": "2.3.1"
+  },
+  "engines": {
+    "node": ">=6"
+  },
+  "homepage": "https://github.com/renderforest/renderforest-sdk-node",
+  "keywords": [
+    "api",
+    "node",
+    "nodejs",
+    "renderforest",
+    "sdk"
+  ],
+  "main": "./lib/renderforest.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/renderforest/renderforest-sdk-node.git"
+  },
+  "scripts": {
+    "fix-package": "fixpack"
+  }
+}
