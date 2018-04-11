@@ -26,6 +26,7 @@
     "renderforest",
     "sdk"
   ],
+  "main": "./lib/renderforest.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/renderforest/renderforest-sdk-node.git"
