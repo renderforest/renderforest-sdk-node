@@ -106,7 +106,7 @@ Http.DEFAULT_OPTIONS = {
   json: true,
   headers: {
     'Accept': 'application/json',
-    'User-agent': `renderforest/sdk-node/${PackageJson.version}`
+    'User-Agent': `renderforest/sdk-node/${PackageJson.version}`
   }
 }
 
