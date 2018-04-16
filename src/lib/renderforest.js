@@ -9,6 +9,7 @@
 const Http = require('./http/http')
 
 const Fonts = require('./resources/fonts')
+const Projects = require('./resources/projects')
 const Templates = require('./resources/templates')
 
 class Renderforest {
@@ -29,6 +30,60 @@ class Renderforest {
    */
   getFonts (payload) {
     return Fonts.getFonts(payload)
+  }
+
+  /**
+   * @param {Object} [payload]
+   * @returns {Promise.<Array>}
+   * @description Get All Projects.
+   */
+  getProjects (payload) {
+    return Projects.getProjects(payload)
+  }
+
+  /**
+   * @param {Object} payload
+   * @returns {Promise.<Object>}
+   * @description Add Project.
+   */
+  addProject (payload) {
+    return Projects.addProject(payload)
+  }
+
+  /**
+   * @param {Object} payload
+   * @returns {Promise.<Object>}
+   * @description Update the Project (partial update).
+   */
+  updateProjectPartial (payload) {
+    return Projects.updateProjectPartial(payload)
+  }
+
+  /**
+   * @param {Object} payload
+   * @returns {Promise.<Object>}
+   * @description Delete a Specific Project
+   */
+  deleteProject (payload) {
+    return Projects.deleteProject(payload)
+  }
+
+  /**
+   * @param {Object} payload
+   * @returns {Promise.<Object>}
+   * @description Apply Template Preset on the Project.
+   */
+  applyTemplatePresetOnProject (payload) {
+    return Projects.applyTemplatePresetOnProject(payload)
+  }
+
+  /**
+   * @param {Object} payload
+   * @returns {Promise.<Object>}
+   * @description Duplicate the Project.
+   */
+  duplicateProject (payload) {
+    return Projects.duplicateProject(payload)
   }
 
   /**
