@@ -62,7 +62,7 @@ class Renderforest {
   /**
    * @param {Object} payload
    * @returns {Promise.<Object>}
-   * @description Delete a Specific Project
+   * @description Delete a Specific Project.
    */
   deleteProject (payload) {
     return Projects.deleteProject(payload)
