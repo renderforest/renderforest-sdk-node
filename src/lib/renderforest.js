@@ -11,6 +11,7 @@ const Http = require('./http/http')
 const Fonts = require('./resources/fonts')
 const Projects = require('./resources/projects')
 const Templates = require('./resources/templates')
+const Users = require('./resources/users')
 
 class Renderforest {
   /**
@@ -84,6 +85,14 @@ class Renderforest {
    */
   duplicateProject (payload) {
     return Projects.duplicateProject(payload)
+  }
+
+  /**
+   * @returns {Promise.<Object>}
+   * @description Get Current User.
+   */
+  getCurrentUser () {
+    return Users.getCurrentUser()
   }
 
   /**
