@@ -47,8 +47,8 @@
   },
   "scripts": {
     "fix-package": "fixpack",
-    "lint": "./node_modules/.bin/eslint src --fix",
-    "lint-no-fix": "./node_modules/.bin/eslint src",
+    "lint": "./node_modules/.bin/eslint src examples --fix",
+    "lint-no-fix": "./node_modules/.bin/eslint src examples",
     "pre-commit": "npm run lint-no-fix"
   }
 }
