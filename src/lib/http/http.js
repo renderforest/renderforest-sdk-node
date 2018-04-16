@@ -25,7 +25,7 @@ class Http {
 
   /**
    * @param {string} signKey
-   * @param {string} clientId
+   * @param {number} clientId
    * @description Set config.
    */
   setConfig (signKey, clientId) {

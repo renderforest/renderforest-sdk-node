@@ -6,9 +6,31 @@
  * LICENSE file in the root directory.
  */
 
+const Http = require('./http/http')
+
+const Fonts = require('./resources/fonts')
 const Templates = require('./resources/templates')
 
 class Renderforest {
+  /**
+   * @constructor
+   * @param {Object} options
+   * @param {string} options.signKey
+   * @param {number} options.clientId
+   */
+  constructor (options) {
+    Http.setConfig(options.signKey, options.clientId)
+  }
+
+  /**
+   * @param {Object} payload
+   * @returns {Promise.<Array>}
+   * @description Get All Fonts.
+   */
+  getFonts (payload) {
+    return Fonts.getFonts(payload)
+  }
+
   /**
    * @param {Object} [payload]
    * @returns {Promise.<Array>}

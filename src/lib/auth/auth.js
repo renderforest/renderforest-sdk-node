@@ -14,7 +14,7 @@ class Auth {
   /**
    * @param {Object} options
    * @param {string} signKey
-   * @param {string} clientId
+   * @param {number} clientId
    * @description Set Authorization.
    */
   static setAuthorization (options, signKey, clientId) {
