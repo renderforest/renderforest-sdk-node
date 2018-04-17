@@ -26,14 +26,6 @@ class ProjectData {
   }
 
   /**
-   * @returns {Object}
-   * @description Get the raw data.
-   */
-  getRawData () {
-    return Object.assign({}, this.projectDataJson)
-  }
-
-  /**
    * @returns {number}
    * @description Get the project id.
    */
