@@ -211,28 +211,18 @@ class ProjectData {
     }
 
     if (area.type === 'image') {
-      result.fileName = fileName
-      result.originalHeight = originalHeight
-      result.originalWidth = originalWidth
-      result.mimeType = mimeType
-      result.webpPath = webpPath
-      result.fileType = fileType
-      result.thumbnailPath = thumbnailPath
-      result.imageCropParams = imageCropParams
+      Object.assign(result, {
+        fileName, originalHeight, originalWidth, mimeType, webpPath, fileType, thumbnailPath, imageCropParams
+      })
       result.setImage = (image) => {
         ProjectData.setAreaImage(area, image)
       }
     }
 
     if (area.type === 'video') {
-      result.fileName = fileName
-      result.originalHeight = originalHeight
-      result.originalWidth = originalWidth
-      result.mimeType = mimeType
-      result.webpPath = webpPath
-      result.fileType = fileType
-      result.thumbnailPath = thumbnailPath
-      result.videoCropParams = videoCropParams
+      Object.assign(result, {
+        fileName, originalHeight, originalWidth, mimeType, webpPath, fileType, thumbnailPath, videoCropParams
+      })
       result.setVideo = (video) => {
         ProjectData.setAreaVideo(area, video)
       }
@@ -275,12 +265,9 @@ class ProjectData {
   static setAreaVideo (area, video) {
     const { fileName, mime, filePath, webpPath, fileType, videoCropParams } = video
 
-    area.fileName = fileName
-    area.mimeType = mime
-    area.value = filePath
-    area.webpPath = webpPath
-    area.fileType = fileType
-    area.videoCropParams = videoCropParams
+    Object.assign(area, {
+      fileName, mimeType: mime, value: filePath, webpPath, fileType, videoCropParams
+    })
   }
 }
 
