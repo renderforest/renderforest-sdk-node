@@ -236,9 +236,6 @@ class ProjectData {
       result.setVideo = (video) => {
         ProjectData.setAreaVideo(area, video)
       }
-      result.setImage = (image) => {
-        ProjectData.setAreaImage(area, image)
-      }
     }
 
     return result
