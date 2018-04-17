@@ -74,7 +74,6 @@ class ProjectData {
   }
 
   /**
-   *
    * @param {boolean} muteMusic
    * @description Set the project muteMusic property.
    */
@@ -149,7 +148,7 @@ class ProjectData {
    * @description Get screens (add methods on screens & screen areas).
    */
   getScreens () {
-    const screens = this.projectDataJson.data['screens'] || []
+    const screens = this.projectDataJson.data['screens']
     return screens.map((screen) => {
       return this.constructScreen(screen)
     })
