@@ -10,6 +10,7 @@ const Http = require('./http/http')
 
 const Fonts = require('./resources/fonts')
 const Projects = require('./resources/projects')
+const Sounds = require('./resources/sounds')
 const Supports = require('./resources/supports')
 const Templates = require('./resources/templates')
 const Users = require('./resources/users')
@@ -89,6 +90,24 @@ class Renderforest {
   }
 
   /**
+   * @param {Object} [payload]
+   * @returns {Promise.<Object>}
+   * @description Get Sounds.
+   */
+  getSounds (payload) {
+    return Sounds.getSounds(payload)
+  }
+
+  /**
+   * @param {Object} [payload]
+   * @returns {Promise.<Object>}
+   * @description Get Recommended Sounds.
+   */
+  getRecommendedSounds (payload) {
+    return Sounds.getRecommendedSounds(payload)
+  }
+
+  /**
    * @param {Object} payload
    * @returns {Promise.<Object>}
    * @description Add Supports Ticket.
@@ -103,6 +122,24 @@ class Renderforest {
    */
   getCurrentUser () {
     return Users.getCurrentUser()
+  }
+
+  /**
+   * @param {Object} payload
+   * @returns {Promise.<Array>}
+   * @description Get Company Sounds (limited).
+   */
+  static getCompanySoundsLimited (payload) {
+    return Sounds.getCompanySoundsLimited(payload)
+  }
+
+  /**
+   * @param {Object} payload
+   * @returns {Promise.<Array>}
+   * @description Get Recommended Sounds (limited).
+   */
+  static getRecommendedSoundsLimited (payload) {
+    return Sounds.getRecommendedSoundsLimited(payload)
   }
 
   /**
