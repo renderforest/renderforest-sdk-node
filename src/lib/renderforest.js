@@ -10,6 +10,7 @@ const Http = require('./http/http')
 
 const Fonts = require('./resources/fonts')
 const Projects = require('./resources/projects')
+const Supports = require('./resources/supports')
 const Templates = require('./resources/templates')
 const Users = require('./resources/users')
 
@@ -85,6 +86,15 @@ class Renderforest {
    */
   duplicateProject (payload) {
     return Projects.duplicateProject(payload)
+  }
+
+  /**
+   * @param {Object} payload
+   * @returns {Promise.<Object>}
+   * @description Add Supports Ticket.
+   */
+  addSupportsTicket (payload) {
+    return Supports.addSupportsTicket(payload)
   }
 
   /**
