@@ -37,7 +37,7 @@
     "renderforest",
     "sdk"
   ],
-  "main": "./lib/renderforest.js",
+  "main": "src/lib/renderforest.js",
   "pre-commit": [
     "pre-commit"
   ],
