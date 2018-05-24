@@ -10,7 +10,7 @@ const Renderforest = require('../../src/lib/renderforest')
 
 const payload = {
   templateId: 701,
-  duration: 10
+  duration: 5
 }
 Renderforest.getRecommendedSoundsLimited(payload)
   .then(console.log) // handle the success

@@ -8,8 +8,7 @@
 
 const Renderforest = require('../../src/lib/renderforest')
 
-const options = { signKey: 'mock-signKey', clientId: -1 }
-const renderforest = new Renderforest(options)
+const renderforest = new Renderforest({ signKey: '<signKey>', clientId: -1 })
 
 const payload = {
   projectId: 6154178
