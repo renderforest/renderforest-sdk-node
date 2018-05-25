@@ -3,10 +3,11 @@ sudo: false
 node_js:
     - "6"
     - "8"
+    - "10"
 cache:
   directories:
     - node_modules
 install:
     - npm install
 script:
-    - npm test
+    - npm run lint-no-fix
