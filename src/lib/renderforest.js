@@ -90,6 +90,15 @@ class Renderforest {
   }
 
   /**
+   * @param {Object} payload
+   * @returns {Promise.<Object>}
+   * @description Render the Project.
+   */
+  renderProject (payload) {
+    return Projects.renderProject(payload)
+  }
+
+  /**
    * @param {Object} [payload]
    * @returns {Promise.<Object>}
    * @description Get Sounds.
