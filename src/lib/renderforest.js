@@ -56,6 +56,15 @@ class Renderforest {
   /**
    * @param {Object} payload
    * @returns {Promise.<Object>}
+   * @description Get Trial Project.
+   */
+  static getTrialProject (payload) {
+    return Projects.getTrialProject(payload)
+  }
+
+  /**
+   * @param {Object} payload
+   * @returns {Promise.<Object>}
    * @description Update the Project (partial update).
    */
   updateProjectPartial (payload) {

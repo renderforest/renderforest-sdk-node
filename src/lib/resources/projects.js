@@ -54,7 +54,7 @@ class Projects {
       endpoint: `${Projects.API_PREFIX}/projects/trial`,
       qs
     }
-    return Http.authorizedRequest(options)
+    return Http.unauthorizedRequest(options)
   }
 
   /**
