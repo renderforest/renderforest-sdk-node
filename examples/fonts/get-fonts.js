@@ -8,11 +8,10 @@
 
 const Renderforest = require('../../src/lib/renderforest')
 
-const options = { signKey: 'mock-signKey', clientId: -1 }
-const renderforest = new Renderforest(options)
+const renderforest = new Renderforest({ signKey: '<signKey>', clientId: -1 })
 
 const payload = {
-  templateId: 701
+  templateId: 805
 }
 renderforest.getFonts(payload)
   .then(console.log) // handle the success
