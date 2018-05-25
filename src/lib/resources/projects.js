@@ -45,6 +45,21 @@ class Projects {
   /**
    * @param {Object} payload
    * @returns {Promise.<Object>}
+   * @description Get Trial Project.
+   */
+  static getTrialProject (payload) {
+    const qs = Params.destructParams(payload, ['templateId'])
+
+    const options = {
+      endpoint: `${Projects.API_PREFIX}/projects/trial`,
+      qs
+    }
+    return Http.authorizedRequest(options)
+  }
+
+  /**
+   * @param {Object} payload
+   * @returns {Promise.<Object>}
    * @description Update the Project (partial update).
    */
   static updateProjectPartial (payload) {
