@@ -105,6 +105,23 @@ class Projects {
     }
     return Http.authorizedRequest(options)
   }
+
+  /**
+   * @param {Object} payload
+   * @returns {Promise.<Object>}
+   * @description Render the Project.
+   */
+  static renderProject (payload) {
+    const body = Params.destructParams(payload, ['quality'])
+    const projectId = Params.destructURLParam(payload, 'projectId')
+
+    const options = {
+      method: 'POST',
+      endpoint: `${Projects.API_PREFIX}/projects/${projectId}/render`,
+      body
+    }
+    return Http.authorizedRequest(options)
+  }
 }
 
 Projects.API_PREFIX = '/api/v1'
