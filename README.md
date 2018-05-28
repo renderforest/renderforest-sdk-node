@@ -54,6 +54,26 @@ Welcome to the Renderforest API! You can use our API to:
 
 ## Templates API
 
+
+### Get Color-Presets of the Template
+
+Retrieves color-presets of the template.
+You can apply these color presets to your project to give it better and unique look.
+```js
+const Renderforest = require('@renderforest/sdk-node')
+
+const payload = {
+  templateId: 701
+}
+Renderforest.getTemplateColorPresets(payload)
+  .then(console.log) // handle the success
+  .catch(console.error) // handle the error
+```
+- The number of color-presets is varying from template to template.
+
+[See example](https://github.com/renderforest/renderforest-sdk-node/blob/master/examples/templates/get-template-color-presets.js)
+
+
 ### Get Pluggable-Screens of the Template
 
 Retrieves pluggable-screens of the template.
