@@ -54,6 +54,26 @@ Welcome to the Renderforest API! You can use our API to:
 
 ## Templates API
 
+### Get Pluggable-Screens of the Template
+
+Retrieves pluggable-screens of the template.
+```js
+const Renderforest = require('@renderforest/sdk-node')
+
+const payload = {
+  templateId: 701
+}
+Renderforest.getTemplatePluggableScreens(payload)
+  .then(console.log) // handle the success
+  .catch(console.error) // handle the error
+```
+- Only lego templates might have a pluggable-screen. 
+- The number of pluggable-screens is varying from template to template.
+Pluggable-Screens are grouped by categories.
+
+[See example](https://github.com/renderforest/renderforest-sdk-node/blob/master/examples/templates/get-template-pluggable-screens.js)
+
+
 ### Get Recommended-Custom-Colors of the Template
 
 Retrieves recommended-custom-colors of the template.
@@ -68,7 +88,10 @@ Renderforest.getTemplateRecommendedCustomColors(payload)
   .then(console.log) // handle the success
   .catch(console.error) // handle the error
 ```
+- The number of recommended-custom-colors is varying from template to template.
+
 [See example](https://github.com/renderforest/renderforest-sdk-node/blob/master/examples/templates/get-template-recommended-custom-colors.js)
+
 
 ### Get Template-Presets of the Template
 
@@ -83,7 +106,13 @@ Renderforest.getTemplatePresets(payload)
   .then(console.log) // handle the success
   .catch(console.error) // handle the error
 ```
+- Only lego templates might have a template-preset.
+
+- The number of template-presets is varying from template to template.
+Template-presets are ready-made stories created from this template to fasten your video production.
+
 [See example](https://github.com/renderforest/renderforest-sdk-node/blob/master/examples/templates/get-template-presets.js)
+
 
 ### Get Theme of the Template
 
@@ -98,10 +127,14 @@ Renderforest.getTemplateTheme(payload)
   .then(console.log) // handle the success
   .catch(console.error) // handle the error
 ```
+- Both lego & non-lego templates might have a theme.
+
 [See example](https://github.com/renderforest/renderforest-sdk-node/blob/master/examples/templates/get-template-theme.js)
 
 
+
 ## Users API
+
 
 ### Get Current User
 
