@@ -52,8 +52,32 @@ Welcome to the Renderforest API! You can use our API to:
 
 ## Supports API
 
+### Add Supports Ticket
+
+Creates supports ticket.
+```js
+const Renderforest = require('@renderforest/sdk-node')
+
+const renderforest = new Renderforest({ signKey: '<signKey>', clientId: -1 })
+
+const payload = {
+  message: 'I need to...',
+  mailType: 'Sales',
+  subject: 'Some help in ..'
+}
+renderforest.addSupportsTicket(payload)
+  .then(console.log) // handle the success
+  .catch(console.error) // handle the error
+```
+- The possible values of ticket mailType are: 'Sales', 'Report a bug', 'Editing process', 'Creative team', 'Other'.
+
+[See example](https://github.com/renderforest/renderforest-sdk-node/blob/master/examples/supports/add-supports-ticket.js)
+
+
+
 ## Templates API
 
+_No authorization is required for ./templates API's._
 
 ### Get All Templates
 
