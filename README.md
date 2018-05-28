@@ -37,7 +37,7 @@ Welcome to the Renderforest API! You can use our API to:
   - [Get Template-Presets of the Template]()
   - [Get Theme of the Template]()
 * [Users API](#users-api)
-  - [Get Current User]()
+  - [Get Current User](#get-current-user)
  
  
 # API
@@ -55,3 +55,17 @@ Welcome to the Renderforest API! You can use our API to:
 ## Templates API
 
 ## Users API
+
+### Get Current User
+
+Retrieves the current user.
+
+```js
+const Renderforest = require('@renderforest/sdk-node')
+
+const renderforest = new Renderforest({ signKey: 'signKey', clientId: -1 })
+
+renderforest.getCurrentUser()
+  .then(console.log) // handle the success
+  .catch(console.error) // handle the error
+```
