@@ -73,9 +73,49 @@ It might be extended later on to take more values.
 
 ## Projects API
 
+
+
 ## Projects-data API
 
+
+
 ## Sounds API
+
+### Get All Sounds
+
+Retrieves sounds given the duration.
+
+The endpoint supports both authorized and unauthorized requests. If the authorization is not present, then response 
+ limits to 5.
+```js
+const Renderforest = require('@renderforest/sdk-node')
+
+const payload = {
+  duration: 4
+}
+
+Renderforest.getCompanySoundsLimited(payload)
+  .then(console.log) // handle the success
+  .catch(console.error) // handle the error
+```
+```js
+const Renderforest = require('@renderforest/sdk-node')
+
+const renderforest = new Renderforest({ signKey: '<signKey>', clientId: -1 })
+
+renderforest.getSounds(payload)
+  .then(console.log) // handle the success
+  .catch(console.error) // handle the error
+```
+- The sounds will have greater or equal duration to the specified one.
+- Remember — any given value of the duration greater than 180 will be overridden by 180!
+
+[See example](https://github.com/renderforest/renderforest-sdk-node/blob/master/examples/sounds/get-company-sounds-limited.js)
+
+[See example](https://github.com/renderforest/renderforest-sdk-node/blob/master/examples/sounds/get-sounds.js)
+
+
+
 
 ## Supports API
 
