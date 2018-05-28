@@ -55,6 +55,44 @@ Welcome to the Renderforest API! You can use our API to:
 ## Templates API
 
 
+### Get All Templates
+
+Retrieves all templates.
+```js
+const Renderforest = require('@renderforest/sdk-node')
+
+const payload = {
+  categoryId: 3,
+  equalizer: false,
+  limit: 4,
+  offset: 10
+}
+Renderforest.getTemplates(payload)
+  .then(console.log) // handle the success
+  .catch(console.error) // handle the error
+```
+[See example](https://github.com/renderforest/renderforest-sdk-node/blob/master/examples/templates/get-templates.js)
+
+
+### Get Templates Categories
+
+Retrieves templates categories.
+
+```js
+const Renderforest = require('@renderforest/sdk-node')
+
+const payload = {
+  language: 'en'
+}
+Renderforest.getTemplatesCategories(payload)
+  .then(console.log) // handle the success
+  .catch(console.error) // handle the error
+```
+- The supported language codes are: ar, de, en, es, fr, pt, ru, tr.
+
+[See example](https://github.com/renderforest/renderforest-sdk-node/blob/master/examples/templates/get-templates-categories.js)
+
+
 ### Get a Specific Template
 
 Retrieves a specific template.
