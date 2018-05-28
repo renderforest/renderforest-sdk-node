@@ -73,10 +73,174 @@ It might be extended later on to take more values.
 
 ## Projects API
 
+### Get All Projects
+
+Retrieves the projects.
+```js
+const Renderforest = require('@renderforest/sdk-node')
+
+const renderforest = new Renderforest({ signKey: '<signKey>', clientId: -1 })
+
+const payload = {
+  limit: 2,
+  offset: 10
+}
+renderforest.getProjects(payload)
+  .then(console.log) // handle the success
+  .catch(console.error) // handle the error
+```
+- The renderedQualities property is optional and present if the project is in renders queue (ongoing rend).
+
+[See example](https://github.com/renderforest/renderforest-sdk-node/blob/master/examples/projects/get-projects.js)
+
+
+### Add Project
+
+Creates a project.
+```js
+const Renderforest = require('@renderforest/sdk-node')
+
+const renderforest = new Renderforest({ signKey: '<signKey>', clientId: -1 })
+
+const payload = {
+  templateId: 701
+}
+renderforest.addProject(payload)
+  .then(console.log) // handle the success
+  .catch(console.error) // handle the error
+```
+- Also, project-data is created with the following list of initial properties: 
+  templateId, title, duration, equalizer, isLego, extendableScreens, fps, projectVersion, screens, muteMusic, 
+  currentScreenId, projectColors (optional), themeVariableName (optional), themeVariableValue (optional).
+
+
+- The "muteMusic" is false initially. 
+- If template is lego ("isLego": true), then no initial screen is added and "screens" defaults to []. Otherwise, at least one screen is present. 
+- The "currentScreenId" is the id of the first screen for non-lego templates & null for lego templates. 
+- The "projectColors" is optional and gets value if the template has default colors. Both lego & non-lego templates might have default colors.
+- Both "themeVariableName" & "themeVariableValue" are optional and are added (both) if template has theme. Both lego & non-lego templates might have a theme. 
+
+[See example](https://github.com/renderforest/renderforest-sdk-node/blob/master/examples/projects/add-project.js)
+
+
+### Get Trial Project
+
+This endpoint retrieves a trial project. Designed to allow the user to make a project (trial - without saving) before
+ getting logged in to get an overall idea.
+The data can be used later to create real project (create project, update project-data with this data).
+
+_No authorization is required for this endpoint._
+```js
+const Renderforest = require('@renderforest/sdk-node')
+
+const payload = {
+  templateId: 701
+}
+Renderforest.getTrialProject(payload)
+  .then(console.log) // handle the success
+  .catch(console.error) // handle the error
+```
+[See example](https://github.com/renderforest/renderforest-sdk-node/blob/master/examples/projects/get-trial-project.js)
+
+
+### Update the Project (partial update)
+
+Updates the project (partial update).
+```js
+const Renderforest = require('@renderforest/sdk-node')
+
+const renderforest = new Renderforest({ signKey: '<signKey>', clientId: -1 })
+
+const payload = {
+  projectId: 5000658,
+  customTitle: 'Graduation'
+}
+renderforest.updateProjectPartial(payload)
+  .then(console.log) // handle the success
+  .catch(console.error) // handle the error
+```
+[See example](https://github.com/renderforest/renderforest-sdk-node/blob/master/examples/projects/update-project-partial.js)
+
+
+### Delete a Specific Project
+
+Deletes a specific project.
+```js
+const Renderforest = require('@renderforest/sdk-node')
+
+const renderforest = new Renderforest({ signKey: '<signKey>', clientId: -1 })
+
+const payload = {
+  projectId: 5000658
+}
+renderforest.deleteProject(payload)
+  .then(console.log) // handle the success
+  .catch(console.error) // handle the error
+```
+[See example](https://github.com/renderforest/renderforest-sdk-node/blob/master/examples/projects/delete-project.js)
+
+
+### Apply Template Preset on the Project
+
+Applies template preset on the project.
+```js
+const Renderforest = require('@renderforest/sdk-node')
+
+const renderforest = new Renderforest({ signKey: '<signKey>', clientId: -1 })
+
+const payload = {
+  projectId: 5000658,
+  presetId: 55
+}
+renderforest.applyTemplatePresetOnProject(payload)
+  .then(console.log) // handle the success
+  .catch(console.error) // handle the error
+```
+[See example](https://github.com/renderforest/renderforest-sdk-node/blob/master/examples/projects/apply-template-preset-on-project.js)
+
+
+### Duplicate the Project
+
+Duplicates the project.
+```js
+const Renderforest = require('@renderforest/sdk-node')
+
+const renderforest = new Renderforest({ signKey: '<signKey>', clientId: -1 })
+
+const payload = {
+  projectId: 5000658
+}
+renderforest.duplicateProject(payload)
+  .then(console.log) // handle the success
+  .catch(console.error) // handle the error
+```
+[See example](https://github.com/renderforest/renderforest-sdk-node/blob/master/examples/projects/duplicate-project.js)
+
+
+### Render the Project
+
+Renders the project.
+```js
+const Renderforest = require('@renderforest/sdk-node')
+
+const renderforest = new Renderforest({ signKey: '<signKey>', clientId: -1 })
+
+const payload = {
+  projectId: 5000658,
+  quality: 1080
+}
+renderforest.renderProject(payload)
+  .then(console.log) // handle the success
+  .catch(console.error) // handle the error
+```
+- The possible values of the quality are: 0, 360, 720, and 1080.
+
+[See example](https://github.com/renderforest/renderforest-sdk-node/blob/master/examples/projects/render-project.js)
+
 
 
 ## Projects-data API
-
+TBA
 
 
 ## Sounds API
