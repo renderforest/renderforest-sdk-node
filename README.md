@@ -55,6 +55,25 @@ Welcome to the Renderforest API! You can use our API to:
 ## Templates API
 
 
+### Get a Specific Template
+
+Retrieves a specific template.
+```js
+const Renderforest = require('@renderforest/sdk-node')
+
+const payload = {
+  templateId: 701,
+  language: 'en'
+}
+Renderforest.getTemplate(payload)
+  .then(console.log) // handle the success
+  .catch(console.error) // handle the error
+```
+- The supported language codes are: ar, de, en, es, fr, pt, ru, tr.
+
+[See example](https://github.com/renderforest/renderforest-sdk-node/blob/master/examples/templates/get-template.js)
+
+
 ### Get Color-Presets of the Template
 
 Retrieves color-presets of the template.
