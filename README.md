@@ -33,8 +33,8 @@ Welcome to the Renderforest API! You can use our API to:
   - [Get a Specific Template]()
   - [Get Color-Presets of the Template]()
   - [Get Pluggable-Screens of the Template]()
-  - [Get Recommended-Custom-Colors of the Template]()
-  - [Get Template-Presets of the Template](#get-recommended-custom-colors-of-the-template)
+  - [Get Recommended-Custom-Colors of the Template](#get-recommended-custom-colors-of-the-template)
+  - [Get Template-Presets of the Template](#get-template-presets-of-the-template)
   - [Get Theme of the Template](#get-theme-of-the-template)
 * [Users API](#users-api)
   - [Get Current User](#get-current-user)
@@ -58,7 +58,6 @@ Welcome to the Renderforest API! You can use our API to:
 
 Retrieves recommended-custom-colors of the template.
 You can apply these recommended custom colors to your project to give it better and unique look.
-
 ```js
 const Renderforest = require('@renderforest/sdk-node')
 
@@ -69,14 +68,26 @@ Renderforest.getTemplateRecommendedCustomColors(payload)
   .then(console.log) // handle the success
   .catch(console.error) // handle the error
 ```
-
 [See example](https://github.com/renderforest/renderforest-sdk-node/blob/master/examples/templates/get-template-recommended-custom-colors.js)
 
+### Get Template-Presets of the Template
+
+Retrieves template-presets of the template.
+```js
+const Renderforest = require('@renderforest/sdk-node')
+
+const payload = {
+  templateId: 701
+}
+Renderforest.getTemplatePresets(payload)
+  .then(console.log) // handle the success
+  .catch(console.error) // handle the error
+```
+[See example](https://github.com/renderforest/renderforest-sdk-node/blob/master/examples/templates/get-template-presets.js)
 
 ### Get Theme of the Template
 
 Retrieves theme of the template.
- 
 ```js
 const Renderforest = require('@renderforest/sdk-node')
 
@@ -87,9 +98,7 @@ Renderforest.getTemplateTheme(payload)
   .then(console.log) // handle the success
   .catch(console.error) // handle the error
 ```
-
 [See example](https://github.com/renderforest/renderforest-sdk-node/blob/master/examples/templates/get-template-theme.js)
-
 
 
 ## Users API
@@ -97,7 +106,6 @@ Renderforest.getTemplateTheme(payload)
 ### Get Current User
 
 Retrieves the current user.
-
 ```js
 const Renderforest = require('@renderforest/sdk-node')
 
@@ -107,5 +115,4 @@ renderforest.getCurrentUser()
   .then(console.log) // handle the success
   .catch(console.error) // handle the error
 ```
-
 [See example](https://github.com/renderforest/renderforest-sdk-node/blob/master/examples/users/get-current-user.js)
