@@ -9,6 +9,7 @@
 const Http = require('./http/http')
 
 const Fonts = require('./resources/fonts')
+const ProjectData = require('./resources/project-data')
 const Projects = require('./resources/projects')
 const Sounds = require('./resources/sounds')
 const Supports = require('./resources/supports')
@@ -33,6 +34,15 @@ class Renderforest {
    */
   getFonts (payload) {
     return Fonts.getFonts(payload)
+  }
+
+  /**
+   * @param {Object} payload
+   * @returns {Promise.<Object>}
+   * @description Get Project-data.
+   */
+  getProjectData (payload) {
+    return ProjectData.getProjectData(payload)
   }
 
   /**
