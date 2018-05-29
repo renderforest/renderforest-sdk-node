@@ -14,5 +14,20 @@ const payload = {
   projectId: 7096113
 }
 renderforest.getProjectData(payload)
-  .then(console.log) // handle the success
+  .then((projectDataInstance) => {
+    console.log('Project id:', projectDataInstance.getProjectId())
+    console.log('Template id:', projectDataInstance.getTemplateId())
+    console.log('Is equalizer:', projectDataInstance.isEqualizer())
+    console.log('Is lego:', projectDataInstance.isLego())
+    console.log('Title:', projectDataInstance.getTitle())
+    console.log('Mute music:', projectDataInstance.getMuteMusic())
+    console.log('Sounds:', projectDataInstance.getSounds())
+    console.log('Theme:', projectDataInstance.getTheme())
+    console.log('Project colors:', projectDataInstance.getProjectColors())
+    console.log('Screens:', projectDataInstance.getScreens())
+
+    const screens = projectDataInstance.getScreens()
+    const firstScreenAreas = screens && screens[0] && screens[0].getAreas()
+    console.log('First screen area:', firstScreenAreas)
+  })
   .catch(console.error) // handle the error
