@@ -15,6 +15,7 @@ class ProjectData {
    */
   constructor (projectDataJson) {
     this.projectDataJson = projectDataJson
+    this.patchProperties = []
     this.setGenerator()
   }
 
@@ -23,6 +24,25 @@ class ProjectData {
    */
   setGenerator () {
     this.projectDataJson.data['generator'] = ProjectData.generator
+    this.patchProperties.push('generator')
+  }
+
+  /**
+   * @description Get patch object.
+   */
+  getPatchObject () {
+    return this.patchProperties.reduce((acc, property) => {
+      acc[property] = this.projectDataJson.data[property]
+
+      return acc
+    }, {})
+  }
+
+  /**
+   * @description Reset patch object.
+   */
+  resetPatchObject () {
+    this.patchProperties = []
   }
 
   /**
@@ -71,6 +91,7 @@ class ProjectData {
    */
   setMuteMusic (muteMusic) {
     this.projectDataJson.data['muteMusic'] = muteMusic
+    this.patchProperties.push('muteMusic')
   }
 
   /**
@@ -87,6 +108,7 @@ class ProjectData {
    */
   setProjectColors (projectColors) {
     this.projectDataJson.data['projectColors'] = projectColors
+    this.patchProperties.push('projectColors')
   }
 
   /**
@@ -109,6 +131,8 @@ class ProjectData {
   setTheme (payload) {
     this.projectDataJson.data['themeVariableName'] = payload.themeVariableName
     this.projectDataJson.data['themeVariableValue'] = payload.themeVariableValue
+    this.patchProperties.push('themeVariableName')
+    this.patchProperties.push('themeVariableValue')
   }
 
   /**
@@ -125,6 +149,7 @@ class ProjectData {
    */
   setSounds (sounds) {
     this.projectDataJson.data['sounds'] = sounds
+    this.patchProperties.push('sounds')
   }
 
   /**
@@ -199,6 +224,7 @@ class ProjectData {
     if (area.type === 'text') {
       result.setText = (text) => {
         area.value = text
+        this.patchProperties.push('screens')
       }
     }
 
@@ -208,6 +234,7 @@ class ProjectData {
       })
       result.setImage = (image) => {
         ProjectData.setAreaImage(area, image)
+        this.patchProperties.push('screens')
       }
     }
 
@@ -217,6 +244,7 @@ class ProjectData {
       })
       result.setVideo = (video) => {
         ProjectData.setAreaVideo(area, video)
+        this.patchProperties.push('screens')
       }
     }
 
