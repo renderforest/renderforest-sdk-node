@@ -11,8 +11,6 @@ Renderforest SDK for Node.js.
 
 Welcome to the Renderforest API! You can use our API to:
 
-* [Fonts API](#fonts-api)
-  - [Get All Fonts](#get-all-fonts)
 * [Projects API](#projects-api)
   - [Get All Projects](#get-all-projects)
   - [Add Project](#add-project)
@@ -44,30 +42,6 @@ Welcome to the Renderforest API! You can use our API to:
  
  
 # API
-
-
-
-## Fonts API
-
-### Get All Fonts
-
-Retrieves the fonts for the specific template.
-```js
-const Renderforest = require('@renderforest/sdk-node')
-
-const renderforest = new Renderforest({ signKey: '<signKey>', clientId: -1 })
-
-const payload = {
-  templateId: 805
-}
-renderforest.getFonts(payload)
-  .then(console.log) // handle the success
-  .catch(console.error) // handle the error
-```
-- The fontType field takes 0, 1 values at this moment, where 0 is a primary and 1 is a secondary font of the template. 
-It might be extended later on to take more values.
-
-[See example](https://github.com/renderforest/renderforest-sdk-node/blob/master/examples/fonts/get-fonts.js)
 
 
 
