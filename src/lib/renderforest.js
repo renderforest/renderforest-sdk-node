@@ -46,6 +46,15 @@ class Renderforest {
   }
 
   /**
+   * @param {Object} payload
+   * @returns {Promise.<Object>}
+   * @description Update Project-data (partial update)
+   */
+  updateProjectDataPartial (payload) {
+    return ProjectData.updateProjectDataPartial(payload)
+  }
+
+  /**
    * @param {Object} [payload]
    * @returns {Promise.<Array>}
    * @description Get All Projects.
