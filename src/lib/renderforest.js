@@ -8,7 +8,6 @@
 
 const Http = require('./http/http')
 
-const Fonts = require('./resources/fonts')
 const ProjectData = require('./resources/project-data')
 const Projects = require('./resources/projects')
 const Sounds = require('./resources/sounds')
@@ -25,15 +24,6 @@ class Renderforest {
    */
   constructor (options) {
     Http.setConfig(options.signKey, options.clientId)
-  }
-
-  /**
-   * @param {Object} payload
-   * @returns {Promise.<Array>}
-   * @description Get All Fonts.
-   */
-  getFonts (payload) {
-    return Fonts.getFonts(payload)
   }
 
   /**
