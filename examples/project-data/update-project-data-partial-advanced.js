@@ -31,8 +31,8 @@ async function sample () {
     duration: 120,
     id: 559,
     genre: 'Rock', // optional
-    lowQuality: 'hosting/file/Sounds/120_second/Inspiring%20Piano%20120%20preview.mp3',
-    path: 'https://usersounds.rfstat.com/Sounds/120_second/Inspiring%2520Piano%2520120.mp3',
+    lowQuality: 'https://example.com/sample-low.mp3',
+    path: 'https://example.com/sample.mp3',
     title: 'Inspiring Piano'
   }
 
@@ -41,13 +41,14 @@ async function sample () {
     duration: 12,
     fileSize: 198658,
     id: 952626,
-    path: 'https://usersounds.rfstat.com/user_1469277/bf69833d-a895-43b4-bedf-f37eeabdc5f7.mp3',
+    path: 'https://example.com/sample.mp3',
     title: 'sound sample.mp3',
     userId: 1469277,
     voiceOver: false
   }
 
-  projectDataInstance.setSounds([sound1, sound2])
+  const sounds = [ sound1, sound2 ]
+  projectDataInstance.setSounds(sounds)
 
   const screens = projectDataInstance.getScreens()
   // set text on text holder area
@@ -134,13 +135,13 @@ async function sample () {
     duration: 5,
     extraVideoSecond: 0,
     iconAdjustable: 0,
-    gifPath: 'https://static.rfstat.com/media/Screens_2016/3rd_gen_2016/Explainer-Video-Toolkit-3gen/Gif/191_man_Angry_2_1.gif',
-    gifBigPath: 'https://static.rfstat.com/media/Screens_2016/3rd_gen_2016/Explainer-Video-Toolkit-3gen/Gif/Big-Gif/191_man_Angry_2_1.gif',
-    gifThumbnailPath: 'https://static.rfstat.com/media/Screens_2016/3rd_gen_2016/Explainer-Video-Toolkit-3gen/Gif/Gif-thumb/191_man_Angry_2_n.jpg',
+    gifPath: 'https://example.com/191_man_Angry_2_1.gif',
+    gifBigPath: 'https://example.com/191_man_Angry_2_1.gif',
+    gifThumbnailPath: 'https://example.com/191_man_Angry_2_n.jpg',
     hidden: false,
     maxDuration: 15,
     order: 1900,
-    path: 'https://static.rfstat.com/media/Screens_2016/3rd_gen_2016/Explainer-Video-Toolkit-3gen/Screen/191_man_Angry_2_n.jpg',
+    path: 'https://example.com/191_man_Angry_2_n.jpg',
     tags: 'business, computer, chair, desk, laptop, occupation, office, worker, arms, boss, boy, businessman,chef, company, employer, professional',
     title: 'Angry Office worker with arms crossed',
     type: 1,
