@@ -172,6 +172,15 @@ class ProjectData {
   }
 
   /**
+   * @param {Array} screens
+   * @description Set screens.
+   */
+  setScreens (screens) {
+    this.projectDataJson.data['screens'] = screens
+    this.patchProperties.push('screens')
+  }
+
+  /**
    * @param {Object} screen
    * @returns {Object}
    * @description Construct screen.
@@ -200,6 +209,7 @@ class ProjectData {
       tags,
       title,
       type,
+      areas,
       getAreas: () => {
         return areas.map((area) => {
           return this.constructArea(area)
