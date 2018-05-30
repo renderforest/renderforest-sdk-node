@@ -24,6 +24,19 @@ Welcome to the Renderforest API! You can use our API to:
   - [Get Project-data](#get-project-data)
   - [Update Project-data - partial update](#update-project-data---partial-update)
   - [Getters and Setters of Project-data Instance](#getters-and-setters-of-project-data-instance)
+    * [Getters](#getters)
+      - [Get project id](#get-project-id)
+      - [Get template id](#get-template-id)
+      - [Check whether is equalizer or not](#check-whether-is-equalizer-or-not)
+      - [Check whether is lego or not](#check-whether-is-lego-or-not)
+      - [Get title](#get-title)
+      - [Get mute music](#get-mute-music)
+      - [Get sounds](#get-sounds)
+      - [Get theme](#get-theme)
+      - [Get project colors](#get-project-colors)
+      - [Get screens](#get-screens)
+      - [Get screen areas](#get-screen-areas)
+      - [Get patch object](#get-patch-object)
 * [Sounds API](#sounds-api)
   - [Get All Sounds](#get-all-sounds)
   - [Get Recommended Sounds](#get-recommended-sounds)
@@ -307,9 +320,74 @@ See the [Getters and Setters of Project-data Instance](#getters-and-setters-of-p
 
 ### Getters and Setters of Project-data Instance
 
-Getters TBA
+#### Getters
 
-Setters TBA
+##### Get project id
+```js
+projectDataInstance.getProjectId()  // 7096113
+```
+
+##### Get template id
+```js
+projectDataInstance.getTemplateId()  // 701
+```
+
+##### Check whether is equalizer or not
+```js
+projectDataInstance.isEqualizer()  // false
+```
+
+##### Check whether is lego or not
+```js
+projectDataInstance.isLego()  // true
+```
+
+##### Get title
+```js
+projectDataInstance.getTitle()  // 'Explainer Video Toolkit'
+```
+
+##### Get mute music
+```js
+projectDataInstance.getMuteMusic()  // false
+```
+
+##### Get sounds
+```js
+projectDataInstance.getSounds()  // Array of sound objects
+```
+
+##### Get theme
+```js
+projectDataInstance.getTheme()  // { themeVariableName: 'num', themeVariableValue: '2' }
+```
+
+##### Get project colors
+```js
+projectDataInstance.getProjectColors()  // Array of color objects
+```
+
+##### Get screens
+```js
+projectDataInstance.getScreens()  // Array of screen objects
+```
+
+##### Get screen areas
+```js
+const screens = projectDataInstance.getScreens()
+
+const firstScreenAreas = screens && screens[0] && screens[0].getAreas()  // Array of area objects
+```
+
+##### Get patch object
+```js
+projectDataInstance.getPatchObject()  // Object containing local updates. Used to update project-data (partial). 
+```
+
+
+#### Setters TBA
+
+
 
 ## Sounds API
 
