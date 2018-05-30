@@ -127,6 +127,41 @@ async function sample () {
   ]
   projectDataInstance.setProjectColors(projectColors) // get project colors from ./templates API
 
+  const screen = {
+    id: 2125620,
+    characterBasedDuration: true,
+    compositionName: '191_man_Angry_2',
+    duration: 5,
+    extraVideoSecond: 0,
+    iconAdjustable: 0,
+    gifPath: 'https://static.rfstat.com/media/Screens_2016/3rd_gen_2016/Explainer-Video-Toolkit-3gen/Gif/191_man_Angry_2_1.gif',
+    gifBigPath: 'https://static.rfstat.com/media/Screens_2016/3rd_gen_2016/Explainer-Video-Toolkit-3gen/Gif/Big-Gif/191_man_Angry_2_1.gif',
+    gifThumbnailPath: 'https://static.rfstat.com/media/Screens_2016/3rd_gen_2016/Explainer-Video-Toolkit-3gen/Gif/Gif-thumb/191_man_Angry_2_n.jpg',
+    hidden: false,
+    maxDuration: 15,
+    order: 1900,
+    path: 'https://static.rfstat.com/media/Screens_2016/3rd_gen_2016/Explainer-Video-Toolkit-3gen/Screen/191_man_Angry_2_n.jpg',
+    tags: 'business, computer, chair, desk, laptop, occupation, office, worker, arms, boss, boy, businessman,chef, company, employer, professional',
+    title: 'Angry Office worker with arms crossed',
+    type: 1,
+    areas: [
+      {
+        id: 3562168,
+        cords: [ 656, 224, 1048, 224, 1048, 332, 656, 332 ],
+        height: 108,
+        order: 0,
+        title: 'char_Angry_2',
+        type: 'text',
+        value: '',
+        wordCount: 40,
+        width: 392
+      }
+    ]
+  }
+  const _screens = projectDataInstance.getScreens()
+  _screens.push(screen)
+  projectDataInstance.setScreens(_screens) // get screen from ./templates API
+
   // get payload data
   const projectId = projectDataInstance.getProjectId()
   const data = projectDataInstance.getPatchObject()
