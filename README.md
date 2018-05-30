@@ -24,6 +24,28 @@ Welcome to the Renderforest API! You can use our API to:
   - [Get Project-data](#get-project-data)
   - [Update Project-data - partial update](#update-project-data---partial-update)
   - [Getters and Setters of Project-data Instance](#getters-and-setters-of-project-data-instance)
+    * [Getters](#getters)
+      - [Get project id](#get-project-id)
+      - [Get template id](#get-template-id)
+      - [Check whether is equalizer or not](#check-whether-is-equalizer-or-not)
+      - [Check whether is lego or not](#check-whether-is-lego-or-not)
+      - [Get title](#get-title)
+      - [Get mute music](#get-mute-music)
+      - [Get sounds](#get-sounds)
+      - [Get theme](#get-theme)
+      - [Get project colors](#get-project-colors)
+      - [Get screens](#get-screens)
+      - [Get screen areas](#get-screen-areas)
+      - [Get patch object](#get-patch-object)
+    * [Setters](#setters)
+      - [Set theme](#set-theme)
+      - [Set mute music](#set-mute-music)
+      - [Set sounds](#set-sounds)
+      - [Set text on text holder area](#set-text-on-text-holder-area)
+      - [Set image on image holder area](#set-image-on-image-holder-area)
+      - [Set video on video holder area](#set-video-on-video-holder-area)
+      - [Set project colors](#set-project-colors)
+      - [Set screens](#set-screens)  
 * [Sounds API](#sounds-api)
   - [Get All Sounds](#get-all-sounds)
   - [Get Recommended Sounds](#get-recommended-sounds)
@@ -307,9 +329,250 @@ See the [Getters and Setters of Project-data Instance](#getters-and-setters-of-p
 
 ### Getters and Setters of Project-data Instance
 
-Getters TBA
+#### Getters
 
-Setters TBA
+##### Get project id
+```js
+projectDataInstance.getProjectId()  // 7096113
+```
+
+##### Get template id
+```js
+projectDataInstance.getTemplateId()  // 701
+```
+
+##### Check whether is equalizer or not
+```js
+projectDataInstance.isEqualizer()  // false
+```
+
+##### Check whether is lego or not
+```js
+projectDataInstance.isLego()  // true
+```
+
+##### Get title
+```js
+projectDataInstance.getTitle()  // 'Explainer Video Toolkit'
+```
+
+##### Get mute music
+```js
+projectDataInstance.getMuteMusic()  // false
+```
+
+##### Get sounds
+```js
+projectDataInstance.getSounds()  // Array of sound objects
+```
+
+##### Get theme
+```js
+projectDataInstance.getTheme()  // { themeVariableName: 'num', themeVariableValue: '2' }
+```
+
+##### Get project colors
+```js
+projectDataInstance.getProjectColors()  // Array of color objects
+```
+
+##### Get screens
+```js
+projectDataInstance.getScreens()  // Array of screen objects
+```
+
+##### Get screen areas
+```js
+const screens = projectDataInstance.getScreens()
+
+const firstScreenAreas = screens && screens[0] && screens[0].getAreas()  // Array of area objects
+```
+
+##### Get patch object
+```js
+projectDataInstance.getPatchObject()  // Object containing local updates. Used to update project-data (partial). 
+```
+
+
+#### Setters
+
+##### Set theme
+```js
+// get theme from .templates API
+const theme = {
+  themeVariableName: 'num',
+  themeVariableValue: '2'
+}
+projectDataInstance.setTheme(theme)
+```
+
+##### Set mute music
+```js
+projectDataInstance.setMuteMusic(true)
+```
+
+##### Set sounds
+```js
+// sound from ./sounds API
+const sound1 = {
+  duration: 120,
+  id: 559,
+  genre: 'Rock', // optional
+  lowQuality: 'https://example.com/sample-low.mp3',
+  path: 'https://example.com/sample.mp3',
+  title: 'Inspiring Piano'
+}
+
+// your own sound
+const sound2 = {
+  duration: 12,
+  fileSize: 198658,
+  id: 952626,
+  path: 'https://example.com/sample.mp3',
+  title: 'sound sample.mp3',
+  userId: 1469277,
+  voiceOver: false
+}
+
+const sounds = [ sound1, sound2 ]
+projectDataInstance.setSounds(sounds)
+```
+
+##### Set text on text holder area
+```js
+const screens = projectDataInstance.getScreens()
+
+if (screens && screens[0]) {
+  const areas = screens[0].getAreas()
+
+  const area = areas[0]
+  if (area && area.type === 'text') {
+    area.setText('sample text')
+  }
+}
+```
+
+##### Set image on image holder area
+```js
+const screens = projectDataInstance.getScreens()
+
+if (screens && screens[1]) {
+  const areas = screens[1].getAreas()
+
+  const area = areas[0]
+  if (area && area.type === 'image') {
+    const image = {
+      fileName: 'sample file name', // optional
+      mime: 'image/png', // optional
+      filePath: 'https://example.com/sample.png',
+      webpPath: 'https://example.com/sample.webp', // optional
+      fileType: 'image', // optional
+      thumbnailPath: 'https://example.com/sample-thumbnail.png', // optional
+      imageCropParams: {
+        transform: 0,
+        top: 11,
+        left: 0,
+        width: 798,
+        height: 456
+      }
+    }
+
+    area.setImage(image)
+  }
+}
+```
+
+##### Set video on video holder area
+```js
+const screens = projectDataInstance.getScreens()
+
+if (screens && screens[2]) {
+  const areas = screens[2].getAreas()
+
+  const area = areas[0]
+  if (area && area.type === 'video') {
+    const video = {
+      fileName: 'sample file name', // optional
+      mime: 'video/mp4', // optional
+      filePath: 'https://example.com/sample.png',
+      webpPath: 'https://example.com/sample.webp', // optional
+      fileType: 'video', // optional
+      videoCropParams: {
+        duration: 6,
+        mime: 'video/mp4',
+        thumbnail: 'https://example.com/sample-thumbnail.png',
+        thumbnailVideo: 'https://example.com/sample-thumbnail-video.mp4',
+        trims: [0, 2, 3, 5],
+        volume: {
+          music: 10,
+          video: 100
+        }
+      }
+    }
+
+    area.setVideo(video)
+  }
+}
+```
+
+##### Set project colors
+```js
+// get project colors from ./templates API
+const projectColors = [
+  { id: 0, hexCode: 'ffffff' },
+  { id: 1, hexCode: 'a1d4ec' },
+  { id: 2, hexCode: '1d2e54' },
+  { id: 3, hexCode: '61a371' },
+  { id: 4, hexCode: 'a0b6e7' },
+  { id: 5, hexCode: 'e0d0ef' },
+  { id: 6, hexCode: '5c1313' },
+  { id: 7, hexCode: 'b2e1f4' },
+  { id: 8, hexCode: '706bb5' },
+  { id: 9, hexCode: 'b4ddf5' }
+]
+projectDataInstance.setProjectColors(projectColors)
+```
+
+##### Set screens
+```js
+// get screen from ./templates API
+const screen = {
+  id: 2125620,
+  characterBasedDuration: true,
+  compositionName: '191_man_Angry_2',
+  duration: 5,
+  extraVideoSecond: 0,
+  iconAdjustable: 0,
+  gifPath: 'https://example.com/191_man_Angry_2_1.gif',
+  gifBigPath: 'https://example.com/191_man_Angry_2_1.gif',
+  gifThumbnailPath: 'https://example.com/191_man_Angry_2_n.jpg',
+  hidden: false,
+  maxDuration: 15,
+  order: 1900,
+  path: 'https://example.com/191_man_Angry_2_n.jpg',
+  tags: 'business, computer, chair, desk, laptop, occupation, office, worker, arms, boss, boy, businessman,chef, company, employer, professional',
+  title: 'Angry Office worker with arms crossed',
+  type: 1,
+  areas: [
+    {
+      id: 3562168,
+      cords: [ 656, 224, 1048, 224, 1048, 332, 656, 332 ],
+      height: 108,
+      order: 0,
+      title: 'char_Angry_2',
+      type: 'text',
+      value: '',
+      wordCount: 40,
+      width: 392
+    }
+  ]
+}
+const _screens = projectDataInstance.getScreens()
+_screens.push(screen)
+projectDataInstance.setScreens(_screens)
+```
+
+
 
 ## Sounds API
 
