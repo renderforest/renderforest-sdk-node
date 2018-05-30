@@ -8,7 +8,7 @@
 
 const Http = require('./http/http')
 
-const Fonts = require('./resources/fonts')
+const ProjectData = require('./resources/project-data')
 const Projects = require('./resources/projects')
 const Sounds = require('./resources/sounds')
 const Supports = require('./resources/supports')
@@ -28,11 +28,20 @@ class Renderforest {
 
   /**
    * @param {Object} payload
-   * @returns {Promise.<Array>}
-   * @description Get All Fonts.
+   * @returns {Promise.<Object>}
+   * @description Get Project-data.
    */
-  getFonts (payload) {
-    return Fonts.getFonts(payload)
+  getProjectData (payload) {
+    return ProjectData.getProjectData(payload)
+  }
+
+  /**
+   * @param {Object} payload
+   * @returns {Promise.<Object>}
+   * @description Update Project-data (partial update)
+   */
+  updateProjectDataPartial (payload) {
+    return ProjectData.updateProjectDataPartial(payload)
   }
 
   /**
@@ -51,6 +60,15 @@ class Renderforest {
    */
   addProject (payload) {
     return Projects.addProject(payload)
+  }
+
+  /**
+   * @param {Object} payload
+   * @returns {Promise.<Object>}
+   * @description Get Trial Project.
+   */
+  static getTrialProject (payload) {
+    return Projects.getTrialProject(payload)
   }
 
   /**
@@ -87,6 +105,15 @@ class Renderforest {
    */
   duplicateProject (payload) {
     return Projects.duplicateProject(payload)
+  }
+
+  /**
+   * @param {Object} payload
+   * @returns {Promise.<Object>}
+   * @description Render the Project.
+   */
+  renderProject (payload) {
+    return Projects.renderProject(payload)
   }
 
   /**

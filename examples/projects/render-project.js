@@ -11,9 +11,9 @@ const Renderforest = require('../../src/lib/renderforest')
 const renderforest = new Renderforest({ signKey: '<signKey>', clientId: -1 })
 
 const payload = {
-  limit: 2,
-  offset: 10
+  projectId: 7015342,
+  quality: 0
 }
-renderforest.getProjects(payload)
+renderforest.renderProject(payload)
   .then(console.log) // handle the success
   .catch(console.error) // handle the error

@@ -45,6 +45,21 @@ class Projects {
   /**
    * @param {Object} payload
    * @returns {Promise.<Object>}
+   * @description Get Trial Project.
+   */
+  static getTrialProject (payload) {
+    const qs = Params.destructParams(payload, ['templateId'])
+
+    const options = {
+      endpoint: `${Projects.API_PREFIX}/projects/trial`,
+      qs
+    }
+    return Http.unauthorizedRequest(options)
+  }
+
+  /**
+   * @param {Object} payload
+   * @returns {Promise.<Object>}
    * @description Update the Project (partial update).
    */
   static updateProjectPartial (payload) {
@@ -102,6 +117,23 @@ class Projects {
     const options = {
       method: 'POST',
       endpoint: `${Projects.API_PREFIX}/projects/${projectId}/duplicate`
+    }
+    return Http.authorizedRequest(options)
+  }
+
+  /**
+   * @param {Object} payload
+   * @returns {Promise.<Object>}
+   * @description Render the Project.
+   */
+  static renderProject (payload) {
+    const body = Params.destructParams(payload, ['quality'])
+    const projectId = Params.destructURLParam(payload, 'projectId')
+
+    const options = {
+      method: 'POST',
+      endpoint: `${Projects.API_PREFIX}/projects/${projectId}/render`,
+      body
     }
     return Http.authorizedRequest(options)
   }
