@@ -15,15 +15,15 @@ Welcome to the Renderforest API! You can use our API to:
   - [Get All Projects](#get-all-projects)
   - [Add Project](#add-project)
   - [Get Trial Project](#get-trial-project)
-  - [Update the Project (partial update)](#update-the-project-(partial-update))
+  - [Update the Project - partial update](#update-the-project---partial-update)
   - [Delete a Specific Project](#delete-a-specific-project)
   - [Apply Template Preset on the Project](#apply-template-preset-on-the-project)
   - [Duplicate the Project](#duplicate-the-project)
   - [Render the Project](#render-the-project)
 * [Projects-data API](#projects-data-api)
   - [Get Project-data](#get-project-data)
-  - [Update Project-data (partial update)](#update-project-data-(partial-update))
-  - [Getters & Setters of Project-data Instance](#getters-&-setters-of-project-data-instance)
+  - [Update Project-data - partial update](#update-project-data---partial-update)
+  - [Getters and Setters of Project-data Instance](#getters-and-setters-of-project-data-instance)
 * [Sounds API](#sounds-api)
   - [Get All Sounds](#get-all-sounds)
   - [Get Recommended Sounds](#get-recommended-sounds)
@@ -118,7 +118,7 @@ Renderforest.getTrialProject(payload)
 [See example](https://github.com/renderforest/renderforest-sdk-node/blob/master/examples/projects/get-trial-project.js)
 
 
-### Update the Project (partial update)
+### Update the Project - partial update
 
 Updates the project (partial update).
 ```js
@@ -249,10 +249,10 @@ renderforest.getProjectData(payload)
 ```
 [See example](https://github.com/renderforest/renderforest-sdk-node/blob/master/examples/project-data/get-project-data.js)
 
-See the [Getters & Setters of Project-data Instance](#getters-&-setters-of-project-data-instance)
+See the [Getters and Setters of Project-data Instance](#getters-and-setters-of-project-data-instance)
 
 
-### Update Project-data (partial update)
+### Update Project-data - partial update
 
 Updates the project-data (partial update).
 
@@ -302,12 +302,14 @@ sample()
 - [See example](https://github.com/renderforest/renderforest-sdk-node/blob/master/examples/project-data/update-project-data-partial.js)
 - [See advanced example](https://github.com/renderforest/renderforest-sdk-node/blob/master/examples/project-data/update-project-data-partial-advanced.js)
 
-See the [Getters & Setters of Project-data Instance](#getters-&-setters-of-project-data-instance)
+See the [Getters and Setters of Project-data Instance](#getters-and-setters-of-project-data-instance)
 
 
-### Getters & Setters of Project-data Instance
-TBA
+### Getters and Setters of Project-data Instance
 
+Getters TBA
+
+Setters TBA
 
 ## Sounds API
 
