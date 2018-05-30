@@ -15,7 +15,7 @@ Welcome to the Renderforest API! You can use our API to:
   - [Get All Projects](#get-all-projects)
   - [Add Project](#add-project)
   - [Get Trial Project](#get-trial-project)
-  - [Update the Project (partial update)](#update-the-project-(partial-update))
+  - [Update the Project - partial update](#update-the-project---partial-update)
   - [Delete a Specific Project](#delete-a-specific-project)
   - [Apply Template Preset on the Project](#apply-template-preset-on-the-project)
   - [Duplicate the Project](#duplicate-the-project)
@@ -118,7 +118,7 @@ Renderforest.getTrialProject(payload)
 [See example](https://github.com/renderforest/renderforest-sdk-node/blob/master/examples/projects/get-trial-project.js)
 
 
-### Update the Project (partial update)
+### Update the Project - partial update
 
 Updates the project (partial update).
 ```js
@@ -306,8 +306,10 @@ See the [Getters & Setters of Project-data Instance](#getters-&-setters-of-proje
 
 
 ### Getters & Setters of Project-data Instance
-TBA
 
+Getters TBA
+
+Setters TBA
 
 ## Sounds API
 
