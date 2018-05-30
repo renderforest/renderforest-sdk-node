@@ -21,8 +21,9 @@ Welcome to the Renderforest API! You can use our API to:
   - [Duplicate the Project](#duplicate-the-project)
   - [Render the Project](#render-the-project)
 * [Projects-data API](#projects-data-api)
-  - [Get Project-data]()
-  - [Update Project-data (partial update)]()
+  - [Get Project-data](#get-project-data)
+  - [Update Project-data (partial update)](#update-project-data-(partial-update))
+  - [Getters & Setters of Project-data Instance](#getters-&-setters-of-project-data-instance)
 * [Sounds API](#sounds-api)
   - [Get All Sounds](#get-all-sounds)
   - [Get Recommended Sounds](#get-recommended-sounds)
@@ -214,6 +215,97 @@ renderforest.renderProject(payload)
 
 
 ## Projects-data API
+
+### Get Project-data
+
+Retrieves a specific project-data.
+
+```js
+const Renderforest = require('@renderforest/sdk-node')
+
+const renderforest = new Renderforest({ signKey: '<signKey>', clientId: -1 })
+
+const payload = {
+  projectId: 5180504
+}
+renderforest.getProjectData(payload)
+  .then((projectDataInstance) => {
+    console.log('Project id:', projectDataInstance.getProjectId())
+    console.log('Template id:', projectDataInstance.getTemplateId())
+    console.log('Is equalizer:', projectDataInstance.isEqualizer())
+    console.log('Is lego:', projectDataInstance.isLego())
+    console.log('Title:', projectDataInstance.getTitle())
+    console.log('Mute music:', projectDataInstance.getMuteMusic())
+    console.log('Sounds:', projectDataInstance.getSounds())
+    console.log('Theme:', projectDataInstance.getTheme())
+    console.log('Project colors:', projectDataInstance.getProjectColors())
+    console.log('Screens:', projectDataInstance.getScreens())
+
+    const screens = projectDataInstance.getScreens()
+    const firstScreenAreas = screens && screens[0] && screens[0].getAreas()
+    console.log('First screen area:', firstScreenAreas)
+  })
+  .catch(console.error) // handle the error
+```
+[See example](https://github.com/renderforest/renderforest-sdk-node/blob/master/examples/project-data/get-project-data.js)
+
+See the [Getters & Setters of Project-data Instance](#getters-&-setters-of-project-data-instance)
+
+
+### Update Project-data (partial update)
+
+Updates the project-data (partial update).
+
+```js
+const Renderforest = require('@renderforest/sdk-node')
+
+const renderforest = new Renderforest({ signKey: '<signKey>', clientId: -1 })
+
+const payload = {
+  projectId: 7096113
+}
+
+async function sample () {
+  const projectDataInstance = await renderforest.getProjectData(payload)
+
+  // make some change
+  projectDataInstance.setMuteMusic(true)
+
+  // get payload data
+  const projectId = projectDataInstance.getProjectId()
+  const data = projectDataInstance.getPatchObject()
+
+  const result = await renderforest.updateProjectDataPartial({ projectId, data })
+
+  projectDataInstance.resetPatchObject()
+
+  return result
+}
+
+sample()
+  .then(console.log) // handle the success
+  .catch(console.error) // handle the error
+```
+- You can update the following list of properties: `currentScreenId, duration, generator, muteMusic, themeVariableName, 
+  themeVariableValue, projectColors, simple, sounds, screens, voiceSoundId`.
+- Any top-level properties (writable) can be updated separately (except `themeVariableName` & `themeVariableValue`), as
+  well as all of them at the same time.
+- The `themeVariableName` & `themeVariableValue` are related to the template theme and both should be updated at the same 
+  time. Possible values you can get in the template theme section 
+  (https://developers.renderforest.com/#get-theme-of-the-template).
+- The `iconAdjustable` field of the screen takes one of the 0, 1 or 2 values. If iconAdjustable is 0, then the icon is 
+  not updatable. The value 1 indicates that the icon is on the left side, and the value 2 indicates that the icon is on 
+  the right side. You can update 1 <-> 2 to change the icon from left <-> right.
+- No blob data accepted for the value field of a screen area.
+
+
+- [See example](https://github.com/renderforest/renderforest-sdk-node/blob/master/examples/project-data/update-project-data-partial.js)
+- [See advanced example](https://github.com/renderforest/renderforest-sdk-node/blob/master/examples/project-data/update-project-data-partial-advanced.js)
+
+See the [Getters & Setters of Project-data Instance](#getters-&-setters-of-project-data-instance)
+
+
+### Getters & Setters of Project-data Instance
 TBA
 
 
