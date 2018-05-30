@@ -249,7 +249,7 @@ renderforest.getProjectData(payload)
 ```
 [See example](https://github.com/renderforest/renderforest-sdk-node/blob/master/examples/project-data/get-project-data.js)
 
-See the [Getters & Setters of Project-data Instance](#getters-and-setters-of-project-data-instance)
+See the [Getters and Setters of Project-data Instance](#getters-and-setters-of-project-data-instance)
 
 
 ### Update Project-data - partial update
@@ -302,7 +302,7 @@ sample()
 - [See example](https://github.com/renderforest/renderforest-sdk-node/blob/master/examples/project-data/update-project-data-partial.js)
 - [See advanced example](https://github.com/renderforest/renderforest-sdk-node/blob/master/examples/project-data/update-project-data-partial-advanced.js)
 
-See the [Getters & Setters of Project-data Instance](#getters-and-setters-of-project-data-instance)
+See the [Getters and Setters of Project-data Instance](#getters-and-setters-of-project-data-instance)
 
 
 ### Getters and Setters of Project-data Instance
