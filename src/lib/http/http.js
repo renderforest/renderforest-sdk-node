@@ -100,7 +100,7 @@ class Http {
   }
 }
 
-Http.HOST = 'https://renderforest.com'
+Http.HOST = 'https://api.renderforest.com'
 Http.DEFAULT_OPTIONS = {
   method: 'GET',
   json: true,
