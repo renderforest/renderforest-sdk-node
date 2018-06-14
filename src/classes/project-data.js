@@ -277,13 +277,7 @@ class ProjectData {
     area.webpPath = webpPath
     area.fileType = fileType
     area.thumbnailPath = thumbnailPath
-    area.imageCropParams = {
-      transform: `rotate(${transform}deg)`,
-      top: `${top}px`,
-      left: `${left}px`,
-      width,
-      height
-    }
+    area.imageCropParams = { transform, top, left, width, height }
   }
 
   /**
