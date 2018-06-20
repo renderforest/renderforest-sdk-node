@@ -31,11 +31,19 @@
   },
   "homepage": "https://github.com/renderforest/renderforest-sdk-node",
   "keywords": [
+    "animation maker",
     "api",
+    "movie maker",
     "node",
     "nodejs",
+    "online video creation",
+    "photo video maker",
     "renderforest",
-    "sdk"
+    "sdk",
+    "slideshow",
+    "slideshow maker",
+    "video",
+    "video maker"
   ],
   "main": "src/lib/renderforest.js",
   "pre-commit": [
