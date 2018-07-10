@@ -15,6 +15,7 @@ Welcome to the Renderforest API! You can use our API to:
   - [Get All Projects](#get-all-projects)
   - [Add Project](#add-project)
   - [Get Trial Project](#get-trial-project)
+  - [Get a Specific Project](#get-a-specific-project)
   - [Update the Project - partial update](#update-the-project---partial-update)
   - [Delete a Specific Project](#delete-a-specific-project)
   - [Apply Template Preset on the Project](#apply-template-preset-on-the-project)
