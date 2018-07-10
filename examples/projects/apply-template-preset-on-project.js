@@ -11,7 +11,7 @@ const Renderforest = require('../../src/lib/renderforest')
 const renderforest = new Renderforest({ signKey: '<signKey>', clientId: -1 })
 
 const payload = {
-  projectId: 6154178,
+  projectId: 5000658,
   presetId: 55
 }
 renderforest.applyTemplatePresetOnProject(payload)
