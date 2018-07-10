@@ -140,6 +140,24 @@ Renderforest.getTrialProject(payload)
 [See example](https://github.com/renderforest/renderforest-sdk-node/blob/master/examples/projects/get-trial-project.js)
 
 
+### Get a Specific Project
+
+Gets a specific project.
+```js
+const Renderforest = require('@renderforest/sdk-node')
+
+const renderforest = new Renderforest({ signKey: '<signKey>', clientId: -1 })
+
+const payload = {
+  projectId: 5000295
+}
+renderforest.getProject(payload)
+  .then(console.log) // handle the success
+  .catch(console.error) // handle the error
+```
+[See example](https://github.com/renderforest/renderforest-sdk-node/blob/master/examples/projects/get-project.js)
+
+
 ### Update the Project - partial update
 
 Updates the project (partial update).

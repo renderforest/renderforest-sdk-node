@@ -11,8 +11,8 @@ const Renderforest = require('../../src/lib/renderforest')
 const renderforest = new Renderforest({ signKey: '<signKey>', clientId: -1 })
 
 const payload = {
-  projectId: 5000658
+  projectId: 5000295
 }
-renderforest.duplicateProject(payload)
+renderforest.getProject(payload)
   .then(console.log) // handle the success
   .catch(console.error) // handle the error

@@ -11,8 +11,8 @@ const Renderforest = require('../../src/lib/renderforest')
 const renderforest = new Renderforest({ signKey: '<signKey>', clientId: -1 })
 
 const payload = {
-  projectId: 7015342,
-  quality: 0
+  projectId: 5000658,
+  quality: 1080
 }
 renderforest.renderProject(payload)
   .then(console.log) // handle the success
