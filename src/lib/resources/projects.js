@@ -29,20 +29,6 @@ class Projects {
   /**
    * @param {Object} payload
    * @returns {Promise.<Object>}
-   * @description Get a Specific Project.
-   */
-  static getProject (payload) {
-    const projectId = Params.destructURLParam(payload, 'projectId')
-
-    const options = {
-      endpoint: `${Projects.API_PREFIX}/projects/${projectId}`
-    }
-    return Http.authorizedRequest(options)
-  }
-
-  /**
-   * @param {Object} payload
-   * @returns {Promise.<Object>}
    * @description Add Project.
    */
   static addProject (payload) {
@@ -69,6 +55,20 @@ class Projects {
       qs
     }
     return Http.unauthorizedRequest(options)
+  }
+
+  /**
+   * @param {Object} payload
+   * @returns {Promise.<Object>}
+   * @description Get a Specific Project.
+   */
+  static getProject (payload) {
+    const projectId = Params.destructURLParam(payload, 'projectId')
+
+    const options = {
+      endpoint: `${Projects.API_PREFIX}/projects/${projectId}`
+    }
+    return Http.authorizedRequest(options)
   }
 
   /**

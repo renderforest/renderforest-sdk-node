@@ -56,15 +56,6 @@ class Renderforest {
   /**
    * @param {Object} payload
    * @returns {Promise.<Object>}
-   * @description Get a Specific Project.
-   */
-  getProject (payload) {
-    return Projects.getProject(payload)
-  }
-
-  /**
-   * @param {Object} payload
-   * @returns {Promise.<Object>}
    * @description Add Project.
    */
   addProject (payload) {
@@ -78,6 +69,15 @@ class Renderforest {
    */
   static getTrialProject (payload) {
     return Projects.getTrialProject(payload)
+  }
+
+  /**
+   * @param {Object} payload
+   * @returns {Promise.<Object>}
+   * @description Get a Specific Project.
+   */
+  getProject (payload) {
+    return Projects.getProject(payload)
   }
 
   /**
