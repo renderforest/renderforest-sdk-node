@@ -149,7 +149,7 @@ const Renderforest = require('@renderforest/sdk-node')
 const renderforest = new Renderforest({ signKey: '<signKey>', clientId: -1 })
 
 const payload = {
-  projectId: 5000658
+  projectId: 5000295
 }
 renderforest.getProject(payload)
   .then(console.log) // handle the success
