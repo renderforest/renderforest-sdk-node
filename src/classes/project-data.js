@@ -146,6 +146,23 @@ class ProjectData {
   }
 
   /**
+   * @returns {Object}
+   * @description Get the project voiceOver.
+   */
+  getVoiceOver () {
+    return this.projectDataJson.data['voiceOver']
+  }
+
+  /**
+   * @param {Object} voiceOver
+   * @description Set the project voiceOver.
+   */
+  setVoiceOver (voiceOver) {
+    this.projectDataJson.data['voiceOver'] = voiceOver
+    this.patchProperties.push('voiceOver')
+  }
+
+  /**
    * @returns {string}
    * @description Get the project title.
    */
