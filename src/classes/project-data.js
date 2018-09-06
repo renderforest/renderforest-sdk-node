@@ -138,7 +138,7 @@ class ProjectData {
 
   /**
    * @param {Object} styles
-   * @description Set the project theme.
+   * @description Set the project styles.
    */
   setStyles (styles) {
     this.projectDataJson.data['styles'] = styles
