@@ -427,8 +427,8 @@ projectDataInstance.getPatchObject()  // Object containing local updates. Used t
 ```js
 // get theme/transition from .templates API
 const styles = {
-  theme: '1',
-  transition: '2'
+  theme: '1', // optional
+  transition: '2' // optional
 }
 projectDataInstance.setStyles(styles)
 ```
@@ -436,7 +436,7 @@ projectDataInstance.setStyles(styles)
 ##### Set voice-over
 ```js
 const voiceOver = {
-  path: 'https://example.com/voice-ower.mp3'
+  path: 'https://example.com/voice-ower.mp3' // optional
 }
 projectDataInstance.setVoiceOver(voiceOver)
 ```
