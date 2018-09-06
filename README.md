@@ -33,13 +33,15 @@ Welcome to the Renderforest API! You can use our API to:
       - [Get title](#get-title)
       - [Get mute music](#get-mute-music)
       - [Get sounds](#get-sounds)
-      - [Get theme](#get-theme)
+      - [Get styles](#get-styles)
+      - [Get voice-over](#get-voice-over)
       - [Get project colors](#get-project-colors)
       - [Get screens](#get-screens)
       - [Get screen areas](#get-screen-areas)
       - [Get patch object](#get-patch-object)
     * [Setters](#setters)
-      - [Set theme](#set-theme)
+      - [Set styles](#set-styles)
+      - [Set voice-over](#set-voice-over)
       - [Set mute music](#set-mute-music)
       - [Set sounds](#set-sounds)
       - [Set text on text holder area](#set-text-on-text-holder-area)
@@ -386,9 +388,14 @@ projectDataInstance.getMuteMusic()  // false
 projectDataInstance.getSounds()  // Array of sound objects
 ```
 
-##### Get theme
+##### Get styles
 ```js
-projectDataInstance.getTheme()  // { themeVariableName: 'num', themeVariableValue: '2' }
+projectDataInstance.getStyles()  // { theme: '1', transition: '2' }
+```
+
+##### Get voice-over
+```js
+projectDataInstance.getVoiceOver() // { path: 'https://example.com/voice-over.mp3' }
 ```
 
 ##### Get project colors
@@ -416,14 +423,22 @@ projectDataInstance.getPatchObject()  // Object containing local updates. Used t
 
 #### Setters
 
-##### Set theme
+##### Set styles
 ```js
-// get theme from .templates API
-const theme = {
-  themeVariableName: 'num',
-  themeVariableValue: '2'
+// get theme/transition from .templates API
+const styles = {
+  theme: '1',
+  transition: '2'
 }
-projectDataInstance.setTheme(theme)
+projectDataInstance.setStyles(styles)
+```
+
+##### Set voice-over
+```js
+const voiceOver = {
+  path: 'https://example.com/voice-ower.mp3'
+}
+projectDataInstance.setVoiceOver(voiceOver)
 ```
 
 ##### Set mute music
