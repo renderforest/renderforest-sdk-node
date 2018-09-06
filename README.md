@@ -554,16 +554,7 @@ if (screens && screens[2]) {
 ```js
 // get project colors from ./templates API
 const projectColors = [
-  { id: 0, hexCode: 'ffffff' },
-  { id: 1, hexCode: 'a1d4ec' },
-  { id: 2, hexCode: '1d2e54' },
-  { id: 3, hexCode: '61a371' },
-  { id: 4, hexCode: 'a0b6e7' },
-  { id: 5, hexCode: 'e0d0ef' },
-  { id: 6, hexCode: '5c1313' },
-  { id: 7, hexCode: 'b2e1f4' },
-  { id: 8, hexCode: '706bb5' },
-  { id: 9, hexCode: 'b4ddf5' }
+  'ffffff', 'a1d4ec', '1d2e54', '61a371', 'a0b6e7', 'e0d0ef', '5c1313', 'b2e1f4', '706bb5', 'b4ddf5'
 ]
 projectDataInstance.setProjectColors(projectColors)
 ```
