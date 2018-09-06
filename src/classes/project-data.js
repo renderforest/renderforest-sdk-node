@@ -112,30 +112,6 @@ class ProjectData {
   }
 
   /**
-   * @returns {Object}
-   * @description Get the project theme.
-   */
-  getTheme () {
-    return {
-      themeVariableName: this.projectDataJson.data['themeVariableName'],
-      themeVariableValue: this.projectDataJson.data['themeVariableValue']
-    }
-  }
-
-  /**
-   * @param {Object} payload
-   * @param {string} payload.themeVariableName
-   * @param {string} payload.themeVariableValue
-   * @description Set the project theme.
-   */
-  setTheme (payload) {
-    this.projectDataJson.data['themeVariableName'] = payload.themeVariableName
-    this.projectDataJson.data['themeVariableValue'] = payload.themeVariableValue
-    this.patchProperties.push('themeVariableName')
-    this.patchProperties.push('themeVariableValue')
-  }
-
-  /**
    * @returns {Array}
    * @description Get the project sounds.
    */
@@ -150,6 +126,40 @@ class ProjectData {
   setSounds (sounds) {
     this.projectDataJson.data['sounds'] = sounds
     this.patchProperties.push('sounds')
+  }
+
+  /**
+   * @returns {Object}
+   * @description Get the project styles.
+   */
+  getStyles () {
+    return this.projectDataJson.data['styles']
+  }
+
+  /**
+   * @param {Object} styles
+   * @description Set the project styles.
+   */
+  setStyles (styles) {
+    this.projectDataJson.data['styles'] = styles
+    this.patchProperties.push('styles')
+  }
+
+  /**
+   * @returns {Object}
+   * @description Get the project voiceOver.
+   */
+  getVoiceOver () {
+    return this.projectDataJson.data['voiceOver']
+  }
+
+  /**
+   * @param {Object} voiceOver
+   * @description Set the project voiceOver.
+   */
+  setVoiceOver (voiceOver) {
+    this.projectDataJson.data['voiceOver'] = voiceOver
+    this.patchProperties.push('voiceOver')
   }
 
   /**
