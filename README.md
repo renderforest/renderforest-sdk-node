@@ -33,13 +33,15 @@ Welcome to the Renderforest API! You can use our API to:
       - [Get title](#get-title)
       - [Get mute music](#get-mute-music)
       - [Get sounds](#get-sounds)
-      - [Get theme](#get-theme)
+      - [Get styles](#get-styles)
+      - [Get voice-over](#get-voice-over)
       - [Get project colors](#get-project-colors)
       - [Get screens](#get-screens)
       - [Get screen areas](#get-screen-areas)
       - [Get patch object](#get-patch-object)
     * [Setters](#setters)
-      - [Set theme](#set-theme)
+      - [Set styles](#set-styles)
+      - [Set voice-over](#set-voice-over)
       - [Set mute music](#set-mute-music)
       - [Set sounds](#set-sounds)
       - [Set text on text holder area](#set-text-on-text-holder-area)
@@ -278,7 +280,8 @@ renderforest.getProjectData(payload)
     console.log('Title:', projectDataInstance.getTitle())
     console.log('Mute music:', projectDataInstance.getMuteMusic())
     console.log('Sounds:', projectDataInstance.getSounds())
-    console.log('Theme:', projectDataInstance.getTheme())
+    console.log('Styles:', projectDataInstance.getStyles())
+    console.log('VoiceOver:', projectDataInstance.getVoiceOver())
     console.log('Project colors:', projectDataInstance.getProjectColors())
     console.log('Screens:', projectDataInstance.getScreens())
 
@@ -385,9 +388,14 @@ projectDataInstance.getMuteMusic()  // false
 projectDataInstance.getSounds()  // Array of sound objects
 ```
 
-##### Get theme
+##### Get styles
 ```js
-projectDataInstance.getTheme()  // { themeVariableName: 'num', themeVariableValue: '2' }
+projectDataInstance.getStyles()  // { theme: '1', transition: '2' }
+```
+
+##### Get voice-over
+```js
+projectDataInstance.getVoiceOver() // { path: 'https://example.com/voice-over.mp3' }
 ```
 
 ##### Get project colors
@@ -415,14 +423,22 @@ projectDataInstance.getPatchObject()  // Object containing local updates. Used t
 
 #### Setters
 
-##### Set theme
+##### Set styles
 ```js
-// get theme from .templates API
-const theme = {
-  themeVariableName: 'num',
-  themeVariableValue: '2'
+// get theme/transition from .templates API
+const styles = {
+  theme: '1', // optional
+  transition: '2' // optional
 }
-projectDataInstance.setTheme(theme)
+projectDataInstance.setStyles(styles)
+```
+
+##### Set voice-over
+```js
+const voiceOver = {
+  path: 'https://example.com/voice-ower.mp3' // optional
+}
+projectDataInstance.setVoiceOver(voiceOver)
 ```
 
 ##### Set mute music
@@ -538,16 +554,7 @@ if (screens && screens[2]) {
 ```js
 // get project colors from ./templates API
 const projectColors = [
-  { id: 0, hexCode: 'ffffff' },
-  { id: 1, hexCode: 'a1d4ec' },
-  { id: 2, hexCode: '1d2e54' },
-  { id: 3, hexCode: '61a371' },
-  { id: 4, hexCode: 'a0b6e7' },
-  { id: 5, hexCode: 'e0d0ef' },
-  { id: 6, hexCode: '5c1313' },
-  { id: 7, hexCode: 'b2e1f4' },
-  { id: 8, hexCode: '706bb5' },
-  { id: 9, hexCode: 'b4ddf5' }
+  'ffffff', 'a1d4ec', '1d2e54', '61a371', 'a0b6e7', 'e0d0ef', '5c1313', 'b2e1f4', '706bb5', 'b4ddf5'
 ]
 projectDataInstance.setProjectColors(projectColors)
 ```

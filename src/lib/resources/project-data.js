@@ -46,6 +46,6 @@ class ProjectData {
   }
 }
 
-ProjectData.API_PREFIX = '/api/v4'
+ProjectData.API_PREFIX = '/api/v5'
 
 module.exports = ProjectData
