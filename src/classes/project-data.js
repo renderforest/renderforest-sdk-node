@@ -8,6 +8,8 @@
 
 const PackageJson = require('../../package.json')
 
+const projectDataUtil = require('../util/project-data')
+
 class ProjectData {
   /**
    * @constructor
@@ -188,6 +190,18 @@ class ProjectData {
   setScreens (screens) {
     this.projectDataJson.data['screens'] = screens
     this.patchProperties.push('screens')
+  }
+
+  /**
+   * @param newScreen {Object}
+   * @returns {Array}
+   * @description Pushes the given `screen` to screens array.
+   * Checks if given `screen` has order property and it's valid pushes the screen in to right order.
+   * Otherwise pushes from the end.
+   */
+  pushScreen (newScreen) {
+    const screens = this.getScreens()
+    return projectDataUtil.insertAndArrangeOrder(screens, newScreen)
   }
 
   /**
