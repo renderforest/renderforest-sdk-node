@@ -1,7 +1,7 @@
 /**
  * @param {Array} screens - The screens array.
  * @param {Object} screen - The screen to insert.
- * @returns {Array} - Screens array,
+ * @returns {Array}
  * @description Inserts given `screen` into `screens` array by `screen` order.
  */
 function insertScreenByOrder (screens, screen) {
@@ -17,25 +17,14 @@ function insertScreenByOrder (screens, screen) {
 }
 
 /**
- * @param {Array} screens - The screens array.
- * @param {Object} newScreen - The screen to insert.
- * @returns {Array}
- * @description Checks if given `newScreen`s order is more than last screen order, then appends new screen from the end.
- * In case order is less than 0 then inserts the new screen from the beginning, otherwise inserts new screen by order.
+ * @param {Object} screen - The screen to normalize.
+ * @param {Number} index - The value to set.
+ * @returns {Object}
+ * @description Sets `screen.order` value to given `index`.
  */
-function findAndInsertScreen (screens, newScreen) {
-  const newScreenOrder = newScreen.hasOwnProperty('order') ? newScreen.order : screens[screens.length - 1].order
-  const lastScreenOrder = screens[screens.length - 1].order
-
-  if (newScreenOrder >= lastScreenOrder) {
-    return [...screens, { ...newScreen, order: lastScreenOrder }]
-  }
-
-  if (newScreenOrder <= 0) {
-    return [newScreen, ...screens]
-  }
-
-  return insertScreenByOrder(screens, newScreen)
+function normalizeOrders (screen, index) {
+  screen.order = index
+  return screen
 }
 
 /**
@@ -44,14 +33,11 @@ function findAndInsertScreen (screens, newScreen) {
  * @returns {Array}
  * @description After inserting the new screen into given `screens` array, arranges `screen.order` property by index.
  */
-function insertAndArrangeOrder (screens, newScreen) {
-  return findAndInsertScreen(screens, newScreen)
-    .map((screen, index) => {
-      screen.order = index
-      return screen
-    })
+function insertAndNormalizeOrder (screens, newScreen) {
+  return insertScreenByOrder(screens, newScreen)
+    .map(normalizeOrders)
 }
 
 module.exports = {
-  insertAndArrangeOrder
+  insertAndNormalizeOrder
 }
