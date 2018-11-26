@@ -28,8 +28,8 @@ function normalizeOrders (screen, index) {
 }
 
 /**
- * @param screens - The screens array.
- * @param newScreen - The screen to insert.
+ * @param {Array} screens - The screens array.
+ * @param {Object} newScreen - The screen to insert.
  * @returns {Array}
  * @description After inserting the new screen into given `screens` array, arranges `screen.order` property by index.
  */
