@@ -593,12 +593,15 @@ const screen = {
     }
   ]
 }
-const _screens = projectDataInstance.getScreens()
-_screens.push(screen)
+const _screens = projectDataInstance.pushScreen(screen)
 projectDataInstance.setScreens(_screens)
 ```
 
+#### Push screen
 
+```js
+const _screens = projectDataInstance.pushScreen(screen) // Array of screens
+```
 
 ## Sounds API
 
