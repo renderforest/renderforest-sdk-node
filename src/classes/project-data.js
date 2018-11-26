@@ -195,13 +195,11 @@ class ProjectData {
   /**
    * @param newScreen {Object}
    * @returns {Array}
-   * @description Pushes the given `screen` to screens array.
-   * Checks if given `screen` has order property and it's valid pushes the screen in to right order.
-   * Otherwise pushes from the end.
+   * @description Pushes the given `screen` to `screens` array.
    */
   pushScreen (newScreen) {
     const screens = this.getScreens()
-    return projectDataUtil.insertAndArrangeOrder(screens, newScreen)
+    return projectDataUtil.insertAndNormalizeOrder(screens, newScreen)
   }
 
   /**
