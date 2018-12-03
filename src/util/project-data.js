@@ -1,22 +1,4 @@
 /**
- * @param {Array} screens - The screens array.
- * @param {Object} screen - The screen to insert.
- * @returns {Array}
- * @description Inserts given `screen` into `screens` array by `screen` order.
- */
-function insertScreenByOrder (screens, screen) {
-  const screensLength = screens.length
-  let screenIndex = screensLength - 1
-
-  for (screenIndex; (screenIndex >= 0 && screens[screenIndex].order >= screen.order); screenIndex--) {
-    screens[screenIndex + 1] = screens[screenIndex]
-  }
-  screens[screenIndex + 1] = screen
-
-  return screens
-}
-
-/**
  * @param {Object} screen - The screen to normalize.
  * @param {Number} index - The value to set.
  * @returns {Object}
@@ -28,13 +10,27 @@ function normalizeOrders (screen, index) {
 }
 
 /**
+ * @param {string} prop
+ * @return {Function}
+ * @description Sort factory.
+ */
+function sortFactory (prop) {
+  return function (a, b) {
+    return parseInt(a[prop]) - parseInt(b[prop])
+  }
+}
+
+/**
  * @param {Array} screens - The screens array.
  * @param {Object} newScreen - The screen to insert.
  * @returns {Array}
- * @description After inserting the new screen into given `screens` array, arranges `screen.order` property by index.
+ * @description Inserting new screen, arranges screens by `screen.order`
+ * and normalize orders to have consequent numbers.
  */
 function insertAndNormalizeOrder (screens, newScreen) {
-  return insertScreenByOrder(screens, newScreen)
+  screens.push(newScreen)
+  return screens
+    .sort(sortFactory('order'))
     .map(normalizeOrders)
 }
 
