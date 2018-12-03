@@ -20,6 +20,20 @@ function sortFactory (prop) {
   }
 }
 
+function insertScreenAtOrder (screens, newScreen) {
+  return screens.reduce((acc, screen) => {
+    if (screen.order === newScreen.order) {
+      acc.push(newScreen)
+    }
+
+    if (screen.order >= newScreen.order) {
+      screen.order++
+    }
+    acc.push(screen)
+    return acc
+  }, [])
+}
+
 /**
  * @param {Array} screens - The screens array.
  * @param {Object} newScreen - The screen to insert.
@@ -28,8 +42,7 @@ function sortFactory (prop) {
  * and normalize orders to have consequent numbers.
  */
 function insertAndNormalizeOrder (screens, newScreen) {
-  screens.push(newScreen)
-  return screens
+  return insertScreenAtOrder(screen, newScreen)
     .sort(sortFactory('order'))
     .map(normalizeOrders)
 }
