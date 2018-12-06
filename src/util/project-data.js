@@ -28,8 +28,11 @@ function sortFactory (prop) {
  * @description Inserts screen at the right order.
  */
 function insertScreenAtOrder (screens, newScreen) {
-  const lastScreenOrder = screens.length !== 0 ? screens[screens.length - 1].order : 0
-  if (newScreen.order >= lastScreenOrder) {
+  if (screens.length === 0) {
+    return [newScreen]
+  }
+
+  if (newScreen.order >= screens[screens.length - 1].order) {
     return [...screens, newScreen]
   }
 
