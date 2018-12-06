@@ -10,9 +10,10 @@ function normalizeOrders (screen, index) {
 }
 
 /**
- * @param {string} prop
+ * @param {string} prop - The property to sort with.
  * @return {Function}
  * @description Sort factory.
+ * Sorting function which sorts with given `prop`.
  */
 function sortFactory (prop) {
   return function (a, b) {
