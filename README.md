@@ -887,7 +887,6 @@ Renderforest.getTemplateTransitions(payload)
   .then(console.log) // handle the success
   .catch(console.error) // handle the error
 ```
-- Both lego & non-lego templates might have a theme.
 
 [See example](https://github.com/renderforest/renderforest-sdk-node/blob/master/examples/templates/get-template-transitions.js)
 
