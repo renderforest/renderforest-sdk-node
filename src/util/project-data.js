@@ -57,7 +57,7 @@ function insertScreenAtOrder (screens, newScreen) {
  * and normalize orders to have consequent numbers.
  */
 function insertAndNormalizeOrder (screens, newScreen) {
-  return insertScreenAtOrder(screen, newScreen)
+  return insertScreenAtOrder(screens, newScreen)
     .sort(sortFactory('order'))
     .map(normalizeOrders)
 }
