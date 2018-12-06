@@ -21,7 +21,21 @@ function sortFactory (prop) {
   }
 }
 
+/**
+ * @param {Array} screens - The screens array.
+ * @param {Object} newScreen - The screen to insert.
+ * @returns {Array}
+ * @description Inserts screen at the right order.
+ */
 function insertScreenAtOrder (screens, newScreen) {
+  if (newScreen.order <= 0) {
+    return [newScreen, ...screens]
+  }
+
+  if (newScreen.order >= screens[screens.length - 1].order) {
+    return [...screens, newScreen]
+  }
+
   return screens.reduce((acc, screen) => {
     if (screen.order === newScreen.order) {
       acc.push(newScreen)
