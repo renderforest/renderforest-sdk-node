@@ -6,7 +6,7 @@
  * LICENSE file in the root directory.
  */
 
-const RenderforestError = require('./error')
+const { RenderforestError } = require('./error')
 
 class Params {
   /**
