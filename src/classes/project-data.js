@@ -8,6 +8,9 @@
 
 const PackageJson = require('../../package.json')
 
+const { MissingOrderError } = require('../util/error')
+const projectDataUtil = require('../util/project-data')
+
 class ProjectData {
   /**
    * @constructor
@@ -188,6 +191,20 @@ class ProjectData {
   setScreens (screens) {
     this.projectDataJson.data['screens'] = screens
     this.patchProperties.push('screens')
+  }
+
+  /**
+   * @param newScreen {Object}
+   * @returns {Array}
+   * @description Pushes the given `screen` to `screens` array.
+   */
+  pushScreen (newScreen) {
+    if (!newScreen.hasOwnProperty('order')) {
+      throw MissingOrderError('Screen order property is missing.')
+    }
+
+    const screens = this.getScreens()
+    return projectDataUtil.insertAndNormalizeOrder(screens, newScreen)
   }
 
   /**

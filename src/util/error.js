@@ -14,4 +14,15 @@ class RenderforestError extends Error {
   }
 }
 
-module.exports = RenderforestError
+class MissingOrderError extends Error {
+  constructor (message) {
+    super()
+    this.message = message
+    this.name = this.constructor.name
+  }
+}
+
+module.exports = {
+  RenderforestError,
+  MissingOrderError
+}

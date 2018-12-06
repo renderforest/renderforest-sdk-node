@@ -156,8 +156,7 @@ async function sample () {
       }
     ]
   }
-  const _screens = projectDataInstance.getScreens()
-  _screens.push(screen)
+  const _screens = projectDataInstance.pushScreen(screen)
   projectDataInstance.setScreens(_screens) // get screen from ./templates API
 
   // get payload data
