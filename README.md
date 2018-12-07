@@ -36,6 +36,7 @@ Welcome to the Renderforest API! You can use our API to:
       - [Get styles](#get-styles)
       - [Get voice-over](#get-voice-over)
       - [Get project colors](#get-project-colors)
+      - [Get project duration](#get-project-duration)
       - [Get screens](#get-screens)
       - [Get screen areas](#get-screen-areas)
       - [Get patch object](#get-patch-object)
@@ -63,6 +64,7 @@ Welcome to the Renderforest API! You can use our API to:
   - [Get Recommended-Custom-Colors of the Template](#get-recommended-custom-colors-of-the-template)
   - [Get Template-Presets of the Template](#get-template-presets-of-the-template)
   - [Get Theme of the Template](#get-theme-of-the-template)
+  - [Get Transitions of the Template](#get-transitions-of-the-template)
 * [Users API](#users-api)
   - [Get Current User](#get-current-user)
  
@@ -401,6 +403,11 @@ projectDataInstance.getVoiceOver() // { path: 'https://example.com/voice-over.mp
 ##### Get project colors
 ```js
 projectDataInstance.getProjectColors()  // Array of color objects
+```
+
+##### Get project duration
+```js
+projectDataInstance.getProjectDuration()  // Project duration  
 ```
 
 ##### Get screens
@@ -865,6 +872,23 @@ Renderforest.getTemplateTheme(payload)
 
 [See example](https://github.com/renderforest/renderforest-sdk-node/blob/master/examples/templates/get-template-theme.js)
 
+
+
+### Get Transitions of the Template
+
+Retrieves transitions of the template.
+```js
+const Renderforest = require('@renderforest/sdk-node')
+
+const payload = {
+  templateId: 701
+}
+Renderforest.getTemplateTransitions(payload)
+  .then(console.log) // handle the success
+  .catch(console.error) // handle the error
+```
+
+[See example](https://github.com/renderforest/renderforest-sdk-node/blob/master/examples/templates/get-template-transitions.js)
 
 
 ## Users API

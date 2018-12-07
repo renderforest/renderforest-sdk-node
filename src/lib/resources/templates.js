@@ -126,6 +126,20 @@ class Templates {
     }
     return Http.unauthorizedRequest(options)
   }
+
+  /**
+   * @param {Object} payload
+   * @returns {Promise.<Object>}
+   * @description Get Transitions of the Template.
+   */
+  static getTemplateTransitions (payload) {
+    const templateId = Params.destructURLParam(payload, 'templateId')
+
+    const options = {
+      endpoint: `${Templates.API_PREFIX}/templates/${templateId}/transitions`
+    }
+    return Http.unauthorizedRequest(options)
+  }
 }
 
 Templates.API_PREFIX = '/api/v1'

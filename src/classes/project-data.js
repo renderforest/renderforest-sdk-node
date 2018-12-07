@@ -106,6 +106,14 @@ class ProjectData {
   }
 
   /**
+   * @returns {Array}
+   * @description Get the project duration.
+   */
+  getProjectDuration () {
+    return this.projectDataJson.data['duration']
+  }
+
+  /**
    * @param {Array} projectColors
    * @description Set the project colors.
    */

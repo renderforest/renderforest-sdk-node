@@ -179,7 +179,7 @@ class Renderforest {
   }
 
   /**
-   * @param {Object} [payload]
+   * @param {Object} payload
    * @returns {Promise.<Array>}
    * @description Get All Templates.
    */
@@ -188,7 +188,7 @@ class Renderforest {
   }
 
   /**
-   * @param {Object} [payload]
+   * @param {Object} payload
    * @returns {Promise.<Array>}
    * @description Get Templates Categories.
    */
@@ -244,10 +244,19 @@ class Renderforest {
   /**
    * @param {Object} payload
    * @returns {Promise.<Object>}
-   * @description Get Template-Presets of the Template.
+   * @description Get Template-Theme of the Template.
    */
   static getTemplateTheme (payload) {
     return Templates.getTemplateTheme(payload)
+  }
+
+  /**
+   * @param {Object} payload
+   * @returns {Promise.<Object>}
+   * @description Get Template-Transitions of the Template.
+   */
+  static getTemplateTransitions (payload) {
+    return Templates.getTemplateTransitions(payload)
   }
 }
 
