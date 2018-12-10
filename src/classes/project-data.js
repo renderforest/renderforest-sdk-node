@@ -202,13 +202,13 @@ class ProjectData {
   }
 
   /**
-   * @param newScreen {Object}
+   * @param {Object} newScreen - The new screen to push.
    * @returns {Array}
    * @description Pushes the given `screen` to `screens` array.
    */
   pushScreen (newScreen) {
     if (!newScreen.hasOwnProperty('order')) {
-      throw MissingOrderError('Screen order property is missing.')
+      throw new MissingOrderError('Screen order property is missing.')
     }
 
     const screens = this.getScreens()
