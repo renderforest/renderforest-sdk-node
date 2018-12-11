@@ -50,6 +50,7 @@ Welcome to the Renderforest API! You can use our API to:
       - [Set video on video holder area](#set-video-on-video-holder-area)
       - [Set project colors](#set-project-colors)
       - [Set screens](#set-screens)  
+    * [Push Screen](#push-screen)
 * [Sounds API](#sounds-api)
   - [Get All Sounds](#get-all-sounds)
   - [Get Recommended Sounds](#get-recommended-sounds)
@@ -606,6 +607,11 @@ projectDataInstance.setScreens(_screens)
 
 #### Push screen
 
+Inserts new `screen`, arrange screens by `screen.order` property and normalize orders to have consequent numbers.
+In case `screen.order` is less than `0`, then inserts the new `screen` at the beginning of screens.
+If `screen.order` property is more than last `screen's` order property, then appends to the end of screens.
+Throws `MissingOrderError` if `screen.order` property is missing.
+ 
 ```js
 const _screens = projectDataInstance.pushScreen(screen) // Array of screens
 ```
