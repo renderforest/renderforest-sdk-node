@@ -6,9 +6,12 @@
  * LICENSE file in the root directory.
  */
 
-const Http = require('../http/http')
+const ApiRequest = require('../request/api')
+const WebRequest = require('../request/web')
 
 const Params = require('../../util/params')
+
+const { API_PREFIX, WEB_PREFIX } = require('../../config/config')
 
 class Templates {
   /**
@@ -20,10 +23,10 @@ class Templates {
     const qs = Params.destructParams(payload, ['categoryId', 'equalizer', 'limit', 'offset'])
 
     const options = {
-      endpoint: `${Templates.API_PREFIX}/templates`,
+      endpoint: `${API_PREFIX}/templates`,
       qs
     }
-    return Http.unauthorizedRequest(options)
+    return ApiRequest.unauthorizedRequest(options)
   }
 
   /**
@@ -35,10 +38,10 @@ class Templates {
     const qs = Params.destructParams(payload, ['language'])
 
     const options = {
-      endpoint: `${Templates.API_PREFIX}/templates/categories`,
+      endpoint: `${API_PREFIX}/templates/categories`,
       qs
     }
-    return Http.unauthorizedRequest(options)
+    return ApiRequest.unauthorizedRequest(options)
   }
 
   /**
@@ -51,10 +54,10 @@ class Templates {
     const templateId = Params.destructURLParam(payload, 'templateId')
 
     const options = {
-      endpoint: `${Templates.API_PREFIX}/templates/${templateId}`,
+      endpoint: `${WEB_PREFIX}${API_PREFIX}/templates/${templateId}`,
       qs
     }
-    return Http.unauthorizedRequest(options)
+    return ApiRequest.unauthorizedRequest(options)
   }
 
   /**
@@ -66,9 +69,9 @@ class Templates {
     const templateId = Params.destructURLParam(payload, 'templateId')
 
     const options = {
-      endpoint: `${Templates.API_PREFIX}/templates/${templateId}/color-presets`
+      endpoint: `${API_PREFIX}/templates/${templateId}/color-presets`
     }
-    return Http.unauthorizedRequest(options)
+    return ApiRequest.unauthorizedRequest(options)
   }
 
   /**
@@ -80,9 +83,9 @@ class Templates {
     const templateId = Params.destructURLParam(payload, 'templateId')
 
     const options = {
-      endpoint: `${Templates.API_PREFIX}/templates/${templateId}/pluggable-screens`
+      endpoint: `${API_PREFIX}/templates/${templateId}/pluggable-screens`
     }
-    return Http.unauthorizedRequest(options)
+    return ApiRequest.unauthorizedRequest(options)
   }
 
   /**
@@ -94,9 +97,9 @@ class Templates {
     const templateId = Params.destructURLParam(payload, 'templateId')
 
     const options = {
-      endpoint: `${Templates.API_PREFIX}/templates/${templateId}/recommended-custom-colors`
+      endpoint: `${API_PREFIX}/templates/${templateId}/recommended-custom-colors`
     }
-    return Http.unauthorizedRequest(options)
+    return ApiRequest.unauthorizedRequest(options)
   }
 
   /**
@@ -108,9 +111,24 @@ class Templates {
     const templateId = Params.destructURLParam(payload, 'templateId')
 
     const options = {
-      endpoint: `${Templates.API_PREFIX}/templates/${templateId}/template-presets`
+      endpoint: `${API_PREFIX}/templates/${templateId}/template-presets`
     }
-    return Http.unauthorizedRequest(options)
+    return ApiRequest.unauthorizedRequest(options)
+  }
+
+  /**
+   * @param {Object} payload
+   * @returns {Promise.<>}
+   * @description Get Template-SVG-Content of the Template.
+   */
+  static getTemplateSVGContent (payload) {
+    const templateId = Params.destructURLParam(payload, 'templateId')
+
+    const options = {
+      endpoint: `${WEB_PREFIX}/templates/termplatesvg/${templateId}`
+    }
+
+    return WebRequest.request(options)
   }
 
   /**
@@ -122,9 +140,9 @@ class Templates {
     const templateId = Params.destructURLParam(payload, 'templateId')
 
     const options = {
-      endpoint: `${Templates.API_PREFIX}/templates/${templateId}/theme`
+      endpoint: `${API_PREFIX}/templates/${templateId}/theme`
     }
-    return Http.unauthorizedRequest(options)
+    return ApiRequest.unauthorizedRequest(options)
   }
 
   /**
@@ -136,12 +154,10 @@ class Templates {
     const templateId = Params.destructURLParam(payload, 'templateId')
 
     const options = {
-      endpoint: `${Templates.API_PREFIX}/templates/${templateId}/transitions`
+      endpoint: `${API_PREFIX}/templates/${templateId}/transitions`
     }
-    return Http.unauthorizedRequest(options)
+    return ApiRequest.unauthorizedRequest(options)
   }
 }
-
-Templates.API_PREFIX = '/api/v1'
 
 module.exports = Templates
