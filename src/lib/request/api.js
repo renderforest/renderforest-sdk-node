@@ -12,9 +12,9 @@ const RequestPromise = require('request-promise')
 
 const Auth = require('../auth/auth')
 
-const PackageJson = require('../../../package.json')
+const { API_HOST, HTTP_DEFAULT_OPTIONS } = require('../../config/config')
 
-class Http {
+class ApiRequest {
   /**
    * @constructor
    */
@@ -50,7 +50,7 @@ class Http {
    * @description Append URI.
    */
   static appendURI (options) {
-    options.uri = `${Http.HOST}${options.endpoint}`
+    options.uri = `${API_HOST}${options.endpoint}`
   }
 
   /**
@@ -58,8 +58,8 @@ class Http {
    * @description Prepare request.
    */
   static prepareRequest (options) {
-    Http.appendQueryParams(options)
-    Http.appendURI(options)
+    ApiRequest.appendQueryParams(options)
+    ApiRequest.appendURI(options)
   }
 
   /**
@@ -78,11 +78,11 @@ class Http {
    * @description Unauthorized request.
    */
   unauthorizedRequest (options) {
-    const _options = Object.assign({}, Http.DEFAULT_OPTIONS, options)
+    const _options = Object.assign({}, HTTP_DEFAULT_OPTIONS, options)
 
-    Http.prepareRequest(_options)
+    ApiRequest.prepareRequest(_options)
 
-    return Http.request(_options)
+    return ApiRequest.request(_options)
   }
 
   /**
@@ -91,23 +91,13 @@ class Http {
    * @description Authorized request.
    */
   authorizedRequest (options) {
-    const _options = Object.assign({}, Http.DEFAULT_OPTIONS, options)
+    const _options = Object.assign({}, HTTP_DEFAULT_OPTIONS, options)
 
-    Http.prepareRequest(_options)
+    ApiRequest.prepareRequest(_options)
     Auth.setAuthorization(_options, this.signKey, this.clientId)
 
-    return Http.request(_options)
+    return ApiRequest.request(_options)
   }
 }
 
-Http.HOST = 'https://api.renderforest.com'
-Http.DEFAULT_OPTIONS = {
-  method: 'GET',
-  json: true,
-  headers: {
-    'Accept': 'application/json',
-    'User-Agent': `renderforest/sdk-node/${PackageJson.version}`
-  }
-}
-
-module.exports = new Http()
+module.exports = new ApiRequest()
