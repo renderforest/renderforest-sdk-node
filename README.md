@@ -64,6 +64,7 @@ Welcome to the Renderforest API! You can use our API to:
   - [Get Pluggable-Screens of the Template](#get-pluggable-screens-of-the-template)
   - [Get Recommended-Custom-Colors of the Template](#get-recommended-custom-colors-of-the-template)
   - [Get Template-Presets of the Template](#get-template-presets-of-the-template)
+  - [Get SVG Content of the Template](#get-svg-content-of-the-template)
   - [Get Theme of the Template](#get-theme-of-the-template)
   - [Get Transitions of the Template](#get-transitions-of-the-template)
 * [Users API](#users-api)
@@ -859,6 +860,23 @@ Renderforest.getTemplatePresets(payload)
 Template-presets are ready-made stories created from this template to fasten your video production.
 
 [See example](https://github.com/renderforest/renderforest-sdk-node/blob/master/examples/templates/get-template-presets.js)
+
+
+### Get SVG Content of the Template
+Retrieves SVG content of the template.
+
+```js
+const Renderforest = require('@renderforest/sdk-node')
+
+const payload = {
+  templateId: 701
+}
+Renderforest.getTemplateSVGContent(payload)
+  .then(console.log) // handle the success
+  .catch(console.error) // handle the error
+```
+
+[See example](https://github.com/renderforest/renderforest-sdk-node/blob/master/examples/templates/get-template-svg-content.js)
 
 
 ### Get Theme of the Template
