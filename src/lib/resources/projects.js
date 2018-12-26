@@ -6,9 +6,11 @@
  * LICENSE file in the root directory.
  */
 
-const Http = require('../http/http')
+const ApiRequest = require('../request/api')
 
 const Params = require('../../util/params')
+
+const { API_PREFIX } = require('../../config/config')
 
 class Projects {
   /**
@@ -20,10 +22,10 @@ class Projects {
     const qs = Params.destructParams(payload, ['limit', 'offset'])
 
     const options = {
-      endpoint: `${Projects.API_PREFIX}/projects`,
+      endpoint: `${API_PREFIX}/projects`,
       qs
     }
-    return Http.authorizedRequest(options)
+    return ApiRequest.authorizedRequest(options)
   }
 
   /**
@@ -36,10 +38,10 @@ class Projects {
 
     const options = {
       method: 'POST',
-      endpoint: `${Projects.API_PREFIX}/projects`,
+      endpoint: `${API_PREFIX}/projects`,
       body
     }
-    return Http.authorizedRequest(options)
+    return ApiRequest.authorizedRequest(options)
   }
 
   /**
@@ -51,10 +53,10 @@ class Projects {
     const qs = Params.destructParams(payload, ['templateId'])
 
     const options = {
-      endpoint: `${Projects.API_PREFIX}/projects/trial`,
+      endpoint: `${API_PREFIX}/projects/trial`,
       qs
     }
-    return Http.unauthorizedRequest(options)
+    return ApiRequest.unauthorizedRequest(options)
   }
 
   /**
@@ -66,9 +68,9 @@ class Projects {
     const projectId = Params.destructURLParam(payload, 'projectId')
 
     const options = {
-      endpoint: `${Projects.API_PREFIX}/projects/${projectId}`
+      endpoint: `${API_PREFIX}/projects/${projectId}`
     }
-    return Http.authorizedRequest(options)
+    return ApiRequest.authorizedRequest(options)
   }
 
   /**
@@ -82,10 +84,10 @@ class Projects {
 
     const options = {
       method: 'PATCH',
-      endpoint: `${Projects.API_PREFIX}/projects/${projectId}`,
+      endpoint: `${API_PREFIX}/projects/${projectId}`,
       body
     }
-    return Http.authorizedRequest(options)
+    return ApiRequest.authorizedRequest(options)
   }
 
   /**
@@ -98,9 +100,9 @@ class Projects {
 
     const options = {
       method: 'DELETE',
-      endpoint: `${Projects.API_PREFIX}/projects/${projectId}`
+      endpoint: `${API_PREFIX}/projects/${projectId}`
     }
-    return Http.authorizedRequest(options)
+    return ApiRequest.authorizedRequest(options)
   }
 
   /**
@@ -114,10 +116,10 @@ class Projects {
 
     const options = {
       method: 'POST',
-      endpoint: `${Projects.API_PREFIX}/projects/${projectId}/apply-template-preset`,
+      endpoint: `${API_PREFIX}/projects/${projectId}/apply-template-preset`,
       body
     }
-    return Http.authorizedRequest(options)
+    return ApiRequest.authorizedRequest(options)
   }
 
   /**
@@ -130,9 +132,9 @@ class Projects {
 
     const options = {
       method: 'POST',
-      endpoint: `${Projects.API_PREFIX}/projects/${projectId}/duplicate`
+      endpoint: `${API_PREFIX}/projects/${projectId}/duplicate`
     }
-    return Http.authorizedRequest(options)
+    return ApiRequest.authorizedRequest(options)
   }
 
   /**
@@ -146,13 +148,11 @@ class Projects {
 
     const options = {
       method: 'POST',
-      endpoint: `${Projects.API_PREFIX}/projects/${projectId}/render`,
+      endpoint: `${API_PREFIX}/projects/${projectId}/render`,
       body
     }
-    return Http.authorizedRequest(options)
+    return ApiRequest.authorizedRequest(options)
   }
 }
-
-Projects.API_PREFIX = '/api/v1'
 
 module.exports = Projects
