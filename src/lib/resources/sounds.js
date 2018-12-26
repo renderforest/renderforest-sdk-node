@@ -6,9 +6,11 @@
  * LICENSE file in the root directory.
  */
 
-const Http = require('../http/http')
+const ApiRequest = require('../request/api')
 
 const Params = require('../../util/params')
+
+const { API_PREFIX } = require('../../config/config')
 
 class Sounds {
   /**
@@ -20,10 +22,10 @@ class Sounds {
     const qs = Params.destructParams(payload, ['duration'])
 
     const options = {
-      endpoint: `${Sounds.API_PREFIX}/sounds`,
+      endpoint: `${API_PREFIX}/sounds`,
       qs
     }
-    return Http.unauthorizedRequest(options)
+    return ApiRequest.unauthorizedRequest(options)
   }
 
   /**
@@ -35,10 +37,10 @@ class Sounds {
     const qs = Params.destructParams(payload, ['duration'])
 
     const options = {
-      endpoint: `${Sounds.API_PREFIX}/sounds`,
+      endpoint: `${API_PREFIX}/sounds`,
       qs
     }
-    return Http.authorizedRequest(options)
+    return ApiRequest.authorizedRequest(options)
   }
 
   /**
@@ -50,10 +52,10 @@ class Sounds {
     const qs = Params.destructParams(payload, ['duration', 'templateId'])
 
     const options = {
-      endpoint: `${Sounds.API_PREFIX}/sounds/recommended`,
+      endpoint: `${API_PREFIX}/sounds/recommended`,
       qs
     }
-    return Http.unauthorizedRequest(options)
+    return ApiRequest.unauthorizedRequest(options)
   }
 
   /**
@@ -65,13 +67,11 @@ class Sounds {
     const qs = Params.destructParams(payload, ['duration', 'templateId'])
 
     const options = {
-      endpoint: `${Sounds.API_PREFIX}/sounds/recommended`,
+      endpoint: `${API_PREFIX}/sounds/recommended`,
       qs
     }
-    return Http.authorizedRequest(options)
+    return ApiRequest.authorizedRequest(options)
   }
 }
-
-Sounds.API_PREFIX = '/api/v1'
 
 module.exports = Sounds
