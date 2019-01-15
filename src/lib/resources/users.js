@@ -6,7 +6,9 @@
  * LICENSE file in the root directory.
  */
 
-const Http = require('../http/http')
+const ApiRequest = require('../request/api')
+
+const { API_PREFIX } = require('../../config/config')
 
 class Users {
   /**
@@ -15,12 +17,10 @@ class Users {
    */
   static getCurrentUser () {
     const options = {
-      endpoint: `${Users.API_PREFIX}/users/current`
+      endpoint: `${API_PREFIX}/users/current`
     }
-    return Http.authorizedRequest(options)
+    return ApiRequest.authorizedRequest(options)
   }
 }
-
-Users.API_PREFIX = '/api/v1'
 
 module.exports = Users

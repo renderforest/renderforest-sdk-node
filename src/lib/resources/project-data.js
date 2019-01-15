@@ -6,11 +6,13 @@
  * LICENSE file in the root directory.
  */
 
-const Http = require('../http/http')
+const ApiRequest = require('../request/api')
 
 const ProjectDataClass = require('../../classes/project-data')
 
 const Params = require('../../util/params')
+
+const { PROJECT_DATA_API_PREFIX } = require('../../config/config')
 
 class ProjectData {
   /**
@@ -22,9 +24,9 @@ class ProjectData {
     const projectId = Params.destructURLParam(payload, 'projectId')
 
     const options = {
-      endpoint: `${ProjectData.API_PREFIX}/project-data/${projectId}`
+      endpoint: `${PROJECT_DATA_API_PREFIX}/project-data/${projectId}`
     }
-    return Http.authorizedRequest(options)
+    return ApiRequest.authorizedRequest(options)
       .then((projectDataJson) => new ProjectDataClass(projectDataJson))
   }
 
@@ -39,13 +41,11 @@ class ProjectData {
 
     const options = {
       method: 'PATCH',
-      endpoint: `${ProjectData.API_PREFIX}/project-data/${projectId}`,
+      endpoint: `${PROJECT_DATA_API_PREFIX}/project-data/${projectId}`,
       body
     }
-    return Http.authorizedRequest(options)
+    return ApiRequest.authorizedRequest(options)
   }
 }
-
-ProjectData.API_PREFIX = '/api/v5'
 
 module.exports = ProjectData

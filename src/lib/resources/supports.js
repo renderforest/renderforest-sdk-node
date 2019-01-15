@@ -6,9 +6,11 @@
  * LICENSE file in the root directory.
  */
 
-const Http = require('../http/http')
+const ApiRequest = require('../request/api')
 
 const Params = require('../../util/params')
+
+const { API_PREFIX } = require('../../config/config')
 
 class Supports {
   /**
@@ -21,13 +23,11 @@ class Supports {
 
     const options = {
       method: 'POST',
-      endpoint: `${Supports.API_PREFIX}/supports/ticket`,
+      endpoint: `${API_PREFIX}/supports/ticket`,
       body
     }
-    return Http.authorizedRequest(options)
+    return ApiRequest.authorizedRequest(options)
   }
 }
-
-Supports.API_PREFIX = '/api/v1'
 
 module.exports = Supports

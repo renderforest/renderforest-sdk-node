@@ -6,7 +6,7 @@
  * LICENSE file in the root directory.
  */
 
-const Http = require('./http/http')
+const ApiRequest = require('./request/api')
 
 const ProjectData = require('./resources/project-data')
 const Projects = require('./resources/projects')
@@ -23,7 +23,7 @@ class Renderforest {
    * @param {number} options.clientId
    */
   constructor (options) {
-    Http.setConfig(options.signKey, options.clientId)
+    ApiRequest.setConfig(options.signKey, options.clientId)
   }
 
   /**
@@ -230,6 +230,15 @@ class Renderforest {
    */
   static getTemplateRecommendedCustomColors (payload) {
     return Templates.getTemplateRecommendedCustomColors(payload)
+  }
+
+  /**
+   * @param {Object} payload
+   * @returns {Promise.<Array>}
+   * @description Get Template-SVG-Content of the Template.
+   */
+  static getTemplateSVGContent (payload) {
+    return Templates.getTemplateSVGContent(payload)
   }
 
   /**
