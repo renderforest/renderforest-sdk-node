@@ -52,17 +52,41 @@ async function sample () {
     voiceOver: false
   }
 
-  const sounds = [ sound1, sound2 ]
+  const sounds = [sound1, sound2]
   projectDataInstance.setSounds(sounds)
 
   const screens = projectDataInstance.getScreens()
   // set text on text holder area
   if (screens && screens[0]) {
+    // check if screen duration is adjustable do some manipulations
+    const isAdjustable = screens[0].isDurationAdjustable()
+
+    if (isAdjustable) {
+      const calculateDuration = screens[0].calculateScreenDuration()
+      console.log(calculateDuration)
+      const maxDuration = screens[0].getMaxPossibleDuration()
+      const desiredDuration = 5
+
+      if (desiredDuration <= maxDuration) {
+        screens[0].setDuration(desiredDuration)
+      }
+    }
+    // check if icon position is adjustable, then change the icon position
+    if (screens[0].isIconPositionAdjustable()) {
+      screens[0].changeIconPosition()
+    }
+
     const areas = screens[0].getAreas()
 
     const area = areas[0]
     if (area && area.type === 'text') {
-      area.setText('sample text')
+      // check recommended character count for current area
+      const recommendedCharacterCount = area.getRecommendedCharacterCount()
+      const sampleText = 'sample text'
+
+      if (sampleText.length <= recommendedCharacterCount) {
+        area.setText(sampleText)
+      }
     }
   }
   // set image on image holder area
@@ -145,7 +169,7 @@ async function sample () {
     areas: [
       {
         id: 3562168,
-        cords: [ 656, 224, 1048, 224, 1048, 332, 656, 332 ],
+        cords: [656, 224, 1048, 224, 1048, 332, 656, 332],
         height: 108,
         order: 0,
         title: 'char_Angry_2',
