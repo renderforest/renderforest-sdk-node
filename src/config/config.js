@@ -3,6 +3,7 @@ const PackageJson = require('../../package.json')
 const config = {
   API_HOST: 'https://api.renderforest.com',
   API_PREFIX: '/api/v1',
+  AVERAGE_CHARS_IN_WORD: 5.5,
   HTTP_DEFAULT_OPTIONS: {
     method: 'GET',
     json: true,
