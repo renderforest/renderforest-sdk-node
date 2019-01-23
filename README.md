@@ -509,17 +509,17 @@ if (screens && screens[0]) {
 
 ##### Set icon position
 
-There is two methods `isIconPositionAdjustable` and `changeIconPosition`.
+There is two methods `isIconPositionAdjustable` and `toggleIconPosition`.
 The first one checks if it's possible to adjust icon position. If it returns `0` then it's not possible, 
 if a number is greater than `0` it means that icon position is adjustable.
 The value `1` stands for the right position, accordingly, the value `2` stands for left position.  
-For changing the icon position here is `changeIconPosition` method. It changes icon position value `1<-->2`.
+For changing the icon position here is `toggleIconPosition` method. It changes icon position value `1<-->2`.
 ```js
 const screens = projectDataInstance.getScreens()
 
 if (screens && screens[0]) {
   if (screens[0].isIconPositionAdjustable()) {
-    screens[0].changeIconPosition()
+    screens[0].toggleIconPosition()
   }
 }
 ```
