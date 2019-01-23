@@ -328,7 +328,7 @@ class ProjectData {
        *  Otherwise does `xor` bitwise operation with `iconAdjustable` and 3.
        *  Number `3` stands for converting 1->2 and 2->1.
        */
-      changeIconPosition: function () {
+      toggleIconPosition: function () {
         if (!this.isIconPositionAdjustable()) {
           throw new IconAdjustableError('Icon position is not adjustable.')
         }
