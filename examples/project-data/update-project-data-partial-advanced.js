@@ -73,7 +73,7 @@ async function sample () {
     }
     // check if icon position is adjustable, then change the icon position
     if (screens[0].isIconPositionAdjustable()) {
-      screens[0].changeIconPosition()
+      screens[0].toggleIconPosition()
     }
 
     const areas = screens[0].getAreas()
