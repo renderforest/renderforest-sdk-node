@@ -6,23 +6,27 @@
  * LICENSE file in the root directory.
  */
 
-class RenderforestError extends Error {
-  constructor (message) {
-    super()
-    this.message = message
-    this.name = this.constructor.name
-  }
-}
+const CUSTOM_ERRORS = [
+  'CharacterBasedDurationError',
+  'DurationGreaterThanMaxPossibleError',
+  'IconAdjustableError',
+  'MissingOrderError',
+  'RenderforestError',
+  'ScreenHasVideoAreaError',
+  'ScreenIdAlreadyExistsError'
+]
 
-class MissingOrderError extends Error {
-  constructor (message) {
-    super()
-    this.message = message
-    this.name = this.constructor.name
-  }
-}
+const ERRORS = CUSTOM_ERRORS.reduce((acc, className) => {
+  acc[className] = ({
+    [className]: class extends Error {
+      constructor (msg) {
+        super(msg)
+        this.name = this.constructor.name
+      }
+    }
+  })[className]
 
-module.exports = {
-  RenderforestError,
-  MissingOrderError
-}
+  return acc
+}, {})
+
+module.exports = ERRORS
