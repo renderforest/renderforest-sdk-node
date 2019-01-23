@@ -45,6 +45,8 @@ Welcome to the Renderforest API! You can use our API to:
       - [Set voice-over](#set-voice-over)
       - [Set mute music](#set-mute-music)
       - [Set sounds](#set-sounds)
+      - [Set screen duration](#set-screen-duration)
+      - [Set icon position](#set-the-icon-position)
       - [Set text on text holder area](#set-text-on-text-holder-area)
       - [Set image on image holder area](#set-image-on-image-holder-area)
       - [Set video on video holder area](#set-video-on-video-holder-area)
@@ -480,6 +482,46 @@ const sound2 = {
 
 const sounds = [ sound1, sound2 ]
 projectDataInstance.setSounds(sounds)
+```
+
+##### Set screen duration
+
+It's possible to check if `screen` duration is adjustable, get current screen duration via `calculateScreenDuration`, 
+get maximum possible duration for current screen, and to set your desired duration. 
+```js
+const screens = projectDataInstance.getScreens()
+
+if (screens && screens[0]) {
+  const isAdjustable = screens[0].isDurationAdjustable()
+  
+    if (isAdjustable) {
+      const calculateDuration = screens[0].calculateScreenDuration()
+      console.log(calculateDuration)
+      const maxDuration = screens[0].getMaxPossibleDuration()
+      const desiredDuration = 5
+
+      if (desiredDuration <= maxDuration) {
+        screens[0].setDuration(desiredDuration)
+      }
+    }
+}
+``` 
+
+##### Set icon position
+
+There is two methods `isIconPositionAdjustable` and `changeIconPosition`.
+The first one checks if it's possible to adjust icon position. If it returns `0` then it's not possible, 
+if a number is greater than `0` it means that icon position is adjustable.
+The value `1` stands for the right position, accordingly, the value `2` stands for left position.  
+For changing the icon position here is `changeIconPosition` method. It changes icon position value `1<-->2`.
+```js
+const screens = projectDataInstance.getScreens()
+
+if (screens && screens[0]) {
+  if (screens[0].isIconPositionAdjustable()) {
+    screens[0].changeIconPosition()
+  }
+}
 ```
 
 ##### Set text on text holder area
