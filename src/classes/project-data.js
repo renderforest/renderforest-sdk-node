@@ -8,8 +8,17 @@
 
 const PackageJson = require('../../package.json')
 
-const { MissingOrderError } = require('../util/error')
+const {
+  CharacterBasedDurationError,
+  DurationGreaterThanMaxPossibleError,
+  IconAdjustableError,
+  MissingOrderError,
+  ScreenHasVideoAreaError
+} = require('../util/error')
+const screenDurationUtil = require('../util/screen-duration')
 const projectDataUtil = require('../util/project-data')
+
+const { AVERAGE_CHARS_IN_WORD } = require('../config/config')
 
 class ProjectData {
   /**
@@ -218,7 +227,7 @@ class ProjectData {
   /**
    * @param {Object} screen
    * @returns {Object}
-   * @description Construct screen.
+   * @description Construct screen, adds methods to `screen` object.
    */
   constructScreen (screen) {
     const {
@@ -226,6 +235,10 @@ class ProjectData {
       hidden, iconAdjustable, isFull, maxDuration, order, path, tags, title, type, areas
     } = screen
 
+    /**
+     * @namespace screen
+     * @description The screen object with it's methods.
+     */
     return {
       id,
       characterBasedDuration,
@@ -245,10 +258,81 @@ class ProjectData {
       title,
       type,
       areas,
-      getAreas: () => {
-        return areas.map((area) => {
-          return this.constructArea(area)
-        })
+      /**
+       * @returns {Object}
+       * @description Maps through areas array and adds it's methods.
+       */
+      getAreas: () => areas.map((area) => this.constructArea(area)),
+      /**
+       * @throws {ScreenHasVideoAreaError}
+       * @return {Object.characterBasedDuration}
+       * @description Checks if `screen` has video area, then throws error.
+       *  Otherwise returns `characterBasedDuration`.
+       */
+      isDurationAdjustable: () => {
+        const videoAreas = areas.filter((area) => area.type === 'video')
+
+        if (videoAreas.length > 0) {
+          throw new ScreenHasVideoAreaError('The screen has video area.')
+        }
+
+        return characterBasedDuration
+      },
+      /**
+       * @return {number}
+       * @description Calculates screen duration using screen duration utility.
+       *  Detailed description can be found in screen duration util.
+       */
+      calculateScreenDuration: () => screenDurationUtil.getScreenDuration(screen),
+      /**
+       * @returns {number}
+       * @description Filters ares to find only video ones.
+       *  Checks if count of video areas is more than 0, then counts sum of `wordCount`s.
+       *  Otherwise returns `maxDuration` or `duration`.
+       */
+      getMaxPossibleDuration: () => {
+        const videoAreas = areas.filter((area) => area.type === 'video')
+
+        if (videoAreas.length > 0) {
+          return videoAreas.reduce((acc, videoArea) => acc + videoArea.wordCount, 0)
+        }
+
+        return maxDuration || duration
+      },
+      /**
+       * @param {number} duration - The new duration to set.
+       * @throws {CharacterBasedDurationError, DurationGreaterThanMaxPossibleError}
+       * @description Checks if `characterBasedDuration` is falsy, then throws error.
+       *  If `duration` is more than maximum possible duration, then throws error.
+       *  Otherwise sets `selectedDuration`.
+       */
+      setDuration: function (duration) {
+        if (!characterBasedDuration) {
+          throw new CharacterBasedDurationError('Current screen\'s duration is not adjustable.')
+        }
+
+        if (duration > this.getMaxPossibleDuration()) {
+          throw new DurationGreaterThanMaxPossibleError('Given `value` is greater than maximum possible duration.')
+        }
+
+        this.selectedDuration = duration
+      },
+      /**
+       * @return {boolean}
+       * @description Checks if icon position is adjustable by double negation.
+       */
+      isIconPositionAdjustable: () => iconAdjustable,
+      /**
+       * @throws {IconAdjustableError}
+       * @description Checks if icon position is not adjustable then throws error.
+       *  Otherwise does `xor` bitwise operation with `iconAdjustable` and 3.
+       *  Number `3` stands for converting 1->2 and 2->1.
+       */
+      changeIconPosition: function () {
+        if (!this.isIconPositionAdjustable()) {
+          throw new IconAdjustableError('Icon position is not adjustable.')
+        }
+        this.iconAdjustable ^= 3
       }
     }
   }
@@ -271,6 +355,8 @@ class ProjectData {
         area.value = text
         this.patchProperties.push('screens')
       }
+
+      result.getRecommendedCharacterCount = () => Math.floor(parseInt(wordCount) * AVERAGE_CHARS_IN_WORD)
     }
 
     if (area.type === 'image') {
