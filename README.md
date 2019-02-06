@@ -18,6 +18,7 @@ Welcome to the Renderforest API! You can use our API to:
   - [Get a Specific Project](#get-a-specific-project)
   - [Update the Project - partial update](#update-the-project---partial-update)
   - [Delete a Specific Project](#delete-a-specific-project)
+  - [Delete Specific Project Videos](#delete-specific-project-videos)
   - [Apply Template Preset on the Project](#apply-template-preset-on-the-project)
   - [Duplicate the Project](#duplicate-the-project)
   - [Render the Project](#render-the-project)
