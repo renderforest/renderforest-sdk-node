@@ -108,6 +108,22 @@ class Projects {
   /**
    * @param {Object} payload
    * @returns {Promise.<Object>}
+   * @description Delete Specific Project Videos.
+   */
+  static deleteProjectVideos (payload) {
+    const projectId = Params.destructURLParam(payload, 'projectId')
+    const quality = Params.destructOptionalURLParam(payload, 'quality')
+
+    const options = {
+      method: 'DELETE',
+      endpoint: `${API_PREFIX}/projects/${projectId}/videos/${quality}`
+    }
+    return ApiRequest.authorizedRequest(options)
+  }
+
+  /**
+   * @param {Object} payload
+   * @returns {Promise.<Object>}
    * @description Apply Template Preset on the Project.
    */
   static applyTemplatePresetOnProject (payload) {

@@ -43,6 +43,24 @@ class Params {
 
     return payload[param]
   }
+
+  /**
+   * @param {Object} payload
+   * @param {string} param
+   * @returns {number|string}
+   * @throws RenderforestError
+   * @description Destruct optional URL param from the payload.
+   */
+  static destructOptionalURLParam (payload, param) {
+    if (!payload || !Object.keys(payload).length) {
+      throw new RenderforestError(`No parameter specified`)
+    }
+    if (payload[param] === undefined) {
+      return ''
+    }
+
+    return payload[param]
+  }
 }
 
 module.exports = Params
