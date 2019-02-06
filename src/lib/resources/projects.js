@@ -159,7 +159,7 @@ class Projects {
    * @description Render the Project.
    */
   static renderProject (payload) {
-    const body = Params.destructParams(payload, ['quality'])
+    const body = Params.destructParams(payload, ['quality', 'watermark'])
     const projectId = Params.destructURLParam(payload, 'projectId')
 
     const options = {

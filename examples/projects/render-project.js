@@ -12,7 +12,8 @@ const renderforest = new Renderforest({ signKey: '<signKey>', clientId: -1 })
 
 const payload = {
   projectId: 5000658,
-  quality: 1080
+  quality: 360,
+  watermark: 'watermarkURL'
 }
 renderforest.renderProject(payload)
   .then(console.log) // handle the success
