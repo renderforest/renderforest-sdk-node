@@ -12,9 +12,8 @@ const renderforest = new Renderforest({ signKey: '<signKey>', clientId: -1 })
 
 const payload = {
   projectId: 5000658,
-  quality: 360,
-  watermark: 'watermarkURL'
+  quality: 360
 }
-renderforest.renderProject(payload)
+renderforest.deleteProjectVideos(payload)
   .then(console.log) // handle the success
   .catch(console.error) // handle the error

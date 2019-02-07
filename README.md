@@ -18,6 +18,7 @@ Welcome to the Renderforest API! You can use our API to:
   - [Get a Specific Project](#get-a-specific-project)
   - [Update the Project - partial update](#update-the-project---partial-update)
   - [Delete a Specific Project](#delete-a-specific-project)
+  - [Delete Specific Project Videos](#delete-specific-project-videos)
   - [Apply Template Preset on the Project](#apply-template-preset-on-the-project)
   - [Duplicate the Project](#duplicate-the-project)
   - [Render the Project](#render-the-project)
@@ -203,6 +204,25 @@ renderforest.deleteProject(payload)
 ```
 [See example](https://github.com/renderforest/renderforest-sdk-node/blob/master/examples/projects/delete-project.js)
 
+
+### Delete Specific Project Videos
+
+Deletes specific project videos.
+The quality parameter is optional. If you want to delete only a single quality video, you have to specify quality parameter, otherwise all quality videos of the project will be deleted.
+```js
+const Renderforest = require('@renderforest/sdk-node')
+
+const renderforest = new Renderforest({ signKey: '<signKey>', clientId: -1 })
+
+const payload = {
+  projectId: 5000658,
+  quality: 360
+}
+renderforest.deleteProjectVideos(payload)
+  .then(console.log) // handle the success
+  .catch(console.error) // handle the error
+```
+[See example](https://github.com/renderforest/renderforest-sdk-node/blob/master/examples/projects/delete-project-videos.js)
 
 ### Apply Template Preset on the Project
 

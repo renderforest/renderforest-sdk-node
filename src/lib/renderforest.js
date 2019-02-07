@@ -101,6 +101,15 @@ class Renderforest {
   /**
    * @param {Object} payload
    * @returns {Promise.<Object>}
+   * @description Delete Specific Project Videos.
+   */
+  deleteProjectVideos (payload) {
+    return Projects.deleteProjectVideos(payload)
+  }
+
+  /**
+   * @param {Object} payload
+   * @returns {Promise.<Object>}
    * @description Apply Template Preset on the Project.
    */
   applyTemplatePresetOnProject (payload) {
