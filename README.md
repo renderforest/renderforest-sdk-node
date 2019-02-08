@@ -207,9 +207,11 @@ renderforest.deleteProject(payload)
 
 ### Delete Specific Project Videos
 
-Deletes specific project videos.
-The quality parameter is optional.
-IMPORTANT: If you want to delete only a single quality video, you have to specify quality parameter, otherwise all quality videos of the project will be deleted.
+Deletes specific project videos. The quality parameter is optional.
+
+**IMPORTANT**: If you want to delete only a single quality video, you have to specify quality parameter, 
+otherwise all quality videos of the project will be deleted.
+
 ```js
 const Renderforest = require('@renderforest/sdk-node')
 
@@ -224,6 +226,7 @@ renderforest.deleteProjectVideos(payload)
   .catch(console.error) // handle the error
 ```
 [See example](https://github.com/renderforest/renderforest-sdk-node/blob/master/examples/projects/delete-project-videos.js)
+
 
 ### Apply Template Preset on the Project
 
