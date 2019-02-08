@@ -11,7 +11,7 @@ const Renderforest = require('../../src/lib/renderforest')
 const renderforest = new Renderforest({ signKey: '<signKey>', clientId: -1 })
 
 const payload = {
-  projectId: 5000658,
+  projectId: 4120385,
   quality: 360,
   watermark: 'https://example.com/watermark.png' // optional argument
 }
