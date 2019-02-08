@@ -12,7 +12,7 @@ const renderforest = new Renderforest({ signKey: '<signKey>', clientId: -1 })
 
 const payload = {
   projectId: 5000658,
-  quality: 360
+  quality: 360 // optional argument
 }
 renderforest.deleteProjectVideos(payload)
   .then(console.log) // handle the success

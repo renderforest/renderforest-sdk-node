@@ -208,7 +208,8 @@ renderforest.deleteProject(payload)
 ### Delete Specific Project Videos
 
 Deletes specific project videos.
-The quality parameter is optional. If you want to delete only a single quality video, you have to specify quality parameter, otherwise all quality videos of the project will be deleted.
+The quality parameter is optional.
+IMPORTANT: If you want to delete only a single quality video, you have to specify quality parameter, otherwise all quality videos of the project will be deleted.
 ```js
 const Renderforest = require('@renderforest/sdk-node')
 
@@ -216,7 +217,7 @@ const renderforest = new Renderforest({ signKey: '<signKey>', clientId: -1 })
 
 const payload = {
   projectId: 5000658,
-  quality: 360
+  quality: 360 // optional argument
 }
 renderforest.deleteProjectVideos(payload)
   .then(console.log) // handle the success
@@ -271,7 +272,8 @@ const renderforest = new Renderforest({ signKey: '<signKey>', clientId: -1 })
 
 const payload = {
   projectId: 5000658,
-  quality: 1080
+  quality: 360,
+  watermark: 'https://example.com/watermark.png' // optional argument
 }
 renderforest.renderProject(payload)
   .then(console.log) // handle the success
