@@ -10,10 +10,10 @@ const { RenderforestError } = require('./error')
 
 class Params {
   /**
-   * @param {Object} payload
-   * @param {Array} props
+   * Destruct given properties from the payload.
+   * @param {Object} payload - The payload to destruct.
+   * @param {Array} props - The props to destruct from payload.
    * @returns {Object}
-   * @description Destruct given properties from the payload.
    */
   static destructParams (payload, props) {
     if (!payload || !Object.keys(payload).length) {
@@ -30,11 +30,11 @@ class Params {
   }
 
   /**
-   * @param {Object} payload
-   * @param {string} param
-   * @returns {number|undefined}
+   * Destruct URL param from the payload.
+   * @param {Object} payload - The payload to destruct.
+   * @param {string} param - The param to destruct from payload.
+   * @returns {number|string}
    * @throws RenderforestError
-   * @description Destruct URL param from the payload.
    */
   static destructURLParam (payload, param) {
     if (!payload || !Object.keys(payload).length || payload[param] === undefined) {
@@ -45,17 +45,14 @@ class Params {
   }
 
   /**
+   * Destruct optional URL param from the payload.
    * @param {Object} payload
    * @param {string} param
    * @returns {number|string}
    * @throws RenderforestError
-   * @description Destruct optional URL param from the payload.
    */
   static destructOptionalURLParam (payload, param) {
-    if (!payload || !Object.keys(payload).length) {
-      throw new RenderforestError(`No parameter specified`)
-    }
-    if (payload[param] === undefined) {
+    if (!payload || !Object.keys(payload).length || payload[param] === undefined) {
       return ''
     }
 
