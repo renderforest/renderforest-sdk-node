@@ -90,7 +90,11 @@ const renderforest = new Renderforest({ signKey: '<signKey>', clientId: -1 })
 
 const payload = {
   limit: 2,
-  offset: 10
+  offset: 10,
+  includeApiProjects: false,
+  order: 'DESC', //possible options: 'DESC', 'ASC'
+  orderBy: 'order', //possible options: 'order', 'date'
+  search: '' //get projects with specified title
 }
 renderforest.getProjects(payload)
   .then(console.log) // handle the success
