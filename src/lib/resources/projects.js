@@ -19,7 +19,7 @@ class Projects {
    * @description Get All Projects.
    */
   static getProjects (payload) {
-    const qs = Params.destructParams(payload, ['limit', 'offset'])
+    const qs = Params.destructParams(payload, ['limit', 'offset', 'order', 'orderBy', 'search'])
 
     const options = {
       endpoint: `${API_PREFIX}/projects`,
