@@ -92,15 +92,16 @@ const payload = {
   limit: 2,
   offset: 10,
   includeApiProjects: false,
-  order: 'DESC', //possible options: 'DESC', 'ASC'
-  orderBy: 'order', //possible options: 'order', 'date'
-  search: '' //get projects with specified title
+  order: 'DESC', // possible options: 'DESC', 'ASC'
+  orderBy: 'order', // possible options: 'order', 'date'
+  search: '' // get projects with specified title
 }
 renderforest.getProjects(payload)
   .then(console.log) // handle the success
   .catch(console.error) // handle the error
 ```
 - The renderedQualities property is optional and present if the project is in renders queue (ongoing rend).
+- All the properties of `payload` object are optional.
 
 [See example](https://github.com/renderforest/renderforest-sdk-node/blob/master/examples/projects/get-projects.js)
 
