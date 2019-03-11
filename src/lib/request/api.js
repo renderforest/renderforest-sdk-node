@@ -12,7 +12,7 @@ const RequestPromise = require('request-promise')
 
 const Auth = require('../auth/auth')
 
-const { API_HOST, HTTP_DEFAULT_OPTIONS } = require('../../config/config')
+const { API_HOST, HTTP_DEFAULT_OPTIONS } = require('../../config')
 
 class ApiRequest {
   /**

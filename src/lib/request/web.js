@@ -8,7 +8,7 @@
 
 const RequestPromise = require('request-promise')
 
-const { HTTP_DEFAULT_OPTIONS, WEB_HOST } = require('../../config/config')
+const { HTTP_DEFAULT_OPTIONS, WEB_HOST } = require('../../config')
 
 class WebRequest {
   /**
