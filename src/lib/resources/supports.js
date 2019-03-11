@@ -10,7 +10,7 @@ const ApiRequest = require('../request/api')
 
 const Params = require('../../util/params')
 
-const { API_PREFIX } = require('../../config/config')
+const { API_PREFIX } = require('../../config')
 
 class Supports {
   /**

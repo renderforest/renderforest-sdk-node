@@ -11,7 +11,7 @@ const WebRequest = require('../request/web')
 
 const Params = require('../../util/params')
 
-const { API_PREFIX, WEB_PREFIX } = require('../../config/config')
+const { API_PREFIX, WEB_PREFIX } = require('../../config')
 
 class Templates {
   /**

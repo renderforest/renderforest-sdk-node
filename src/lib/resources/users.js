@@ -8,7 +8,7 @@
 
 const ApiRequest = require('../request/api')
 
-const { API_PREFIX } = require('../../config/config')
+const { API_PREFIX } = require('../../config')
 
 class Users {
   /**

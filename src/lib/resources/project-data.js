@@ -12,7 +12,7 @@ const ProjectDataClass = require('../../classes/project-data')
 
 const Params = require('../../util/params')
 
-const { PROJECT_DATA_API_PREFIX } = require('../../config/config')
+const { PROJECT_DATA_API_PREFIX } = require('../../config')
 
 class ProjectData {
   /**
