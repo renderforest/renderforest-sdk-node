@@ -18,7 +18,7 @@ const {
 const screenDurationUtil = require('../util/screen-duration')
 const projectDataUtil = require('../util/project-data')
 
-const { AVERAGE_CHARS_IN_WORD } = require('../config/config')
+const { AVERAGE_CHARS_IN_WORD } = require('../config')
 
 class ProjectData {
   /**
