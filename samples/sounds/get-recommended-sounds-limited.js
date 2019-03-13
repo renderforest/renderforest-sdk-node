@@ -6,13 +6,12 @@
  * LICENSE file in the root directory.
  */
 
-const Renderforest = require('../../src/lib/renderforest')
-
-const renderforest = new Renderforest({ signKey: '<signKey>', clientId: -1 })
+const RenderforestClient = require('../../lib/client')
 
 const payload = {
-  duration: 4
+  templateId: 701,
+  duration: 5
 }
-renderforest.getSounds(payload)
+RenderforestClient.getRecommendedSoundsLimited(payload)
   .then(console.log) // handle the success
   .catch(console.error) // handle the error
