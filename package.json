@@ -52,7 +52,7 @@
     "video",
     "video maker"
   ],
-  "main": "src/lib/renderforest.js",
+  "main": "lib/client.js",
   "pre-commit": [
     "pre-commit"
   ],
@@ -61,8 +61,8 @@
     "url": "https://github.com/renderforest/renderforest-sdk-node.git"
   },
   "scripts": {
-    "lint": "./node_modules/.bin/eslint src examples --fix",
-    "lint-no-fix": "./node_modules/.bin/eslint src examples",
+    "lint": "./node_modules/.bin/eslint samples --fix",
+    "lint-no-fix": "./node_modules/.bin/eslint lib samples",
     "pre-commit": "npm run lint-no-fix"
   }
 }
