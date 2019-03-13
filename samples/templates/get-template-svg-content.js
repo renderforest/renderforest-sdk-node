@@ -6,12 +6,11 @@
  * LICENSE file in the root directory.
  */
 
-const Renderforest = require('../../src/lib/renderforest')
+const RenderforestClient = require('../../lib/client')
 
 const payload = {
-  templateId: 701,
-  language: 'en'
+  templateId: 701
 }
-Renderforest.getTemplate(payload)
+RenderforestClient.getTemplateSVGContent(payload)
   .then(console.log) // handle the success
   .catch(console.error) // handle the error

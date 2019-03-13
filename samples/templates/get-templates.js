@@ -6,11 +6,14 @@
  * LICENSE file in the root directory.
  */
 
-const Renderforest = require('../../src/lib/renderforest')
+const RenderforestClient = require('../../lib/client')
 
 const payload = {
-  templateId: 701
+  categoryId: 3,
+  equalizer: false,
+  limit: 4,
+  offset: 10
 }
-Renderforest.getTemplateTransitions(payload)
+RenderforestClient.getTemplates(payload)
   .then(console.log) // handle the success
   .catch(console.error) // handle the error

@@ -6,11 +6,12 @@
  * LICENSE file in the root directory.
  */
 
-const Renderforest = require('../../src/lib/renderforest')
+const RenderforestClient = require('../../lib/client')
 
 const payload = {
-  templateId: 701
+  templateId: 701,
+  language: 'en'
 }
-Renderforest.getTemplateRecommendedCustomColors(payload)
+RenderforestClient.getTemplate(payload)
   .then(console.log) // handle the success
   .catch(console.error) // handle the error
