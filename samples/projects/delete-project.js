@@ -6,18 +6,13 @@
  * LICENSE file in the root directory.
  */
 
-const Renderforest = require('../../src/lib/renderforest')
+const RenderforestClient = require('../../lib/client')
 
-const renderforest = new Renderforest({ signKey: '<signKey>', clientId: -1 })
+const renderforest = new RenderforestClient({ signKey: '<signKey>', clientId: -1 })
 
 const payload = {
-  limit: 2,
-  offset: 10,
-  includeApiProjects: false,
-  order: 'DESC',
-  orderBy: 'order',
-  search: ''
+  projectId: 5000658
 }
-renderforest.getProjects(payload)
+renderforest.deleteProject(payload)
   .then(console.log) // handle the success
   .catch(console.error) // handle the error

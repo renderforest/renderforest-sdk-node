@@ -6,13 +6,14 @@
  * LICENSE file in the root directory.
  */
 
-const Renderforest = require('../../src/lib/renderforest')
+const RenderforestClient = require('../../lib/client')
 
-const renderforest = new Renderforest({ signKey: '<signKey>', clientId: -1 })
+const renderforest = new RenderforestClient({ signKey: '<signKey>', clientId: -1 })
 
 const payload = {
-  projectId: 5000658
+  projectId: 5000658,
+  customTitle: 'Graduation'
 }
-renderforest.duplicateProject(payload)
+renderforest.updateProjectPartial(payload)
   .then(console.log) // handle the success
   .catch(console.error) // handle the error

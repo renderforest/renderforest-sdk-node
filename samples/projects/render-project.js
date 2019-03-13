@@ -6,13 +6,15 @@
  * LICENSE file in the root directory.
  */
 
-const Renderforest = require('../../src/lib/renderforest')
+const RenderforestClient = require('../../lib/client')
 
-const renderforest = new Renderforest({ signKey: '<signKey>', clientId: -1 })
+const renderforest = new RenderforestClient({ signKey: '<signKey>', clientId: -1 })
 
 const payload = {
-  templateId: 701
+  projectId: 4120385,
+  quality: 360,
+  watermark: 'https://example.com/watermark.png' // optional argument
 }
-renderforest.addProject(payload)
+renderforest.renderProject(payload)
   .then(console.log) // handle the success
   .catch(console.error) // handle the error

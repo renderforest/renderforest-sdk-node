@@ -6,11 +6,13 @@
  * LICENSE file in the root directory.
  */
 
-const Renderforest = require('../../src/lib/renderforest')
+const RenderforestClient = require('../../lib/client')
+
+const renderforest = new RenderforestClient({ signKey: '<signKey>', clientId: -1 })
 
 const payload = {
   templateId: 701
 }
-Renderforest.getTrialProject(payload)
+renderforest.addProject(payload)
   .then(console.log) // handle the success
   .catch(console.error) // handle the error
