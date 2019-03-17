@@ -61,7 +61,6 @@ renderforest.getProjectData(payload)
       }
     })
 
-    return projectDataInstance.getPayloadData()
+    return projectDataInstance.save()
   })
-  .then(renderforest.updateProjectDataPartial)
   .catch(console.error)

@@ -18,9 +18,9 @@ renderforest.getProjectData(payload)
   .then((projectDataInstance) => {
     const screen = projectDataInstance.getScreen(0)
 
-    return screen
+    screen
       .setLowerThirdSettings(2, 5)
-      .getPayloadData()
+
+    return projectDataInstance.save()
   })
-  .then(renderforest.updateProjectDataPartial)
   .catch(console.error)
