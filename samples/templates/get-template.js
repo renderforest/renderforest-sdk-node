@@ -8,10 +8,6 @@
 
 const RenderforestClient = require('../../lib/client')
 
-const payload = {
-  templateId: 701,
-  language: 'en'
-}
-RenderforestClient.getTemplate(payload)
+RenderforestClient.getTemplate(701, { language: 'en' })
   .then(console.log) // handle the success
   .catch(console.error) // handle the error

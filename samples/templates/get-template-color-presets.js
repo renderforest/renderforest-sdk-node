@@ -8,9 +8,6 @@
 
 const RenderforestClient = require('../../lib/client')
 
-const payload = {
-  templateId: 701
-}
-RenderforestClient.getTemplateColorPresets(payload)
+RenderforestClient.getTemplateColorPresets(701)
   .then(console.log) // handle the success
   .catch(console.error) // handle the error
