@@ -8,12 +8,8 @@
 
 const RenderforestClient = require('../../lib/client')
 
-const renderforest = new RenderforestClient({ signKey: '<signKey>', clientId: -1 })
+const Renderforest = new RenderforestClient({ signKey: '<signKey>', clientId: -1 })
 
-const payload = {
-  projectId: 5000658,
-  customTitle: 'Graduation'
-}
-renderforest.updateProjectPartial(payload)
+Renderforest.updateProjectPartial(5000658, { customTitle: 'Graduation' })
   .then(console.log) // handle the success
   .catch(console.error) // handle the error

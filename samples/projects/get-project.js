@@ -8,11 +8,8 @@
 
 const RenderforestClient = require('../../lib/client')
 
-const renderforest = new RenderforestClient({ signKey: '<signKey>', clientId: -1 })
+const Renderforest = new RenderforestClient({ signKey: '<signKey>', clientId: -1 })
 
-const payload = {
-  projectId: 5000295
-}
-renderforest.getProject(payload)
+Renderforest.getProject(5000295)
   .then(console.log) // handle the success
   .catch(console.error) // handle the error
