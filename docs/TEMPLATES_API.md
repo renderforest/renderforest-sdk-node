@@ -117,10 +117,7 @@ Retrieves template-presets of the template.
 ```js
 const RenderforestClient = require('@renderforest/sdk-node')
 
-const payload = {
-  templateId: 701
-}
-RenderforestClient.getTemplatePresets(payload)
+RenderforestClient.getTemplatePresets(701)
   .then(console.log) // handle the success
   .catch(console.error) // handle the error
 ```
