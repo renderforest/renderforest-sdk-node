@@ -8,11 +8,8 @@
 
 const RenderforestClient = require('../../lib/client')
 
-const renderforest = new RenderforestClient({ signKey: '<signKey>', clientId: -1 })
+const Renderforest = new RenderforestClient({ signKey: '<signKey>', clientId: -1 })
 
-const payload = {
-  duration: 4
-}
-renderforest.getSounds(payload)
+Renderforest.getSounds({ duration: 4 })
   .then(console.log) // handle the success
   .catch(console.error) // handle the error

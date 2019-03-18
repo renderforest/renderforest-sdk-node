@@ -8,9 +8,6 @@
 
 const RenderforestClient = require('../../lib/client')
 
-const payload = {
-  duration: 4
-}
-RenderforestClient.getCompanySoundsLimited(payload)
+RenderforestClient.getCompanySoundsLimited({ duration: 4 })
   .then(console.log) // handle the success
   .catch(console.error) // handle the error

@@ -8,10 +8,6 @@
 
 const RenderforestClient = require('../../lib/client')
 
-const payload = {
-  templateId: 701,
-  duration: 5
-}
-RenderforestClient.getRecommendedSoundsLimited(payload)
+RenderforestClient.getRecommendedSoundsLimited(701, { duration: 5 })
   .then(console.log) // handle the success
   .catch(console.error) // handle the error
