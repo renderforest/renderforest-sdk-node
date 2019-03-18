@@ -24,8 +24,8 @@ Renderforest.getProjectData(7096113)
     console.log('Project colors:', projectDataInstance.getProjectColors())
     console.log('Screens:', projectDataInstance.getScreens())
 
-    const screens = projectDataInstance.getScreens()
-    const firstScreenAreas = screens && screens[0] && screens[0].getAreas()
-    console.log('First screen area:', firstScreenAreas)
+    const firstScreen = projectDataInstance.getScreen(0)
+    const firstAreaFirstScreen = firstScreen.getArea(0)
+    console.log('First screen area:', firstAreaFirstScreen)
   })
   .catch(console.error) // handle the error
