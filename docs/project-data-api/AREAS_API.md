@@ -12,7 +12,7 @@
 
 ### Get area type
 
-Gets area type. Possible values area `text`, `image`, `video`.
+Gets area type. Possible values are: `text`, `image`, `video`.
 
 ```js
 const secondScreen = projectDataInstance.getScreen(1)
