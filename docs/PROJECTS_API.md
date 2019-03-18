@@ -179,7 +179,7 @@ Renderforest.duplicateProject(5000658)
 
 Renders the project with given quality. The possible values for the quality are: 0, 360, 720, and 1080. 
 The watermark parameter is optional, must be in '.png' file format and have canvas size of 1920 x 1080 pixels,
-url length must not exceed 250 characters and is not applicable to HD quality videos.
+url length must not exceed 250 characters.
 
 ```js
 const RenderforestClient = require('@renderforest/sdk-node')
