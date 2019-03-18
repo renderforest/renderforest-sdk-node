@@ -8,13 +8,9 @@
 
 const RenderforestClient = require('../../lib/client')
 
-const renderforest = new RenderforestClient({ signKey: '<signKey>', clientId: -1 })
+const Renderforest = new RenderforestClient({ signKey: '<signKey>', clientId: -1 })
 
-const payload = {
-  projectId: 15187066
-}
-
-renderforest.getProjectData(payload)
+Renderforest.getProjectData(15220886)
   .then((projectDataInstance) => {
     const firstScreen = projectDataInstance.getScreen(0)
     const firstAreaFirstScreen = firstScreen.getArea(0)

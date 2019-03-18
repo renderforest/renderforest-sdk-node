@@ -8,19 +8,15 @@
 
 const RenderforestClient = require('../../lib/client')
 
-const renderforest = new RenderforestClient({ signKey: '<signKey>', clientId: -1 })
+const Renderforest = new RenderforestClient({ signKey: '<signKey>', clientId: -1 })
 
-const payload = {
-  projectId: 15220886
-}
-
-renderforest.getProjectData(payload)
+Renderforest.getProjectData(15220886)
   .then((projectDataInstance) => {
     const screen = projectDataInstance.getScreen(0)
     // these steps are not necessary
-    const screenDuration = screen.getMaxPossibleDuration()
+    const screenDuration = screen.calculateScreenDuration()
     console.log(screenDuration)
-    const maxDuration = screen.calculateScreenDuration()
+    const maxDuration = screen.getMaxPossibleDuration()
     console.log(maxDuration)
 
     return screen.setDuration(5)

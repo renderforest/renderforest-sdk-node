@@ -8,12 +8,9 @@
 
 const RenderforestClient = require('../../lib/client')
 
-const renderforest = new RenderforestClient({ signKey: '<signKey>', clientId: -1 })
+const Renderforest = new RenderforestClient({ signKey: '<signKey>', clientId: -1 })
 
-const payload = {
-  projectId: 7096113
-}
-renderforest.getProjectData(payload)
+Renderforest.getProjectData(7096113)
   .then((projectDataInstance) => {
     console.log('Project id:', projectDataInstance.getProjectId())
     console.log('Template id:', projectDataInstance.getTemplateId())
