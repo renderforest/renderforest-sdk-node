@@ -198,7 +198,7 @@ your changes with API. Save method can be called with chaining.
 Renderforest.getProjectData(15220886)
   .then((projectDataInstance) =>
     projectDataInstance.setMuteMusic(true)
-      /// do some changes, then call save() method
+      // do some changes, then call save() method
       .save()
   )
   .catch(console.error)
