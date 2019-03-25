@@ -10,6 +10,7 @@
   - [Apply Template Preset on the Project](#apply-template-preset-on-the-project)
   - [Duplicate the Project](#duplicate-the-project)
   - [Render the Project](#render-the-project)
+  - [Get rendering status](#get-rendering-status)
 
 ### Get All Projects
 
@@ -194,5 +195,31 @@ Renderforest.renderProject(4120385, { quality: 360, watermark: 'https://example.
 - The possible values of the quality are: 0, 360, 720, and 1080.
 
 [See example](https://github.com/renderforest/renderforest-sdk-node/blob/master/samples/projects/render-project.js)
+
+
+### Get rendering status
+
+Our rendering status method uses user's defined `callback` to manage rendering status percentage 
+and uses error first callback pattern. If you want to unsubscribe from getting rendering status then simply call 
+`unsubscribe` (`getRenderingStatus` method returns function to unsubscribe from getting rendering status).
+
+```js
+const RenderforestClient = require('@renderforest/sdk-node')
+
+const Renderforest = new RenderforestClient({ signKey: '<signKey>', clientId: -1 })
+
+Renderforest.renderProject(15431416, { quality: 720 })
+  .then(() => {
+    const unsubscribe = Renderforest.getRenderingStatus((error, percentage) => {
+      if (error) {
+        console.log(error)
+      }
+      // take percentage from here
+      console.log(percentage)
+      // if you want in unsubscribe in some case, then simply call unsubscribe
+      unsubscribe()
+    })
+  })
+```
 
 **[⬆ back to the top](#projects-api)**
