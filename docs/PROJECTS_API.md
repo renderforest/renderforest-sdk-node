@@ -200,7 +200,8 @@ Renderforest.renderProject(4120385, { quality: 360, watermark: 'https://example.
 ### Get rendering status
 
 Our rendering status method uses user's defined `callback` to manage rendering status percentage 
-and uses error first callback pattern. If you want to unsubscribe from getting rendering status then simply call 
+and uses error first callback pattern. If you want to unsubscribe from getting rendering status
+(before rendering finishes) then simply call 
 `unsubscribe` (`getRenderingStatus` method returns function to unsubscribe from getting rendering status).
 
 ```js
@@ -216,7 +217,7 @@ Renderforest.renderProject(15431416, { quality: 720 })
       }
       // take percentage from here
       console.log(percentage)
-      // if you want in unsubscribe in some case, then simply call unsubscribe
+      // if you want in unsubscribe (before rendering finishes) for some reason, then simply call unsubscribe
       unsubscribe()
     })
   })
