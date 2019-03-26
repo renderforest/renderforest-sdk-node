@@ -1,6 +1,7 @@
 ## Projects-data API 
 
   - [Get Project-data](#get-project-data)
+  - [Update Project-data](#update-project-data)
     * [Getters](#getters)
     * [Setters](#setters)
     * [Push Screen](#push-screen)
@@ -27,6 +28,7 @@ Renderforest.getProjectData(7096113)
     console.log('Styles:', projectDataInstance.getStyles())
     console.log('VoiceOver:', projectDataInstance.getVoiceOver())
     console.log('Project colors:', projectDataInstance.getProjectColors())
+    console.log('Project duration:', projectDataInstance.getProjectDuration())
     console.log('Screens:', projectDataInstance.getScreens())
 
     const firstScreen = projectDataInstance.getScreen(0)
