@@ -3,12 +3,11 @@ Renderforest SDK for Node.js.
 
 [![Build Status](https://travis-ci.org/renderforest/renderforest-sdk-node.svg?branch=master)](https://travis-ci.org/renderforest/renderforest-sdk-node)
 
-
 ### [API Reference](https://developers.renderforest.com) 
 
 # Introduction
 
-Welcome to the Renderforest API! 
+Welcome to the Renderforest API! With our SDK you can use following resources:
 
 * [Projects](https://github.com/renderforest/renderforest-sdk-node/blob/master/docs/PROJECTS_API.md)
 * [Project-data](https://github.com/renderforest/renderforest-sdk-node/blob/master/docs/project-data-api/PROJECT_DATA_API.md)
