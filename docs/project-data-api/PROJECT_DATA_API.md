@@ -9,7 +9,6 @@
       - [Check if project is Lego](#check-if-project-is-lego)
       - [Get project title](#get-project-title)
       - [Get mute music](#get-mute-music)
-      - [Get mute music](#get-mute-music)
       - [Get project sounds](#get-project-sounds)
       - [Get project styles](#get-project-styles)
       - [Get project voice over](#get-project-voice-over)
