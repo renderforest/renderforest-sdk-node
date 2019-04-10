@@ -17,12 +17,14 @@ Renderforest.getTemplateAvailableFonts(1021)
 
 [See example](/samples/fonts/get-template-available-fonts.js)
 
-Function returns object containing all fonts. The object which returned has method `getFontById` which accepts `fontId` 
-as parameter and returns flatten font. Also given flatten font'a `character size` can be modified by calling 
-`setCharacterSize` which accepts font size as parameter.
+`getTemplateVailabeFonts` function returns object containing all fonts. 
+The object which returned has method `getFontById` which accepts `fontId` as parameter.
+`getFontId` method return flatten font.
+
+**Be careful**: `setFonts()` project data instance setter accepts only flatten font. 
 
 ```js
-const primaryFont = fonts.getFontById(256).setCharacterSize(20) // returns flatten font with tuned character size
+const primaryFont = fonts.getFontById(256) // returns flatten font with tuned character size
 ```
 
 Now the flatten font can be used as parameter for `setFonts` setter in project data instance.
