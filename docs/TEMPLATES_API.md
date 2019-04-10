@@ -165,7 +165,6 @@ Retrieves transitions of the template.
 ```js
 const RenderforestClient = require('@renderforest/sdk-node')
 
-
 RenderforestClient.getTemplateTransitions(701)
   .then(console.log) // handle the success
   .catch(console.error) // handle the error
