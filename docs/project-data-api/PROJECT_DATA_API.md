@@ -20,12 +20,11 @@
     * [Setters](#setters)
        - [Set mute music](#set-mute-music)
        - [Set project styles](#set-project-styles)
-       - [Set project colors](#set-project-colors)
        - [Set project voice over](#set-project-voice-over)
        - [Set project sounds](#set-project-sounds)
        - [Set project colors](#set-project-colors)
        - [Set project fonts](#set-project-fonts)
-       - [Reset project colors](#reset-project-fonts)
+       - [Reset project fonts](#reset-project-fonts)
     * [Save changes](#save-changes)
 
 ### Get Project-data
