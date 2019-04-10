@@ -9,13 +9,14 @@ Renderforest SDK for Node.js.
 
 Welcome to the Renderforest API! With our SDK you can use following resources:
 
-* [Projects](https://github.com/renderforest/renderforest-sdk-node/blob/master/docs/PROJECTS_API.md)
-* [Project-data](https://github.com/renderforest/renderforest-sdk-node/blob/master/docs/project-data-api/PROJECT_DATA_API.md)
-  - [Screens](https://github.com/renderforest/renderforest-sdk-node/blob/master/docs/project-data-api/SCREENS_API.md)
-  - [Areas](https://github.com/renderforest/renderforest-sdk-node/blob/master/docs/project-data-api/AREAS_API.md)
-* [Sounds](https://github.com/renderforest/renderforest-sdk-node/blob/master/docs/SOUNDS_API.md)
-* [Supports](https://github.com/renderforest/renderforest-sdk-node/blob/master/docs/SUPPORTS_API.md)
-* [Templates](https://github.com/renderforest/renderforest-sdk-node/blob/master/docs/TEMPLATES_API.md)
-* [Users](https://github.com/renderforest/renderforest-sdk-node/blob/master/docs/USERS_API.md)
+* [Fonts](docs/FONTS.md)
+* [Projects](docs/PROJECTS_API.md)
+* [Project-data](docs/project-data-api/PROJECT_DATA_API.md)
+  - [Screens](docs/project-data-api/SCREENS_API.md)
+  - [Areas](docs/project-data-api/AREAS_API.md)
+* [Sounds](docs/SOUNDS_API.md)
+* [Supports](docs/SUPPORTS_API.md)
+* [Templates](docs/TEMPLATES_API.md)
+* [Users](docs/USERS_API.md)
 
 #### [Renderforest SDK License Agreement](https://developers.renderforest.com/policy.html)
