@@ -21,7 +21,7 @@ Renderforest.getTemplateAvailableFonts(1021)
 The returned object has `getFontById ` method which accepts `fontId` parameter. 
 `getFontId` method returns flattened font.
 
-**Be careful**: `setFonts()` project data instance setter accepts only flatten font. 
+**Be careful**: `setFonts()` project data instance setter accepts only flattened font. 
 
 ```js
 const primaryFont = fonts.getFontById(256) // returns flatten font with tuned character size
