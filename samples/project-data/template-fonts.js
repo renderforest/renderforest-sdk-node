@@ -14,11 +14,8 @@ Promise.all([Renderforest.getTemplateAvailableFonts(1021), Renderforest.getProje
   .then(([fonts, projectDataInstance]) => {
     // to know if template has one or more fonts to choose
     console.log(projectDataInstance.getFonts())
-    const primaryFont = fonts.getFontById(256).setCharacterSize(20)
-    const secondaryFont = fonts.getFontById(1586).setCharacterSize(10)
-
     return projectDataInstance.resetFonts()
-      .setFonts([primaryFont, secondaryFont])
+      .setFonts([fonts.getFontById(256), fonts.getFontById(1586)])
       .save()
   })
   .then(console.log)
