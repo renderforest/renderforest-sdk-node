@@ -107,6 +107,6 @@ Renderforest.getProjectData(15220886)
   })
 ```
 
-[See advanced example for areas](https://github.com/renderforest/renderforest-sdk-node/blob/master/samples/project-data/set-text-image-video.js)
+[See advanced example for areas](/samples/project-data/set-text-image-video.js)
 
 **[⬆ back to the top](#areas-api)**
