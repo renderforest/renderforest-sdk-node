@@ -15,6 +15,6 @@ Renderforest.getCurrentUser()
   .catch(console.error) // handle the error
 ```
 
-[See example](https://github.com/renderforest/renderforest-sdk-node/blob/master/samples/users/get-current-user.js)
+[See example](/samples/users/get-current-user.js)
 
 **[⬆ back to the top](#users-api)**
