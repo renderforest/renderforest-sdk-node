@@ -17,9 +17,9 @@ Renderforest.getTemplateAvailableFonts(1021)
 
 [See example](/samples/fonts/get-template-available-fonts.js)
 
-`getTemplateVailabeFonts` function returns object containing all fonts. 
-The object which returned has method `getFontById` which accepts `fontId` as parameter.
-`getFontId` method return flatten font.
+`getTemplateAvailabeFonts ` function returns an object containing all fonts. 
+The returned object has `getFontById ` method which accepts `fontId` parameter. 
+`getFontId` method returns flattened font.
 
 **Be careful**: `setFonts()` project data instance setter accepts only flatten font. 
 
