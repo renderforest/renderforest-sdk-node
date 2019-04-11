@@ -5,6 +5,7 @@
     - [Get recommended character count](#get-recommended-character-count)
   * [Setters](#setters)
     - [Set text](#set-text)
+      - [Set text scale](#set-text-scale)
     - [Set image](#set-image)
     - [Set video](#set-video)
 
@@ -46,6 +47,16 @@ Renderforest.getProjectData(15220886)
     
     firstAreaFirstScreen.setText('sample-text')
   })
+```
+
+#### Set text scale
+
+It's possible to set text scale by percentage. The value must be between 80 and 120.
+```js
+projectDataInstance.getScreen(0)
+  .getArea(0)
+  .setText('sample-text')
+  .setTextScale(120)
 ```
 
 ### Set image
