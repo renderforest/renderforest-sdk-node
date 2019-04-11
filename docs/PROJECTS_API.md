@@ -34,7 +34,7 @@ Renderforest.getProjects({
 - The renderedQualities property is optional and present if the project is in renders queue (ongoing rend).
 - All the properties of `payload` object are optional.
 
-[See example](https://github.com/renderforest/renderforest-sdk-node/blob/master/samples/projects/get-projects.js)
+[See example](/samples/projects/get-projects.js)
 
 
 ### Add Project
@@ -60,7 +60,7 @@ Renderforest.addProject(701)
 - The "projectColors" is optional and gets value if the template has default colors. Both lego & non-lego templates might have default colors.
 - Both "themeVariableName" & "themeVariableValue" are optional and are added (both) if template has theme. Both lego & non-lego templates might have a theme. 
 
-[See example](https://github.com/renderforest/renderforest-sdk-node/blob/master/samples/projects/add-project.js)
+[See example](/samples/projects/add-project.js)
 
 
 ### Get Trial Project
@@ -78,7 +78,7 @@ RenderforestClient.getTrialProject(701)
   .catch(console.error) // handle the error
 
 ```
-[See example](https://github.com/renderforest/renderforest-sdk-node/blob/master/samples/projects/get-trial-project.js)
+[See example](/samples/projects/get-trial-project.js)
 
 
 ### Get a Specific Project
@@ -93,7 +93,7 @@ Renderforest.getProject(5000295)
   .then(console.log) // handle the success
   .catch(console.error) // handle the error
 ```
-[See example](https://github.com/renderforest/renderforest-sdk-node/blob/master/samples/projects/get-project.js)
+[See example](/samples/projects/get-project.js)
 
 
 ### Update the Project - partial update
@@ -108,7 +108,7 @@ Renderforest.updateProjectPartial(5000658, { customTitle: 'Graduation' })
   .then(console.log) // handle the success
   .catch(console.error) // handle the error
 ```
-[See example](https://github.com/renderforest/renderforest-sdk-node/blob/master/samples/projects/update-project-partial.js)
+[See example](/samples/projects/update-project-partial.js)
 
 
 ### Delete a Specific Project
@@ -124,7 +124,7 @@ Renderforest.deleteProject(5000658)
   .catch(console.error) // handle the error
 
 ```
-[See example](https://github.com/renderforest/renderforest-sdk-node/blob/master/samples/projects/delete-project.js)
+[See example](/samples/projects/delete-project.js)
 
 
 ### Delete Specific Project Videos
@@ -143,7 +143,7 @@ Renderforest.deleteProjectVideos(4120385, 360)
   .then(console.log) // handle the success
   .catch(console.error) // handle the error
 ```
-[See example](https://github.com/renderforest/renderforest-sdk-node/blob/master/samples/projects/delete-project-videos.js)
+[See example](/samples/projects/delete-project-videos.js)
 
 
 ### Apply Template Preset on the Project
@@ -158,7 +158,7 @@ Renderforest.applyTemplatePresetOnProject(5000658, 55)
   .then(console.log) // handle the success
   .catch(console.error) // handle the error
 ```
-[See example](https://github.com/renderforest/renderforest-sdk-node/blob/master/samples/projects/apply-template-preset-on-project.js)
+[See example](/samples/projects/apply-template-preset-on-project.js)
 
 
 ### Duplicate the Project
@@ -173,7 +173,7 @@ Renderforest.duplicateProject(5000658)
   .then(console.log) // handle the success
   .catch(console.error) // handle the error
 ```
-[See example](https://github.com/renderforest/renderforest-sdk-node/blob/master/samples/projects/duplicate-project.js)
+[See example](/samples/projects/duplicate-project.js)
 
 
 ### Render the Project
@@ -194,7 +194,7 @@ Renderforest.renderProject(4120385, { quality: 360, watermark: 'https://example.
 ```
 - The possible values of the quality are: 0, 360, 720, and 1080.
 
-[See example](https://github.com/renderforest/renderforest-sdk-node/blob/master/samples/projects/render-project.js)
+[See example](/samples/projects/render-project.js)
 
 
 ### Get rendering status

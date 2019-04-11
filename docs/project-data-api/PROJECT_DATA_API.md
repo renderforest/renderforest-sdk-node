@@ -1,9 +1,30 @@
 ## Projects-data API 
 
   - [Get Project-data](#get-project-data)
+  - [Update Project-data](#update-project-data)
     * [Getters](#getters)
+      - [Get project id](#get-project-id)
+      - [Get template id](#get-template-id)
+      - [Check if project is Equalizer](#check-if-project-is-equalizer)
+      - [Check if project is Lego](#check-if-project-is-lego)
+      - [Get project title](#get-project-title)
+      - [Get mute music](#get-mute-music)
+      - [Get project sounds](#get-project-sounds)
+      - [Get project styles](#get-project-styles)
+      - [Get project voice over](#get-project-voice-over)
+      - [Get project fonts](#get-project-fonts)
+      - [Get project colors](#get-project-colors)
+      - [Get project duration](#get-project-duration)
+      - [Get screen](#get-screen)
+      - [Get screens](#get-screens)
     * [Setters](#setters)
-    * [Push Screen](#push-screen)
+       - [Set mute music](#set-mute-music)
+       - [Set project styles](#set-project-styles)
+       - [Set project voice over](#set-project-voice-over)
+       - [Set project sounds](#set-project-sounds)
+       - [Set project colors](#set-project-colors)
+       - [Set project fonts](#set-project-fonts)
+       - [Reset project fonts](#reset-project-fonts)
     * [Save changes](#save-changes)
 
 ### Get Project-data
@@ -27,6 +48,7 @@ Renderforest.getProjectData(7096113)
     console.log('Styles:', projectDataInstance.getStyles())
     console.log('VoiceOver:', projectDataInstance.getVoiceOver())
     console.log('Project colors:', projectDataInstance.getProjectColors())
+    console.log('Project duration:', projectDataInstance.getProjectDuration())
     console.log('Screens:', projectDataInstance.getScreens())
 
     const firstScreen = projectDataInstance.getScreen(0)
@@ -35,11 +57,13 @@ Renderforest.getProjectData(7096113)
   })
   .catch(console.error) // handle the error
 ```
-[See example](https://github.com/renderforest/renderforest-sdk-node/blob/master/samples/project-data/get-project-data.js)
+[See example](/samples/project-data/get-project-data.js)
 
 ### Update project data
 
 ```js
+const RenderforestClient = require('@renderforest/sdk-node')
+
 const Renderforest = new RenderforestClient({ signKey: '<signKey>', clientId: -1 })
 
 Renderforest.getProjectData(7125672)
@@ -66,92 +90,155 @@ Renderforest.getProjectData(7125672)
 
 ### Getters and Setters of Project-data Instance
 
-#### Getters
+#### Getters 
+
+##### Get project id
 
 ```js
-// get project id
 projectDataInstance.getProjectId()  // 7096113
+```
 
-// get template id
+##### Get template id
+```js
 projectDataInstance.getTemplateId()  // 701
+```
 
-// check whether is equalizer or not
+##### Check if project is Equalizer
+```js
 projectDataInstance.isEqualizer()  // false
+```
 
-// check whether is lego or not
+##### Check if project is Lego
+```js
 projectDataInstance.isLego()  // true
+```
 
-// get title
+##### Get project title
+```js
 projectDataInstance.getTitle()  // 'Explainer Video Toolkit'
+```
 
-// get mute music
+##### Get mute music
+```js
 projectDataInstance.getMuteMusic()  // false
+```
 
-// get sounds
+##### Get project sounds
+```js
 projectDataInstance.getSounds()  // array of sound objects
+```
 
-// get styles
+##### Get project styles
+```js
 projectDataInstance.getStyles()  // { theme: '1', transition: '2' }
+```
 
-// get voice over
+##### Get project voice over
+```js
 projectDataInstance.getVoiceOver() // { path: 'https://example.com/voice-over.mp3' }
+```
 
-// get project colors
+##### Get project fonts
+```js
+projectDataInstance.getFonts() // object with default and current fonts
+```
+
+##### Get project colors
+```js
 projectDataInstance.getProjectColors()  // array of color objects
+```
 
-// get project duration
+##### Get project duration
+```js
 projectDataInstance.getProjectDuration()  // Project duration
+```
 
-// get screen
+##### Get screen
+```js
 projectDataInstance.getScreen(0)  // screen object or if there is no screen, throws error
+```
 
-// get screens
+##### Get screens
+```js
 projectDataInstance.getScreens() // array of screen objects
 ```
 
-- [See screens API documentation](https://github.com/renderforest/renderforest-sdk-node/blob/master/docs/project-data-api/SCREENS_API.md)
-- [See areas API documentation](https://github.com/renderforest/renderforest-sdk-node/blob/master/docs/project-data-api/AREAS_API.md)
+- [See screens API documentation](/docs/project-data-api/SCREENS_API.md)
+- [See areas API documentation](/docs/project-data-api/AREAS_API.md)
 
 #### Setters
 
-All the setters of project-data instance can be called with chaining.  
+All the setters of project-data instance can be called with chaining.
 
+##### Set mute music
 ```js
-projectDataInstance.setMuteMusic(true)
-      .setStyles({ theme: '1', transition: '2' }) // get theme/transition from .templates API
-      .setVoiceOver({ path: 'https://example.com/voice-ower.mp3' }) // optional
-      .setSounds([
-        { // sound from ./sounds API
-          duration: 120,
-          id: 559,
-          genre: 'Rock', // optional
-          lowQuality: 'https://example.com/sample-low.mp3',
-          path: 'https://example.com/sample.mp3',
-          title: 'Inspiring Piano'
-        },
-        { // your own sound
-          duration: 12,
-          fileSize: 198658,
-          id: 952626,
-          path: 'https://example.com/sample.mp3',
-          title: 'sound sample.mp3',
-          userId: 1469277,
-          voiceOver: false
-        }
-      ])
-      .setProjectColors([ // get project colors from ./templates API
-        'ffffff', 'a1d4ec', '1d2e54', '61a371', 'a0b6e7', 'e0d0ef', '5c1313', 'b2e1f4', '706bb5', 'b4ddf5'
-      ])
-``` 
+projectDataInstance.setMuteMusic(true) // returns project data instance
+```
 
-#### Push screen
+##### Set project styles
+```js
+projectDataInstance.setStyles({ theme: '1', transition: '2' }) // returns project data instance
+```
+
+##### Set project voice over
+```js
+projectDataInstance.setVoiceOver({ path: 'https://example.com/voice-ower.mp3' }) // returns project data instance
+```
+
+##### Set project sounds
+```js
+projectDataInstance.setSounds([
+  { // sound from ./sounds API
+       duration: 120,
+       id: 559,
+       genre: 'Rock', // optional
+       lowQuality: 'https://example.com/sample-low.mp3',
+       path: 'https://example.com/sample.mp3',
+       title: 'Inspiring Piano'
+     },
+     { // your own sound
+       duration: 12,
+       fileSize: 198658,
+       id: 952626,
+       path: 'https://example.com/sample.mp3',
+       title: 'sound sample.mp3',
+       userId: 1469277,
+       voiceOver: false
+     }
+   ]) // returns project data instance
+```
+
+##### Set project colors
+```js
+projectDataInstance.setProjectColors([
+    'ffffff', 'a1d4ec', '1d2e54', '61a371', 'a0b6e7', 'e0d0ef', '5c1313', 'b2e1f4', '706bb5', 'b4ddf5'
+  ]) // returns project data instance
+```
+
+##### Set project fonts
+```js 
+projectDataInstance.setFonts([fontObject1, fontObject2]) // returns project data instance
+```
+
+As parameters `setFonts` setter accepts only flatten fonts.
+
+- [See how to get flatten fonts](/docs/FONTS.md#get-template-available-fonts) 
+- [See fonts manipulation example](/samples/project-data/template-fonts.js) 
+
+##### Reset project fonts
+```js
+projectDataInstance.resetFonts() // returns project data instance
+```
+
+
+##### Push screen
 
 Inserts new `screen`, arrange screens by `screen.order` property and normalize orders to have consequent numbers.
 In case `screen.order` is less than `0`, then inserts the new `screen` at the beginning of screens.
 If `screen.order` property is more than last `screen's` order property, then appends to the end of screens.
 Throws `MissingOrderError` if `screen.order` property is missing.
 
-**Push screen method also can be called in chain.**
+**Push screen method can be called in chain.**
 
 ```js
 projectDataInstance.pushScreen({
@@ -187,12 +274,42 @@ projectDataInstance.pushScreen({
       })
 ```
 
+Here is example for chaining the setters of project data instance.
+
+```js
+projectDataInstance.setMuteMusic(true)
+      .setStyles({ theme: '1', transition: '2' }) // get theme/transition from .templates API
+      .setVoiceOver({ path: 'https://example.com/voice-ower.mp3' }) // optional
+      .setSounds([
+        { // sound from ./sounds API
+          duration: 120,
+          id: 559,
+          genre: 'Rock', // optional
+          lowQuality: 'https://example.com/sample-low.mp3',
+          path: 'https://example.com/sample.mp3',
+          title: 'Inspiring Piano'
+        },
+        { // your own sound
+          duration: 12,
+          fileSize: 198658,
+          id: 952626,
+          path: 'https://example.com/sample.mp3',
+          title: 'sound sample.mp3',
+          userId: 1469277,
+          voiceOver: false
+        }
+      ])
+      .setProjectColors([ // get project colors from ./templates API
+        'ffffff', 'a1d4ec', '1d2e54', '61a371', 'a0b6e7', 'e0d0ef', '5c1313', 'b2e1f4', '706bb5', 'b4ddf5'
+      ])
+``` 
+
 #### Save changes
 
 After modification of project data with project-data instance setters, you **must** call `save()` method to sync all 
 your changes with API. Save method can be called with chaining.
 
-**save method also can be called in chain.**
+**Save method also can be called in chain.**
 
 ```js
 Renderforest.getProjectData(15220886)
@@ -204,6 +321,6 @@ Renderforest.getProjectData(15220886)
   .catch(console.error)
 ``` 
 
-- [See update project data example](https://github.com/renderforest/renderforest-sdk-node/blob/master/samples/project-data/update-project-data-partial.js)
+- [See update project data example](/samples/project-data/update-project-data-partial.js)
 
 **[⬆ back to the top](#projects-data-api)**

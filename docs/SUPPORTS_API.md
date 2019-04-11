@@ -20,6 +20,6 @@ Renderforest.addSupportsTicket({
 ```
 - The possible values of ticket `mailType` are: 'Sales', 'Report a bug', 'Editing process', 'Creative team', 'Other'.
 
-[See example](https://github.com/renderforest/renderforest-sdk-node/blob/master/samples/supports/add-supports-ticket.js)
+[See example](/samples/supports/add-supports-ticket.js)
 
 **[⬆ back to the top](#supports-api)**

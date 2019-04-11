@@ -90,7 +90,7 @@ Renderforest.getProjectData(15220886)
   })
 ``` 
 
-[See screen duration and toggle icon position adjustment example](https://github.com/renderforest/renderforest-sdk-node/blob/master/samples/project-data/screen-duration-and-icon-toggle.js)
+[See screen duration and toggle icon position adjustment example](/samples/project-data/screen-duration-and-icon-toggle.js)
 
 ### Set lower third settings
 
@@ -110,6 +110,6 @@ Renderforest.getProjectData(15220886)
   .catch(console.error)
 ```
 
-[See lower third settings adjustment example](https://github.com/renderforest/renderforest-sdk-node/blob/master/samples/project-data/lower-third-settings.js)
+[See lower third settings adjustment example](/samples/project-data/lower-third-settings.js)
 
 **[⬆ back to the top](#screens-api)**

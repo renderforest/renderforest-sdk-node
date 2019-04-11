@@ -28,7 +28,7 @@ RenderforestClient.getTemplates({
   .then(console.log) // handle the success
   .catch(console.error) // handle the error
 ```
-[See example](https://github.com/renderforest/renderforest-sdk-node/blob/master/samples/templates/get-templates.js)
+[See example](/samples/templates/get-templates.js)
 
 
 ### Get Templates Categories
@@ -44,7 +44,7 @@ RenderforestClient.getTemplatesCategories({ language: 'en' })
 ```
 - The supported language codes are: ar, de, en, es, fr, pt, ru, tr.
 
-[See example](https://github.com/renderforest/renderforest-sdk-node/blob/master/samples/templates/get-templates-categories.js)
+[See example](/samples/templates/get-templates-categories.js)
 
 
 ### Get a Specific Template
@@ -59,7 +59,7 @@ RenderforestClient.getTemplate(701, { language: 'en' })
 ```
 - The supported language codes are: ar, de, en, es, fr, pt, ru, tr.
 
-[See example](https://github.com/renderforest/renderforest-sdk-node/blob/master/samples/templates/get-template.js)
+[See example](/samples/templates/get-template.js)
 
 
 ### Get Color-Presets of the Template
@@ -75,7 +75,7 @@ RenderforestClient.getTemplateColorPresets(701)
 ```
 - The number of color-presets is varying from template to template.
 
-[See example](https://github.com/renderforest/renderforest-sdk-node/blob/master/samples/templates/get-template-color-presets.js)
+[See example](/samples/templates/get-template-color-presets.js)
 
 
 ### Get Pluggable-Screens of the Template
@@ -92,7 +92,7 @@ RenderforestClient.getTemplatePluggableScreens(701)
 - The number of pluggable-screens is varying from template to template.
 Pluggable-Screens are grouped by categories.
 
-[See example](https://github.com/renderforest/renderforest-sdk-node/blob/master/samples/templates/get-template-pluggable-screens.js)
+[See example](/samples/templates/get-template-pluggable-screens.js)
 
 
 ### Get Recommended-Custom-Colors of the Template
@@ -108,7 +108,7 @@ RenderforestClient.getTemplateRecommendedCustomColors(701)
 ```
 - The number of recommended-custom-colors is varying from template to template.
 
-[See example](https://github.com/renderforest/renderforest-sdk-node/blob/master/samples/templates/get-template-recommended-custom-colors.js)
+[See example](/samples/templates/get-template-recommended-custom-colors.js)
 
 
 ### Get Template-Presets of the Template
@@ -126,7 +126,7 @@ RenderforestClient.getTemplatePresets(701)
 - The number of template-presets is varying from template to template.
 Template-presets are ready-made stories created from this template to fasten your video production.
 
-[See example](https://github.com/renderforest/renderforest-sdk-node/blob/master/samples/templates/get-template-presets.js)
+[See example](/samples/templates/get-template-presets.js)
 
 
 ### Get SVG Content of the Template
@@ -140,7 +140,7 @@ RenderforestClient.getTemplateSVGContent(701)
   .catch(console.error) // handle the error
 ```
 
-[See example](https://github.com/renderforest/renderforest-sdk-node/blob/master/samples/templates/get-template-svg-content.js)
+[See example](/samples/templates/get-template-svg-content.js)
 
 
 ### Get Theme of the Template
@@ -155,7 +155,7 @@ RenderforestClient.getTemplateTheme(701)
 ```
 - Both lego & non-lego templates might have a theme.
 
-[See example](https://github.com/renderforest/renderforest-sdk-node/blob/master/samples/templates/get-template-theme.js)
+[See example](/samples/templates/get-template-theme.js)
 
 
 
@@ -165,12 +165,11 @@ Retrieves transitions of the template.
 ```js
 const RenderforestClient = require('@renderforest/sdk-node')
 
-
 RenderforestClient.getTemplateTransitions(701)
   .then(console.log) // handle the success
   .catch(console.error) // handle the error
 ```
 
-[See example](https://github.com/renderforest/renderforest-sdk-node/blob/master/samples/templates/get-template-transitions.js)
+[See example](/samples/templates/get-template-transitions.js)
 
 **[⬆ back to the top](#templates-api)**

@@ -15,7 +15,7 @@ RenderforestClient.getCompanySoundsLimited({ duration: 4 })
   .then(console.log) // handle the success
   .catch(console.error) // handle the error
 ```
-[See example](https://github.com/renderforest/renderforest-sdk-node/blob/master/samples/sounds/get-company-sounds-limited.js)
+[See example](/samples/sounds/get-company-sounds-limited.js)
 
 With authorization it's possible to fetch all sounds.
 
@@ -31,7 +31,7 @@ Renderforest.getSounds({ duration: 4 })
 - The sounds will have greater or equal duration to the specified one.
 - **Remember** — any given value of the duration greater than 180 will be overridden by 180!
 
-[See example](https://github.com/renderforest/renderforest-sdk-node/blob/master/samples/sounds/get-sounds.js)
+[See example](/samples/sounds/get-sounds.js)
 
 
 ### Get Recommended Sounds
@@ -47,7 +47,7 @@ RenderforestClient.getRecommendedSoundsLimited(701, { duration: 5 })
   .then(console.log) // handle the success
   .catch(console.error) // handle the error
 ```
-[See example](https://github.com/renderforest/renderforest-sdk-node/blob/master/samples/sounds/get-recommended-sounds-limited.js)
+[See example](/samples/sounds/get-recommended-sounds-limited.js)
 
 With authorization it's possible to fetch all recommended sounds.
 
@@ -63,6 +63,6 @@ Renderforest.getRecommendedSounds(701, { duration: 5 })
 - These sounds will have greater or equal duration to the specified one.
 - **Remember** — any given value of the duration greater than 180 will be overridden by 180!
 
-[See example](https://github.com/renderforest/renderforest-sdk-node/blob/master/samples/sounds/get-recommended-sounds.js)
+[See example](/samples/sounds/get-recommended-sounds.js)
 
 **[⬆ back to the top](#sounds-api)**
