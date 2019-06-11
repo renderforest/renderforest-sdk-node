@@ -1,31 +1,36 @@
-## Projects-data API 
+# Projects-data API 
 
-  - [Get Project-data](#get-project-data)
-  - [Update Project-data](#update-project-data)
-    * [Getters](#getters)
-      - [Get project id](#get-project-id)
-      - [Get template id](#get-template-id)
-      - [Check if project is Equalizer](#check-if-project-is-equalizer)
-      - [Check if project is Lego](#check-if-project-is-lego)
-      - [Get project title](#get-project-title)
-      - [Get mute music](#get-mute-music)
-      - [Get project sounds](#get-project-sounds)
-      - [Get project styles](#get-project-styles)
-      - [Get project voice over](#get-project-voice-over)
-      - [Get project fonts](#get-project-fonts)
-      - [Get project colors](#get-project-colors)
-      - [Get project duration](#get-project-duration)
-      - [Get screen](#get-screen)
-      - [Get screens](#get-screens)
-    * [Setters](#setters)
-       - [Set mute music](#set-mute-music)
-       - [Set project styles](#set-project-styles)
-       - [Set project voice over](#set-project-voice-over)
-       - [Set project sounds](#set-project-sounds)
-       - [Set project colors](#set-project-colors)
-       - [Set project fonts](#set-project-fonts)
-       - [Reset project fonts](#reset-project-fonts)
-    * [Save changes](#save-changes)
+## Table of Contents
+
+- [Projects-data API](#projects-data-api)
+  - [Table of Contents](#table-of-contents)
+    - [Get Project-data](#get-project-data)
+    - [Getters and Setters of Project-data Instance](#getters-and-setters-of-project-data-instance)
+      - [Getters](#getters)
+        - [Get project id](#get-project-id)
+        - [Get template id](#get-template-id)
+        - [Check if project is Equalizer](#check-if-project-is-equalizer)
+        - [Check if project is Lego](#check-if-project-is-lego)
+        - [Get project title](#get-project-title)
+        - [Get mute music](#get-mute-music)
+        - [Get project sounds](#get-project-sounds)
+        - [Get project styles](#get-project-styles)
+        - [Get project voice over](#get-project-voice-over)
+        - [Get project fonts](#get-project-fonts)
+        - [Get project colors](#get-project-colors)
+        - [Get project duration](#get-project-duration)
+        - [Get screen](#get-screen)
+        - [Get screens](#get-screens)
+      - [Setters](#setters)
+        - [Set mute music](#set-mute-music)
+        - [Set project styles](#set-project-styles)
+        - [Set project voice over](#set-project-voice-over)
+        - [Set project sounds](#set-project-sounds)
+        - [Set project colors](#set-project-colors)
+        - [Set project fonts](#set-project-fonts)
+        - [Reset project fonts](#reset-project-fonts)
+        - [Push screen](#push-screen)
+      - [Save changes](#save-changes)
 
 ### Get Project-data
 
@@ -57,36 +62,7 @@ Renderforest.getProjectData(7096113)
   })
   .catch(console.error) // handle the error
 ```
-[See example](/samples/project-data/get-project-data.js)
-
-### Update project data
-
-```js
-const RenderforestClient = require('@renderforest/sdk-node')
-
-const Renderforest = new RenderforestClient({ signKey: '<signKey>', clientId: -1 })
-
-Renderforest.getProjectData(7125672)
-  .then((projectDataInstance) =>
-    projectDataInstance.setMuteMusic(true)
-      .setStyles({ theme: '1', transition: '2' })
-      .setVoiceOver({ path: 'https://example.com/voice-ower.mp3' })
-      .save()
-  )
-  .catch(console.error)
-```
-
-- You can update the following list of properties: `currentScreenId, duration, generator, muteMusic, themeVariableName, 
-  themeVariableValue, projectColors, simple, sounds, screens, voiceSoundId`.
-- Any top-level properties (writable) can be updated separately (except `themeVariableName` & `themeVariableValue`), as
-  well as all of them at the same time.
-- The `themeVariableName` & `themeVariableValue` are related to the template theme and both should be updated at the same 
-  time. Possible values you can get in the template theme section 
-  (https://developers.renderforest.com/#get-theme-of-the-template).
-- The `iconAdjustable` field of the screen takes one of the 0, 1 or 2 values. If iconAdjustable is 0, then the icon is 
-  not adjustable. The value 1 indicates that the icon is on the left side, and the value 2 indicates that the icon is on 
-  the right side. You can update 1 <-> 2 to change the icon from left <-> right.
-- No blob data accepted for the value field of a screen area.
+[See get project data example](/samples/project-data/get-project-data.js)
 
 ### Getters and Setters of Project-data Instance
 
@@ -320,6 +296,18 @@ Renderforest.getProjectData(15220886)
   )
   .catch(console.error)
 ``` 
+
+- You can update the following list of properties: `currentScreenId, duration, generator, muteMusic, themeVariableName, 
+  themeVariableValue, projectColors, simple, sounds, screens, voiceSoundId`.
+- Any top-level properties (writable) can be updated separately (except `themeVariableName` & `themeVariableValue`), as
+  well as all of them at the same time.
+- The `themeVariableName` & `themeVariableValue` are related to the template theme and both should be updated at the same 
+  time. Possible values you can get in the template theme section 
+  (https://developers.renderforest.com/#get-theme-of-the-template).
+- The `iconAdjustable` field of the screen takes one of the 0, 1 or 2 values. If iconAdjustable is 0, then the icon is 
+  not adjustable. The value 1 indicates that the icon is on the left side, and the value 2 indicates that the icon is on 
+  the right side. You can update 1 <-> 2 to change the icon from left <-> right.
+- No blob data accepted for the value field of a screen area.
 
 - [See update project data example](/samples/project-data/update-project-data-partial.js)
 
