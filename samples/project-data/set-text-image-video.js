@@ -11,15 +11,13 @@ const RenderforestClient = require('../../lib/client')
 const Renderforest = new RenderforestClient({ signKey: '<signKey>', clientId: -1 })
 
 Renderforest.getProjectData(16165971)
-  .then((projectDataInstance) => {
-    // check area type
-    console.log(projectDataInstance.getScreen(0).getArea(0).getAreaType())
+  .then((projectDataInstance) =>
     projectDataInstance.getScreen(0)
       .getArea(0)
       .setText('sample-text')
       .setTextScale(120)
-
-    projectDataInstance.getScreen(1)
+      .returnProjectData()
+      .getScreen(1)
       .getArea(0)
       .setImage({
         fileName: 'sample file name', // optional
@@ -36,8 +34,8 @@ Renderforest.getProjectData(16165971)
           height: 456
         }
       })
-
-    projectDataInstance.getScreen(2)
+      .returnProjectData()
+      .getScreen(2)
       .getArea(0)
       .setVideo({
         fileName: 'sample file name', // optional
@@ -57,7 +55,6 @@ Renderforest.getProjectData(16165971)
           }
         }
       })
-
-    return projectDataInstance.save()
-  })
+      .save()
+  )
   .catch(console.error)
