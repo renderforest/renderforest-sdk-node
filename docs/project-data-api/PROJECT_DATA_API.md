@@ -26,6 +26,7 @@
         - [Set project styles](#set-project-styles)
         - [Set project voice over](#set-project-voice-over)
         - [Set project sounds](#set-project-sounds)
+        - [Set project sounds by getting template recommended sounds](#set-project-sounds-by-getting-template-recommended-sounds)
         - [Set project colors](#set-project-colors)
         - [Set project fonts](#set-project-fonts)
         - [Reset project fonts](#reset-project-fonts)
@@ -182,6 +183,19 @@ projectDataInstance.setSounds([
        voiceOver: false
      }
    ]) // returns project data instance
+```
+
+##### Set project sounds by getting template recommended sounds
+```js
+Promise.all([Renderforest.getRecommendedSounds(1021, { duration: 7 }), Renderforest.getProjectData(6221499)])
+  .then(([sounds, projectDataInstance]) => {
+    console.log(projectDataInstance.getSounds)
+    return projectDataInstance.setSounds([sounds.getSoundById(61), sounds.getSoundById(68)])
+      .save()
+  })
+  .then(console.log)
+  .catch(console.error)
+
 ```
 
 ##### Set project colors
