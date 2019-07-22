@@ -1,7 +1,7 @@
 {
   "name": "@renderforest/sdk-node",
   "description": "Renderforest SDK for Node.js",
-  "version": "0.5.2",
+  "version": "0.5.3",
   "author": "RenderForest LLC",
   "bugs": {
     "url": "https://github.com/renderforest/renderforest-sdk-node/issues"
