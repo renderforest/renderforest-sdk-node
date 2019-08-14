@@ -55,6 +55,8 @@ Renderforest.getProjectData(7096113)
     console.log('Project colors:', projectDataInstance.getProjectColors())
     console.log('Project duration:', projectDataInstance.getProjectDuration())
     console.log('Screens:', projectDataInstance.getScreens())
+    console.log('Number of screens:', projectDataInstance.getNumberOfScreens())
+
 
     const firstScreen = projectDataInstance.getScreen(0)
     const firstAreaFirstScreen = firstScreen.getArea(0)
@@ -137,6 +139,11 @@ projectDataInstance.getScreen(0)  // screen object or if there is no screen, thr
 ##### Get screens
 ```js
 projectDataInstance.getScreens() // array of screen objects
+```
+
+##### Get screens
+```js
+projectDataInstance.getNumberOfScreens() // array of screen objects
 ```
 
 - [See screens API documentation](/docs/project-data-api/SCREENS_API.md)
