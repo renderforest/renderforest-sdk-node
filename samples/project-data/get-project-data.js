@@ -23,6 +23,7 @@ Renderforest.getProjectData(7096113)
     console.log('VoiceOver:', projectDataInstance.getVoiceOver())
     console.log('Project colors:', projectDataInstance.getProjectColors())
     console.log('Screens:', projectDataInstance.getScreens())
+    console.log('Number of screens:', projectDataInstance.getNumberOfScreens())
 
     const firstScreen = projectDataInstance.getScreen(0)
     const firstAreaFirstScreen = firstScreen.getArea(0)
