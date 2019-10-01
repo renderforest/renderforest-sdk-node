@@ -10,6 +10,7 @@
     - [Calculate screen duration](#calculate-screen-duration)
     - [Get max possible duration](#get-max-possible-duration)
   - [Setters](#setters)
+    - [Set current screen id](#set-current-screen-id) 
     - [Set duration](#set-duration)
     - [Toggle icon position](#toggle-icon-position)
     - [Set lower third settings](#set-lower-third-settings)
@@ -54,6 +55,15 @@ console.log(projectDataInstance.getScreen(0).getMaxPossibleDuration())
 ## Setters
 
 All the setters of screen instance can be called in chain.
+
+##### Set current screen id
+```js
+Renderforest.getProjectData(15220886)
+  .then((projectDataInstance) =>
+projectDataInstance.setCurrentScreenId(0)
+      .save()
+  )
+```
 
 ### Set duration
 

@@ -8,6 +8,7 @@
     - [Getters and Setters of Project-data Instance](#getters-and-setters-of-project-data-instance)
       - [Getters](#getters)
         - [Get project id](#get-project-id)
+        - [Get raw project data](#get-raw-project-data)
         - [Get template id](#get-template-id)
         - [Check if project is Equalizer](#check-if-project-is-equalizer)
         - [Check if project is Lego](#check-if-project-is-lego)
@@ -31,6 +32,7 @@
         - [Reset project fonts](#reset-project-fonts)
         - [Push screen](#push-screen)
       - [Save changes](#save-changes)
+    - [Get project screen snapshot](#get-project-screen-snapshot)
 
 ### Get Project-data
 
@@ -74,6 +76,11 @@ Renderforest.getProjectData(7096113)
 
 ```js
 projectDataInstance.getProjectId()  // 7096113
+```
+
+##### Get raw project data
+```js
+projectDataInstance.getRawProjectData()  // Data object
 ```
 
 ##### Get template id
@@ -317,5 +324,29 @@ Renderforest.getProjectData(15220886)
 - No blob data accepted for the value field of a screen area.
 
 - [See update project data example](/samples/project-data/update-project-data-partial.js)
+
+### Get project screen snapshot
+
+Retrieves a specific screen snapshot. The current screen Id must be set for lego templates.
+
+```js
+const Renderforest = require('../../src/lib/renderforest')
+const renderforest = new Renderforest({ signKey: '<signKey>', clientId: -1 })
+const payload = {
+  projectId: 5180504
+}
+renderforest.getProjectData(payload)
+  .then((projectDataInstance) => {
+    // Set the screen which snapshot must be returned.
+    // Required only for lego templates.
+    projectDataInstance.setCurrentScreenId(0)
+    const projectData = projectDataInstance.getRawProjectData()
+    return renderforest.getScreenSnapshot({ projectData })
+  })
+  .then(console.log)
+  .catch(console.error) // handle the error
+  ```
+[See get screen snapshot example](/samples/project-data/get-screen-snapshot.js)
+
 
 **[⬆ back to the top](#projects-data-api)**
