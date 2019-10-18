@@ -7,7 +7,6 @@
   - [Update the Project - partial update](#update-the-project---partial-update)
   - [Delete a Specific Project](#delete-a-specific-project)
   - [Delete Specific Project Videos](#delete-specific-project-videos)
-  - [Apply Template Preset on the Project](#apply-template-preset-on-the-project)
   - [Duplicate the Project](#duplicate-the-project)
   - [Render the Project](#render-the-project)
   - [Get rendering status](#get-rendering-status)
@@ -68,12 +67,19 @@ Renderforest.addProject(701)
 This endpoint retrieves a trial project. Designed to allow the user to make a project (trial - without saving) before
  getting logged in to get an overall idea.
 The data can be used later to create real project (create project, update project-data with this data).
+Additionally you can get preloaded project data with particular preset of template.
 
 _No authorization is required for this endpoint._
 ```js
 const RenderforestClient = require('@renderforest/sdk-node')
 
+// Just a blank project for given tempalte
 RenderforestClient.getTrialProject(701)
+  .then(console.log) // handle the success
+  .catch(console.error) // handle the error
+
+// Project data with preloaded preset data of given template.
+RenderforestClient.getTrialProject(701, 2)
   .then(console.log) // handle the success
   .catch(console.error) // handle the error
 
@@ -144,21 +150,6 @@ Renderforest.deleteProjectVideos(4120385, 360)
   .catch(console.error) // handle the error
 ```
 [See example](/samples/projects/delete-project-videos.js)
-
-
-### Apply Template Preset on the Project
-
-Applies template preset on the project.
-```js
-const RenderforestClient = require('@renderforest/sdk-node')
-
-const Renderforest = new RenderforestClient({ signKey: '<signKey>', clientId: -1 })
-
-Renderforest.applyTemplatePresetOnProject(5000658, 55)
-  .then(console.log) // handle the success
-  .catch(console.error) // handle the error
-```
-[See example](/samples/projects/apply-template-preset-on-project.js)
 
 
 ### Duplicate the Project

@@ -1,25 +1,11 @@
 {
   "name": "@renderforest/sdk-node",
   "description": "Renderforest SDK for Node.js",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "author": "RenderForest LLC",
   "bugs": {
     "url": "https://github.com/renderforest/renderforest-sdk-node/issues"
   },
-  "contributors": [
-    {
-      "name": "Narek Hovhannisyan",
-      "email": "narekgilmour@gmail.com"
-    },
-    {
-      "name": "Albert Hambardzumyan",
-      "email": "hambardzumyan.albert@gmail.com"
-    },
-    {
-      "name": "Anahit Vardanyan",
-      "email": "vardanian.anahit@gmail.com"
-    }
-  ],
   "dependencies": {
     "request": "2.88.0",
     "request-promise": "4.2.4",
