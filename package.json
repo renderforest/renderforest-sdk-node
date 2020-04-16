@@ -3,6 +3,7 @@
   "description": "Renderforest SDK for Node.js",
   "version": "0.7.0",
   "author": "RenderForest LLC",
+  "types": "types",
   "bugs": {
     "url": "https://github.com/renderforest/renderforest-sdk-node/issues"
   },
@@ -12,6 +13,8 @@
     "socket.io-client": "2.2.0"
   },
   "devDependencies": {
+    "@types/node": "^13.11.1",
+    "dtslint": "^3.4.1",
     "eslint": "5.14.1",
     "eslint-config-standard": "11.0.0",
     "eslint-plugin-import": "2.16.0",
@@ -50,6 +53,7 @@
   "scripts": {
     "lint": "./node_modules/.bin/eslint samples --fix",
     "lint-no-fix": "./node_modules/.bin/eslint lib samples",
-    "pre-commit": "npm run lint-no-fix"
+    "pre-commit": "npm run lint-no-fix && mpm run dtslint",
+    "dtslint": "dtslint types"
   }
 }
