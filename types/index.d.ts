@@ -1,7 +1,7 @@
 // TypeScript Version: 3.0
 /// <reference types="node" />
 interface RenderforestInput {
-  [name: string]: string | number | boolean;
+  [name: string]: string | number | boolean | Record<string,any>;
 }
 declare class RenderforestClient {
   constructor(options: any);
