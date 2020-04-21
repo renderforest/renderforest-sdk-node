@@ -22,6 +22,7 @@
         - [Get project duration](#get-project-duration)
         - [Get screen](#get-screen)
         - [Get screens](#get-screens)
+                - [Get the number of screens](#get-the-number-of-screens)
       - [Setters](#setters)
         - [Set mute music](#set-mute-music)
         - [Set project styles](#set-project-styles)
@@ -31,6 +32,7 @@
         - [Set project fonts](#set-project-fonts)
         - [Reset project fonts](#reset-project-fonts)
         - [Push screen](#push-screen)
+                - [Remove screen](#remove-screen)
       - [Save changes](#save-changes)
     - [Get project screen snapshot](#get-project-screen-snapshot)
 
@@ -148,7 +150,7 @@ projectDataInstance.getScreen(0)  // screen object or if there is no screen, thr
 projectDataInstance.getScreens() // array of screen objects
 ```
 
-##### Get screens
+##### Get the number of screens
 ```js
 projectDataInstance.getNumberOfScreens() // array of screen objects
 ```
@@ -263,6 +265,19 @@ projectDataInstance.pushScreen({
         ]
       })
 ```
+
+##### Remove screen
+
+Removes `screen` by index, arrange screens by `screen.order` property and normalize orders to have consequent numbers.
+Can be called only on Lego template projects.
+Throws `InvalidScreenOperationError` if called on non-lego template project.
+
+**Remove screen method can be called in chain.**
+
+```js
+projectDataInstance.removeScreen(0)
+.save()
+``` 
 
 Here is example for chaining the setters of project data instance.
 
