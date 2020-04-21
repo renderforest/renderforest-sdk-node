@@ -32,6 +32,14 @@ Renderforest.getProjectData(16165971)
           left: 0,
           width: 798,
           height: 456
+        },
+        colorFilters: { // optional
+          sepia: 0, // optional (range is between 0-1, default value is 0)
+          contrast: 1, // optional (range is between 0-2.5, default value is 1)
+          grayscale: 0, // optional (range is between 0-1, default value is 0)
+          saturate: 1, // optional (range is between 0-2.5, default value is 1)
+          huerotate: 0, // optional (range is between 0-360)
+          brightness: 1 // optional (range is between 0-2.5, default value is 1)
         }
       })
       .returnProjectData()
@@ -46,6 +54,7 @@ Renderforest.getProjectData(16165971)
         videoCropParams: {
           duration: 6,
           mime: 'video/mp4',
+          transform: 0, // angle of the video. Valid values are 0, 90, 180, 270
           thumbnail: 'https://example.com/sample-thumbnail.png',
           thumbnailVideo: 'https://example.com/sample-thumbnail-video.mp4',
           trims: [0, 2, 3, 5],
