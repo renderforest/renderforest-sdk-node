@@ -68,6 +68,7 @@ Renderforest.getProjectData(7125672)
           }
         ]
       })
+      .removeScreen(0)
       .save()
   )
   .catch(console.error)
