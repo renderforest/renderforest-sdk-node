@@ -1,7 +1,9 @@
 ## Sounds API
 
-  - [Get All Sounds](#get-all-sounds)
-  - [Get Recommended Sounds](#get-recommended-sounds)
+- [Sounds API](#sounds-api)
+    - [Get All Sounds](#get-all-sounds)
+    - [Get Company Sounds](#get-company-sounds)
+    - [Get Recommended Sounds](#get-recommended-sounds)
 
 ### Get All Sounds
 
@@ -18,6 +20,26 @@ RenderforestClient.getCompanySoundsLimited({ duration: 4 })
 [See example](/samples/sounds/get-company-sounds-limited.js)
 
 With authorization it's possible to fetch all sounds.
+
+### Get Company Sounds
+
+Retrieves company sounds with the given duration.
+
+If no duration specified, an empty array is returned.
+```js
+const RenderforestClient = require('@renderforest/sdk-node')
+
+const Renderforest = new RenderforestClient({ signKey: '<signKey>', clientId: -1 })
+
+Renderforest.getCompanySounds({ duration: 4 })
+  .then(console.log) // handle the success
+  .catch(console.error) // handle the error
+```
+- The sounds will have greater or equal duration to the specified one.
+- **Remember** — any given value of the duration greater than 180 will be overridden by 180!
+
+[See example](/samples/sounds/get-company-sounds.js)
+
 
 ```js
 const RenderforestClient = require('@renderforest/sdk-node')
