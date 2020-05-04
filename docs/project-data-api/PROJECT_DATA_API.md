@@ -3,38 +3,39 @@
 ## Table of Contents
 
 - [Projects-data API](#projects-data-api)
-  - [Table of Contents](#table-of-contents)
-    - [Get Project-data](#get-project-data)
-    - [Getters and Setters of Project-data Instance](#getters-and-setters-of-project-data-instance)
-      - [Getters](#getters)
-        - [Get project id](#get-project-id)
-        - [Get raw project data](#get-raw-project-data)
-        - [Get template id](#get-template-id)
-        - [Check if project is Equalizer](#check-if-project-is-equalizer)
-        - [Check if project is Lego](#check-if-project-is-lego)
-        - [Get project title](#get-project-title)
-        - [Get mute music](#get-mute-music)
-        - [Get project sounds](#get-project-sounds)
-        - [Get project styles](#get-project-styles)
-        - [Get project voice over](#get-project-voice-over)
-        - [Get project fonts](#get-project-fonts)
-        - [Get project colors](#get-project-colors)
-        - [Get project duration](#get-project-duration)
-        - [Get screen](#get-screen)
-        - [Get screens](#get-screens)
+    - [Table of Contents](#table-of-contents)
+        - [Get Project-data](#get-project-data)
+        - [Getters and Setters of Project-data Instance](#getters-and-setters-of-project-data-instance)
+            - [Getters](#getters)
+                - [Get project id](#get-project-id)
+                - [Get raw project data](#get-raw-project-data)
+                - [Get template id](#get-template-id)
+                - [Check if project is Equalizer](#check-if-project-is-equalizer)
+                - [Check if project is Lego](#check-if-project-is-lego)
+                - [Get project title](#get-project-title)
+                - [Get mute music](#get-mute-music)
+                - [Get project sounds](#get-project-sounds)
+                - [Get project styles](#get-project-styles)
+                - [Get project voice over](#get-project-voice-over)
+                - [Get project fonts](#get-project-fonts)
+                - [Get project colors](#get-project-colors)
+                - [Get project duration](#get-project-duration)
+                - [Get screen](#get-screen)
+                - [Get screens](#get-screens)
                 - [Get the number of screens](#get-the-number-of-screens)
-      - [Setters](#setters)
-        - [Set mute music](#set-mute-music)
-        - [Set project styles](#set-project-styles)
-        - [Set project voice over](#set-project-voice-over)
-        - [Set project sounds](#set-project-sounds)
-        - [Set project colors](#set-project-colors)
-        - [Set project fonts](#set-project-fonts)
-        - [Reset project fonts](#reset-project-fonts)
-        - [Push screen](#push-screen)
+            - [Setters](#setters)
+                - [Set mute music](#set-mute-music)
+                - [Set project styles](#set-project-styles)
+                - [Set project voice over](#set-project-voice-over)
+                - [Set project sounds](#set-project-sounds)
+                - [Set project colors](#set-project-colors)
+                - [Set project fonts](#set-project-fonts)
+                - [Reset project fonts](#reset-project-fonts)
+                - [Push screen](#push-screen)
                 - [Remove screen](#remove-screen)
-      - [Save changes](#save-changes)
-    - [Get project screen snapshot](#get-project-screen-snapshot)
+                - [Remove all screens](#remove-all-screens)
+            - [Save changes](#save-changes)
+        - [Get project screen snapshot](#get-project-screen-snapshot)
 
 ### Get Project-data
 
@@ -268,7 +269,7 @@ projectDataInstance.pushScreen({
 
 ##### Remove screen
 
-Removes `screen` by index, arrange screens by `screen.order` property and normalize orders to have consequent numbers.
+Removes `screen` by id, arrange screens by `screen.order` property and normalize orders to have consequent numbers.
 Can be called only on Lego template projects.
 Throws `InvalidScreenOperationError` if called on non-lego template project.
 
@@ -276,6 +277,19 @@ Throws `InvalidScreenOperationError` if called on non-lego template project.
 
 ```js
 projectDataInstance.removeScreen(0)
+.save()
+``` 
+
+##### Remove all screens
+
+Removes all screens from project.
+Can be called only on Lego template projects.
+Throws `InvalidScreenOperationError` if called on non-lego template project.
+
+**Remove all screens method can be called in chain.**
+
+```js
+projectDataInstance.removeAllScreens()
 .save()
 ``` 
 
