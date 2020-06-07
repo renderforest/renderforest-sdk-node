@@ -13,3 +13,8 @@ const Renderforest = new RenderforestClient({ signKey: '<signKey>', clientId: -1
 Renderforest.renderProject(4120385, { quality: 360, watermark: 'https://example.com/watermark.png' })
   .then(console.log) // handle the success
   .catch(console.error) // handle the error
+
+// Render project with specified duration (only applicable to visualizer projects and will be dismissed for others.)
+Renderforest.renderProject(4120386, { quality: 360, duration: 10, startSecond: 1 })
+  .then(console.log) // handle the success
+  .catch(console.error) // handle the error
