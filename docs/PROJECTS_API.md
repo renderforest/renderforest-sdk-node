@@ -182,8 +182,14 @@ Renderforest.renderProject(4120385, { quality: 360, watermark: 'https://example.
   .then(console.log) // handle the success
   .catch(console.error) // handle the error
 
+Renderforest.renderProject(4120386, { quality: 360, duration: 15, startSecond: 10 })
+  .then(console.log) // handle the success
+  .catch(console.error) // handle the error
+
 ```
 - The possible values of the quality are: 0, 360, 720, and 1080.
+- Additionally, `duration` and `startSecond` parameters can be specified as rendering options. These
+parameters are only applicable to visualizer projects. They will be dismissed for other projects.
 
 [See example](/samples/projects/render-project.js)
 
