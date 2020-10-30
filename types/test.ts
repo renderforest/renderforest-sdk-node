@@ -36,6 +36,16 @@ Renderforest.getProjects({
   .then(console.log) // handle the success
   .catch(console.error); // handle the error
 
+Renderforest.getSubscription(122)
+  .then(console.log) // handle the success
+  .catch(console.error); // handle the error
+
+Renderforest.getSubscriptions({
+    status: 'active'
+  })
+    .then(console.log) // handle the success
+    .catch(console.error); // handle the error
+
 const unsubscribe = Renderforest.getRenderingStatus((error, percentage) => {
   if (error) {
     console.log(error);
