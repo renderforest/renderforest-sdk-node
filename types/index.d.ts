@@ -13,6 +13,8 @@ declare class RenderforestClient {
   addProject(templateId: number): any;
   static getTrialProject(templateId: number, presetId?: number): any;
   getProject(projectId: any): any;
+  getSubscription(subscriptionId: any): any;
+  getSubscriptions(params: RenderforestInput): any;
   updateProjectPartial(projectId: number, params: RenderforestInput): any;
   deleteProject(projectId: any): any;
   deleteProjectVideos(projectId: number, quality: number): any;

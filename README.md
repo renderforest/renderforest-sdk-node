@@ -15,6 +15,7 @@ Welcome to the Renderforest API! With our SDK you can use following resources:
   - [Screens](docs/project-data-api/SCREENS_API.md)
   - [Areas](docs/project-data-api/AREAS_API.md)
 * [Sounds](docs/SOUNDS_API.md)
+* [Subscriptions](docs/SUBSCRIPTIONS_API.md)
 * [Supports](docs/SUPPORTS_API.md)
 * [Templates](docs/TEMPLATES_API.md)
 * [Users](docs/USERS_API.md)
