@@ -103,6 +103,10 @@ Renderforest.getTemplateAvailableFonts(1021)
   .then(console.log) // handle the success
   .catch(console.error); // handle the error
 
+Renderforest.getOwnFonts()
+  .then(console.log) // handle the success
+  .catch(console.error); // handle the error
+
 RenderforestClient.getCompanySoundsLimited({ duration: 4 })
   .then(console.log) // handle the success
   .catch(console.error); // handle the error
