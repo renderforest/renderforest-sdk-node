@@ -7,6 +7,7 @@ declare class RenderforestClient {
   constructor(options: any);
 
   getTemplateAvailableFonts(templateId: number): any;
+  getOwnFonts(): any;
   getProjectData(projectId: number): any;
   getScreenSnapshot(data: RenderforestInput): any;
   getProjects(params: RenderforestInput): any;
