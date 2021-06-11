@@ -163,9 +163,9 @@ projectDataInstance.getNumberOfScreens() // array of screen objects
 
 All the setters of project-data instance can be called with chaining.
 
-##### Set mute music
+##### Set mute sound effects.
 ```js
-projectDataInstance.setMuteMusic(true) // returns project data instance
+projectDataInstance.setMuteSfx(true) // returns project data instance
 ```
 
 ##### Set project styles
@@ -296,8 +296,7 @@ projectDataInstance.removeAllScreens()
 Here is example for chaining the setters of project data instance.
 
 ```js
-projectDataInstance.setMuteMusic(true)
-      .setStyles({ theme: '1', transition: '2' }) // get theme/transition from .templates API
+projectDataInstance.setStyles({ theme: '1', transition: '2' }) // get theme/transition from .templates API
       .setVoiceOver({ path: 'https://example.com/voice-ower.mp3' }) // optional
       .setSounds([
         { // sound from ./sounds API
@@ -333,7 +332,7 @@ your changes with API. Save method can be called with chaining.
 ```js
 Renderforest.getProjectData(15220886)
   .then((projectDataInstance) =>
-    projectDataInstance.setMuteMusic(true)
+    projectDataInstance.setMuteSfx(true)
       // do some changes, then call save() method
       .save()
   )
