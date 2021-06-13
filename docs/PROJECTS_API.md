@@ -49,11 +49,11 @@ Renderforest.addProject(701)
   .catch(console.error) // handle the error
 ```
 - Also, project-data is created with the following list of initial properties: 
-  templateId, title, duration, equalizer, isLego, extendableScreens, fps, projectVersion, screens, muteMusic, 
+  templateId, title, duration, equalizer, isLego, extendableScreens, fps, projectVersion, screens, muteSfx, 
   currentScreenId, projectColors (optional), themeVariableName (optional), themeVariableValue (optional).
 
 
-- The "muteMusic" is false initially. 
+- The "muteSfx" is false initially. 
 - If template is lego ("isLego": true), then no initial screen is added and "screens" defaults to []. Otherwise, at least one screen is present. 
 - The "currentScreenId" is the id of the first screen for non-lego templates & null for lego templates. 
 - The "projectColors" is optional and gets value if the template has default colors. Both lego & non-lego templates might have default colors.

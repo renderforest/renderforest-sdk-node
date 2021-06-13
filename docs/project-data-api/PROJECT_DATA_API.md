@@ -13,7 +13,7 @@
                 - [Check if project is Equalizer](#check-if-project-is-equalizer)
                 - [Check if project is Lego](#check-if-project-is-lego)
                 - [Get project title](#get-project-title)
-                - [Get mute music](#get-mute-music)
+                - [Get mute SFX](#get-mute-SFX)
                 - [Get project sounds](#get-project-sounds)
                 - [Get project styles](#get-project-styles)
                 - [Get project voice over](#get-project-voice-over)
@@ -24,7 +24,7 @@
                 - [Get screens](#get-screens)
                 - [Get the number of screens](#get-the-number-of-screens)
             - [Setters](#setters)
-                - [Set mute music](#set-mute-music)
+                - [Set mute SFX](#set-mute-SFX)
                 - [Set project styles](#set-project-styles)
                 - [Set project voice over](#set-project-voice-over)
                 - [Set project sounds](#set-project-sounds)
@@ -53,7 +53,7 @@ Renderforest.getProjectData(7096113)
     console.log('Is equalizer:', projectDataInstance.isEqualizer())
     console.log('Is lego:', projectDataInstance.isLego())
     console.log('Title:', projectDataInstance.getTitle())
-    console.log('Mute music:', projectDataInstance.getMuteMusic())
+    console.log('Mute SFX:', projectDataInstance.getMuteSfx())
     console.log('Sounds:', projectDataInstance.getSounds())
     console.log('Styles:', projectDataInstance.getStyles())
     console.log('VoiceOver:', projectDataInstance.getVoiceOver())
@@ -106,9 +106,9 @@ projectDataInstance.isLego()  // true
 projectDataInstance.getTitle()  // 'Explainer Video Toolkit'
 ```
 
-##### Get mute music
+##### Get mute SFX
 ```js
-projectDataInstance.getMuteMusic()  // false
+projectDataInstance.getMuteSfx()  // false
 ```
 
 ##### Get project sounds
@@ -163,7 +163,7 @@ projectDataInstance.getNumberOfScreens() // array of screen objects
 
 All the setters of project-data instance can be called with chaining.
 
-##### Set mute sound effects.
+##### Set mute SFX.
 ```js
 projectDataInstance.setMuteSfx(true) // returns project data instance
 ```
@@ -339,7 +339,7 @@ Renderforest.getProjectData(15220886)
   .catch(console.error)
 ``` 
 
-- You can update the following list of properties: `currentScreenId, duration, generator, muteMusic, themeVariableName, 
+- You can update the following list of properties: `currentScreenId, duration, generator, muteSfx, themeVariableName, 
   themeVariableValue, projectColors, simple, sounds, screens, voiceSoundId`.
 - Any top-level properties (writable) can be updated separately (except `themeVariableName` & `themeVariableValue`), as
   well as all of them at the same time.
