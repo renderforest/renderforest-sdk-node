@@ -12,8 +12,7 @@ const Renderforest = new RenderforestClient({ signKey: '<signKey>', clientId: -1
 
 Renderforest.getProjectData(7125672)
   .then((projectDataInstance) =>
-    projectDataInstance.setMuteMusic(true)
-      .setStyles({ theme: '1', transition: '2' })
+    projectDataInstance.setStyles({ theme: '1', transition: '2' })
       .setVoiceOver({ path: 'https://example.com/voice-ower.mp3' })
       .setSounds([
         {
