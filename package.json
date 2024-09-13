@@ -43,9 +43,6 @@
     "video maker"
   ],
   "main": "lib/client.js",
-  "pre-commit": [
-    "pre-commit"
-  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/renderforest/renderforest-sdk-node.git"
@@ -53,7 +50,7 @@
   "scripts": {
     "lint": "./node_modules/.bin/eslint samples --fix",
     "lint-no-fix": "./node_modules/.bin/eslint lib samples",
-    "pre-commit": "npm run lint-no-fix && mpm run dtslint",
+    "pre-commit": "npm run lint-no-fix && npm run dtslint",
     "dtslint": "dtslint types"
   }
 }

@@ -11,7 +11,7 @@ const RenderforestClient = require('../../lib/client')
 const Renderforest = new RenderforestClient({ signKey: '<signKey>', clientId: -1 })
 
 Renderforest.getSubscriptions({
-  status: 'active' //can be either 'active' or 'closed'
+  status: 'active' // can be either 'active' or 'closed'
 })
   .then(console.log) // handle the success
   .catch(console.error) // handle the error
