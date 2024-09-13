@@ -101,13 +101,10 @@ Renderforest.getProjectData(15220886)
 
 Renderforest.getProjectData(15220886)
   .then((projectDataInstance: any) => {
-    // Set the screen which snapshot must be returned.
-    // Required only for lego templates.
-    projectDataInstance.setCurrentScreenId(2);
-
     const projectData = projectDataInstance.getRawProjectData();
     const screenIds = projectData.screens.map((screen: any) => screen.id);
-    return Renderforest.getLegoScreensPreviews(projectData.projectId, screenIds);
+
+    return Renderforest.getLegoScreensPreviews(15220886, { quality: 0, screenIds });
   })
   .then(console.log)
   .catch(console.error);

@@ -10,15 +10,11 @@ const RenderforestClient = require('../../lib/client')
 
 const Renderforest = new RenderforestClient({ signKey: '<signKey>', clientId: -1 })
 
-Renderforest.getProjectData(15220886)
+Renderforest.getProjectData(88172301)
   .then((projectDataInstance) => {
-    // Set the screen which snapshot must be returned.
-    // Required only for lego templates.
-    projectDataInstance.setCurrentScreenId(2)
-
     const projectData = projectDataInstance.getRawProjectData()
     const screenIds = projectData.screens.map((screen) => screen.id)
-    return Renderforest.getLegoScreensPreviews(projectData.projectId, screenIds)
+    return Renderforest.getLegoScreensPreviews(88172301, { quality: 0, screenIds })
   })
   .then(console.log)
   .catch(console.error)
