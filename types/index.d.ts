@@ -11,6 +11,7 @@ declare class RenderforestClient {
   getProjectData(projectId: number): any;
   getScreenSnapshot(data: RenderforestInput): any;
   getLegoScreensPreviews(projectId: number, params: RenderforestInput): any;
+  getLegoPreviewRenderingStatus(callback: (error: any, status: any) => any): any;
   getProjects(params: RenderforestInput): any;
   addProject(templateId: number): any;
   static getTrialProject(templateId: number, presetId?: number): any;
