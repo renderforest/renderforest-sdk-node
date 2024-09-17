@@ -242,4 +242,20 @@ Renderforest.getLegoPreviewRenderingStatus((error, status) => {
 
 [See get rendering status of screens for lego templates example](/samples/projects/get-preview-screens-rendering-status.js)
 
+### Cancel Lego Preview
+
+Cancels the lego preview.
+
+```js
+const RenderforestClient = require("../../lib/client");
+
+const Renderforest = new RenderforestClient({ signKey: "<signKey>", clientId: -1 });
+
+Renderforest.cancelLegoPreview(88172301, [101628322])
+  .then(console.log) // handle the success
+  .catch(console.error); // handle the error
+```
+
+[See cancel lego preview example](/samples/projects/cancel-lego-preview.js)
+
 **[⬆ back to the top](#projects-api)**

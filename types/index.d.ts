@@ -40,6 +40,7 @@ declare class RenderforestClient {
   static getTemplatePresets(templateId: any): any;
   static getTemplateTheme(templateId: number): any;
   static getTemplateTransitions(templateId: number): any;
+  cancelLegoPreview(projectId: number, queueIds: number[]): any;
 }
 
 export default RenderforestClient;
