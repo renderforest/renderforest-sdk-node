@@ -222,6 +222,29 @@ Renderforest.renderProject(15431416, { quality: 720 }).then(() => {
 });
 ```
 
+### Preview Screens for lego templates
+
+Generates a preview of the lego project's screens.
+
+```js
+const Renderforest = require("../../src/lib/renderforest");
+const renderforest = new Renderforest({ signKey: "<signKey>", clientId: -1 });
+
+renderforest
+  .getProjectData(7096113)
+  .then((projectDataInstance) => {
+    const projectData = projectDataInstance.getRawProjectData();
+    const screenIds = projectData.screens.map((screen) => screen.id);
+    return Renderforest.getLegoScreensPreviews(projectData.projectId, screenIds);
+  })
+  .then((previewData) => {
+    console.log("Preview data:", previewData);
+  })
+  .catch(console.error); // handle the error
+```
+
+[See lego preview screens example](/samples/projects/preview-screens.js)
+
 ### Get rendering status of screens for lego templates
 
 Retrieves the rendering status of individual screens for lego templates. This method allows you to track the progress of rendering for each screen in a lego project.

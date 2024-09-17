@@ -422,27 +422,4 @@ renderforest
 
 [See get screen snapshot example](/samples/project-data/get-screen-snapshot.js)
 
-### Preview Screens for lego templates
-
-Generates a preview of the lego project's screens.
-
-```js
-const Renderforest = require("../../src/lib/renderforest");
-const renderforest = new Renderforest({ signKey: "<signKey>", clientId: -1 });
-
-renderforest
-  .getProjectData(7096113)
-  .then((projectDataInstance) => {
-    const projectData = projectDataInstance.getRawProjectData();
-    const screenIds = projectData.screens.map((screen) => screen.id);
-    return Renderforest.getLegoScreensPreviews(projectData.projectId, screenIds);
-  })
-  .then((previewData) => {
-    console.log("Preview data:", previewData);
-  })
-  .catch(console.error); // handle the error
-```
-
-[See lego preview screens example](/samples/project-data/preview-screens.js)
-
 **[⬆ back to the top](#projects-data-api)**
