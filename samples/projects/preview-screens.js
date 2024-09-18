@@ -14,7 +14,7 @@ Renderforest.getProjectData(88172301)
   .then((projectDataInstance) => {
     const projectData = projectDataInstance.getRawProjectData()
     const screenIds = projectData.screens.map((screen) => screen.id)
-    return Renderforest.getLegoScreensPreviews(88172301, { quality: 0, screenIds })
+    return Renderforest.generateLegoScreensPreviews(88172301, { quality: 0, screenIds })
   })
   .then(console.log)
   .catch(console.error)
