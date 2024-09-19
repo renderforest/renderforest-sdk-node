@@ -281,4 +281,20 @@ Renderforest.cancelLegoPreview(88172301, [101628322])
 
 [See cancel lego preview example](/samples/projects/cancel-lego-preview.js)
 
+### Get Project Preview URLs
+
+Retrieves the preview URLs for a specific project.
+
+```js
+const RenderforestClient = require("@renderforest/sdk-node");
+
+const Renderforest = new RenderforestClient({ signKey: "<signKey>", clientId: -1 });
+
+Renderforest.getProjectPreviewUrls(4120385, { quality: 360 })
+  .then(console.log) // handle the success
+  .catch(console.error); // handle the error
+```
+
+[See example](/samples/projects/get-project-preview-urls.js)
+
 **[⬆ back to the top](#projects-api)**
