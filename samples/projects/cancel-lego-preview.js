@@ -10,8 +10,13 @@ const RenderforestClient = require('../../lib/client')
 
 const Renderforest = new RenderforestClient({ signKey: '<signKey>', clientId: -1 })
 
-Renderforest.getSubscriptions({
-  status: 'active' // can be either 'active' or 'closed'
-})
-  .then(console.log) // handle the success
-  .catch(console.error) // handle the error
+const projectId = 88172301
+const queueIds = [101628322]
+
+Renderforest.cancelLegoPreview(projectId, queueIds)
+  .then(response => {
+    console.log('Lego preview cancelled successfully:', response)
+  })
+  .catch(error => {
+    console.error('Error cancelling lego preview:', error)
+  })

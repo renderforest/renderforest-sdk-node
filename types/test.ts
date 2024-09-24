@@ -1,8 +1,8 @@
-import RenderforestClient from 'renderforest-sdk-node';
+import RenderforestClient from "renderforest-sdk-node";
 
 const Renderforest = new RenderforestClient({
-  signKey: '<signKey>',
-  clientId: -1
+  signKey: "<signKey>",
+  clientId: -1,
 });
 
 Renderforest.addProject(701)
@@ -29,9 +29,9 @@ Renderforest.getProjects({
   limit: 2,
   offset: 10,
   includeApiProjects: false,
-  order: 'DESC',
-  orderBy: 'order',
-  search: ''
+  order: "DESC",
+  orderBy: "order",
+  search: "",
 })
   .then(console.log) // handle the success
   .catch(console.error); // handle the error
@@ -41,10 +41,10 @@ Renderforest.getSubscription(122)
   .catch(console.error); // handle the error
 
 Renderforest.getSubscriptions({
-    status: 'active'
-  })
-    .then(console.log) // handle the success
-    .catch(console.error); // handle the error
+  status: "active",
+})
+  .then(console.log) // handle the success
+  .catch(console.error); // handle the error
 
 const unsubscribe = Renderforest.getRenderingStatus((error, percentage) => {
   if (error) {
@@ -68,22 +68,22 @@ RenderforestClient.getTrialProject(701, 2)
 
 Renderforest.renderProject(4120385, {
   quality: 360,
-  watermark: 'https://example.com/watermark.png'
+  watermark: "https://example.com/watermark.png",
 })
   .then(console.log) // handle the success
   .catch(console.error); // handle the error
 
-Renderforest.updateProjectPartial(5000658, { customTitle: 'Graduation' })
+Renderforest.updateProjectPartial(5000658, { customTitle: "Graduation" })
   .then(console.log) // handle the success
   .catch(console.error); // handle the error
 
 Renderforest.getProjectData(7096113)
   .then((projectDataInstance: any) => {
-    console.log('Project id:', projectDataInstance.getProjectId());
-    console.log('Template id:', projectDataInstance.getTemplateId());
-    console.log('Is equalizer:', projectDataInstance.isEqualizer());
-    console.log('Is lego:', projectDataInstance.isLego());
-    console.log('Title:', projectDataInstance.getTitle());
+    console.log("Project id:", projectDataInstance.getProjectId());
+    console.log("Template id:", projectDataInstance.getTemplateId());
+    console.log("Is equalizer:", projectDataInstance.isEqualizer());
+    console.log("Is lego:", projectDataInstance.isLego());
+    console.log("Title:", projectDataInstance.getTitle());
   })
   .catch(console.error); // handle the error
 
@@ -95,6 +95,16 @@ Renderforest.getProjectData(15220886)
 
     const projectData = projectDataInstance.getRawProjectData();
     return Renderforest.getScreenSnapshot({ projectData });
+  })
+  .then(console.log)
+  .catch(console.error);
+
+Renderforest.getProjectData(15220886)
+  .then((projectDataInstance: any) => {
+    const projectData = projectDataInstance.getRawProjectData();
+    const screenIds = projectData.screens.map((screen: any) => screen.id);
+
+    return Renderforest.generateLegoScreensPreviews(15220886, { quality: 0, screenIds });
   })
   .then(console.log)
   .catch(console.error);
@@ -124,9 +134,9 @@ Renderforest.getSounds({ duration: 4 })
   .catch(console.error); // handle the error
 
 Renderforest.addSupportsTicket({
-  message: 'I need to...',
-  mailType: 'Creative team',
-  subject: 'Some help in ..'
+  message: "I need to...",
+  mailType: "Creative team",
+  subject: "Some help in ..",
 })
   .then(console.log) // handle the success
   .catch(console.error); // handle the error
@@ -143,16 +153,16 @@ RenderforestClient.getTemplates({
   categoryId: 3,
   equalizer: false,
   limit: 4,
-  offset: 10
+  offset: 10,
 })
   .then(console.log) // handle the success
   .catch(console.error); // handle the error
 
-RenderforestClient.getTemplatesCategories({ language: 'en' })
+RenderforestClient.getTemplatesCategories({ language: "en" })
   .then(console.log) // handle the success
   .catch(console.error); // handle the error
 
-RenderforestClient.getTemplate(701, { language: 'en' })
+RenderforestClient.getTemplate(701, { language: "en" })
   .then(console.log) // handle the success
   .catch(console.error); // handle the error
 

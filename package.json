@@ -1,7 +1,7 @@
 {
   "name": "@renderforest/sdk-node",
   "description": "Renderforest SDK for Node.js",
-  "version": "0.11.2",
+  "version": "0.12.0",
   "author": "RenderForest LLC",
   "types": "types",
   "bugs": {
@@ -10,7 +10,7 @@
   "dependencies": {
     "request": "2.88.0",
     "request-promise": "4.2.4",
-    "socket.io-client": "2.5.0"
+    "socket.io-client": "4.2.0"
   },
   "devDependencies": {
     "@types/node": "^13.11.1",
@@ -43,9 +43,6 @@
     "video maker"
   ],
   "main": "lib/client.js",
-  "pre-commit": [
-    "pre-commit"
-  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/renderforest/renderforest-sdk-node.git"
@@ -53,7 +50,7 @@
   "scripts": {
     "lint": "./node_modules/.bin/eslint samples --fix",
     "lint-no-fix": "./node_modules/.bin/eslint lib samples",
-    "pre-commit": "npm run lint-no-fix && mpm run dtslint",
+    "pre-commit": "npm run lint-no-fix && npm run dtslint",
     "dtslint": "dtslint types"
   }
 }

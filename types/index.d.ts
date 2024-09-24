@@ -1,7 +1,7 @@
 // TypeScript Version: 3.0
 /// <reference types="node" />
 interface RenderforestInput {
-  [name: string]: string | number | boolean | Record<string,any>;
+  [name: string]: string | number | boolean | Record<string, any>;
 }
 declare class RenderforestClient {
   constructor(options: any);
@@ -10,6 +10,8 @@ declare class RenderforestClient {
   getOwnFonts(): any;
   getProjectData(projectId: number): any;
   getScreenSnapshot(data: RenderforestInput): any;
+  generateLegoScreensPreviews(projectId: number, params: RenderforestInput): any;
+  getLegoPreviewRenderingStatus(callback: (error: any, status: any) => any): any;
   getProjects(params: RenderforestInput): any;
   addProject(templateId: number): any;
   static getTrialProject(templateId: number, presetId?: number): any;
@@ -27,10 +29,7 @@ declare class RenderforestClient {
   addSupportsTicket(params: RenderforestInput): any;
   getCurrentUser(): any;
   static getCompanySoundsLimited(params: RenderforestInput): any;
-  static getRecommendedSoundsLimited(
-    templateId: number,
-    params: RenderforestInput
-  ): any;
+  static getRecommendedSoundsLimited(templateId: number, params: RenderforestInput): any;
   static getTemplates(params: RenderforestInput): any;
   static getTemplatesCategories(params: RenderforestInput): any;
   static getTemplate(templateId: number, params: RenderforestInput): any;
@@ -41,6 +40,7 @@ declare class RenderforestClient {
   static getTemplatePresets(templateId: any): any;
   static getTemplateTheme(templateId: number): any;
   static getTemplateTransitions(templateId: number): any;
+  cancelLegoPreview(projectId: number, queueIds: number[]): any;
 }
 
 export default RenderforestClient;
